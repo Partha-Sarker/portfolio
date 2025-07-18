@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 import './index.css';
-import App from './App';
+import theme from './theme/theme';
+import GlobalStyles from './theme/globalStyles';
+import AppRouter from './router/AppRouter';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -9,7 +12,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <GlobalStyles />
+      <AppRouter />
+    </ThemeProvider>
   </React.StrictMode>
 );
 
