@@ -9,17 +9,18 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  type: 'game' | 'academic' | 'personal' | 'professional';
+  type: 'research' | 'academic' | 'personal' | 'professional';
   featured: boolean;
   technologies: string[];
-  gameEngine?: string;
-  platforms?: string[];
+  researchAreas?: string[];
   githubUrl?: string;
   liveUrl?: string;
   documentationUrl?: string;
   imageUrl?: string;
   videoUrl?: string;
   achievements?: string[];
+  methodology?: string;
+  results?: string;
   academicSignificance?: string;
 }
 
@@ -56,7 +57,7 @@ export interface Experience {
   endDate: string | 'Present';
   description: string;
   responsibilities: string[];
-  academicRelevance?: string;
+  researchRelevance?: string;
   technologies: string[];
 }
 
@@ -66,7 +67,7 @@ export interface Experience {
 export interface Skill {
   id: string;
   name: string;
-  category: 'programming' | 'gamedev' | 'tools' | 'research' | 'soft';
+  category: 'programming' | 'frameworks' | 'tools' | 'research' | 'soft';
   proficiency: 'beginner' | 'intermediate' | 'advanced' | 'expert';
   relevance: 'high' | 'medium' | 'low';
   academicApplications?: string[];
