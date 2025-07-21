@@ -3,7 +3,10 @@ import Layout from './components/layout/Layout';
 import Section from './components/layout/Section';
 import SectionContainer from './components/layout/SectionContainer';
 import AcademicProfile from './components/academic/AcademicProfile';
+import Education from './components/academic/Education';
+import AcademicAchievements from './components/academic/AcademicAchievements';
 import Hero from './components/academic/Hero';
+import { education } from './data';
 import './App.css';
 
 function App() {
@@ -18,7 +21,7 @@ function App() {
         paddingY={0}
         fullWidth
       >
-        <Hero 
+        <Hero
           name="Partha Sarker"
           title="Research-Focused Software Engineer"
           researchInterests={[
@@ -33,7 +36,7 @@ function App() {
         />
       </Section>
 
-      {/* Education Section - Placeholder */}
+      {/* Education Section */}
       <Section
         id="education"
         title="Academic Background"
@@ -41,14 +44,9 @@ function App() {
         backgroundColor={theme.palette.background.default}
       >
         <SectionContainer>
-          <Grid container spacing={3}>
-            <Grid sx={{ xs: 12 }}>
-              <AcademicProfile />
-              <Typography variant="body1">
-                Detailed education section content will be implemented in task 5.1
-              </Typography>
-            </Grid>
-          </Grid>
+          <AcademicProfile />
+          <Education education={education} />
+          <AcademicAchievements />
         </SectionContainer>
       </Section>
 

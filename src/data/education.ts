@@ -7,16 +7,17 @@ import { Education } from './types';
 const education: Education[] = [
   {
     id: "undergrad",
-    degree: "Bachelor of Science",
+    degree: "B.Sc. in Engineering",
     field: "Computer Science and Engineering",
-    institution: "Metropolitan University",
+    institution: "Shahjalal University of Science and Technology (SUST)",
     location: "Sylhet, Bangladesh",
-    startDate: "2015",
-    endDate: "2019",
-    gpa: "3.8/4.0",
+    startDate: "2017",
+    endDate: "2021",
+    gpa: "3.76/4.0",
     relevantCoursework: [
-      "Human-Computer Interaction",
-      "Computer Vision",
+      "Data Structure",
+      "Algorithm",
+      "Object Oriented Programming",
       "Machine Learning",
       "Data Structures and Algorithms",
       "Database Systems",
@@ -25,38 +26,92 @@ const education: Education[] = [
       "Computer Networks"
     ],
     achievements: [
-      "2nd Runner-up in University Hackathon",
-      "Dean's List: All semesters",
-      "Merit-based Scholarship Recipient"
+      "National Hackathon: 2nd Runner-up",
+      "Merit-based Scholarship for Academic Excellence",
+      "Consistent Academic Performance"
     ],
     thesis: {
-      title: "Human-Computer Interaction in Educational Applications",
-      description: "Research on improving user interfaces for educational software to enhance student engagement and learning outcomes.",
-      url: "/documents/hci-thesis.pdf"
+      title: "A Notification Based Nudge for Handling Excessive Smartphone Use",
+      description: "Research on reducing excessive smartphone usage through notification-based interventions that increase self-awareness without causing annoyance. Developed 'App Usage Monitor' that reduced smartphone usage by over 6% through subtle nudges and visualization techniques.",
+      url: "/info/notification_based_nudge_hci.pdf"
     }
+  },
+  {
+    id: "ielts",
+    degree: "Certification",
+    field: "IELTS Academic",
+    institution: "British Council",
+    location: "Sylhet, Bangladesh",
+    date: "2022",
+    achievements: [
+      "Overall Score: 7.5",
+      "Listening: 8.0, Reading: 8.0",
+      "Speaking: 6.5, Writing: 6.5"
+    ]
   },
   {
     id: "certification1",
     degree: "Certification",
-    field: "Machine Learning",
-    institution: "Coursera - Stanford University",
+    field: "Machine Learning Foundations: A Case Study Approach",
+    institution: "University of Washington",
     location: "Online",
-    startDate: "2020",
-    endDate: "2020",
+    date: "Jun 2020",
+    url: "https://coursera.org/share/839242a113dfd489b53d758a5fe05c10",
     achievements: [
-      "Completed with Distinction"
+      "Grade Achieved: 100%"
     ]
   },
   {
     id: "certification2",
     degree: "Certification",
-    field: "Deep Learning Specialization",
-    institution: "Coursera - deeplearning.ai",
+    field: "Create Your First Chatbot with Rasa and Python",
+    institution: "Coursera",
     location: "Online",
-    startDate: "2021",
-    endDate: "2021",
+    date: "May 2020",
+    url: "https://coursera.org/share/f317760aa866779d8c4c4c8d981ec749",
     achievements: [
-      "Completed all 5 courses with high grades"
+      "Grade Achieved: 100%"
+    ]
+  },
+  {
+    id: "certification3",
+    degree: "Certification",
+    field: "Problem Solving (Basic)",
+    institution: "HackerRank",
+    location: "Online",
+    date: "Mar 2021",
+    url: "https://www.hackerrank.com/certificates/f3603db7b2b1",
+    achievements: [
+      "Covers Data Structures and Algorithms"
+    ]
+  },
+  {
+    id: "higher-secondary",
+    degree: "Higher Secondary Certificate (HSC)",
+    field: "Science",
+    institution: "MC College",
+    location: "Sylhet, Bangladesh",
+    startDate: "2014",
+    endDate: "2016",
+    gpa: "5.00/5.00",
+    achievements: [
+      "Perfect GPA Score",
+      "General Scholarship for Academic Excellence",
+      "Science Group"
+    ]
+  },
+  {
+    id: "secondary",
+    degree: "Secondary School Certificate (SSC)",
+    field: "Science",
+    institution: "Sylhet Government Pilot High School",
+    location: "Sylhet, Bangladesh",
+    startDate: "2012",
+    endDate: "2014",
+    gpa: "5.00/5.00",
+    achievements: [
+      "Perfect GPA Score",
+      "Science Group"
     ]
   }
 ];

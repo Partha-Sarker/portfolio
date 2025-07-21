@@ -33,11 +33,13 @@ export interface Education {
   field: string;
   institution: string;
   location: string;
-  startDate: string;
-  endDate: string;
+  startDate?: string;
+  endDate?: string;
+  date?: string;
   gpa?: string;
   relevantCoursework?: string[];
   achievements?: string[];
+  url?: string;
   thesis?: {
     title: string;
     description: string;
