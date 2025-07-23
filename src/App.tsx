@@ -7,6 +7,7 @@ import Education from './components/academic/Education';
 import AcademicAchievements from './components/academic/AcademicAchievements';
 import Hero from './components/academic/Hero';
 import { education } from './data';
+import { getAssetPath } from './utils/assetUtils';
 import './App.css';
 
 function App() {
@@ -31,8 +32,8 @@ function App() {
             "Document Analysis",
             "Machine Learning"
           ]}
-          profilePhoto="/profile_photo.png"
-          cvUrl="/info/PARTHA_SARKER_SOFTWARE_ENGINEER_RESUME.pdf"
+          profilePhoto={getAssetPath('/profile_photo.png')}
+          cvUrl={getAssetPath('/info/PARTHA_SARKER_SOFTWARE_ENGINEER_RESUME.pdf')}
         />
       </Section>
 

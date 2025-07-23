@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography, Button, IconButton, Grid, Container, useTheme, Avatar } from '@mui/material';
 import { KeyboardArrowDown as KeyboardArrowDownIcon } from '@mui/icons-material';
 import { scrollToElement } from '../../utils/scrollUtils';
+import { getAssetPath } from '../../utils/assetUtils';
 
 interface HeroProps {
   name: string;
@@ -19,8 +20,8 @@ const Hero: React.FC<HeroProps> = ({
   name,
   title,
   researchInterests,
-  profilePhoto = '/profile_photo.png',
-  cvUrl = '/info/PARTHA_SARKER_SOFTWARE_ENGINEER_RESUME.pdf',
+  profilePhoto = getAssetPath('/profile_photo.png'),
+  cvUrl = getAssetPath('/info/PARTHA_SARKER_SOFTWARE_ENGINEER_RESUME.pdf'),
 }) => {
   const theme = useTheme();
 
