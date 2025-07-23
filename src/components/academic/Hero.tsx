@@ -92,7 +92,7 @@ const Hero: React.FC<HeroProps> = ({
               />
             </Box>
           </Grid>
-          
+
           <Grid sx={{ xs: 12, md: 8 }}>
             <Typography
               variant="h1"
@@ -107,7 +107,7 @@ const Hero: React.FC<HeroProps> = ({
             >
               {name}
             </Typography>
-            
+
             <Typography
               variant="h4"
               component="h2"
@@ -123,7 +123,7 @@ const Hero: React.FC<HeroProps> = ({
             >
               {title}
             </Typography>
-            
+
             <Box sx={{ mb: 4 }}>
               <Typography
                 variant="h6"
@@ -136,8 +136,8 @@ const Hero: React.FC<HeroProps> = ({
               >
                 Research Interests
               </Typography>
-              
-              <Box 
+
+              <Box
                 sx={{
                   display: 'flex',
                   flexWrap: 'wrap',
@@ -200,9 +200,9 @@ const Hero: React.FC<HeroProps> = ({
         </Grid>
       </Container>
 
-      <Box 
-        sx={{ 
-          position: 'absolute', 
+      <Box
+        sx={{
+          position: 'absolute',
           bottom: { xs: 10, sm: 20, md: 30 },
           mt: { xs: 6, md: 0 },
           zIndex: 1,
