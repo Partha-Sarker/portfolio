@@ -59,7 +59,6 @@ const projects: Project[] = [
     results: "Successfully segmented words with high accuracy across various handwriting styles and document qualities.",
     academicSignificance: "Contributes to the field of optical character recognition for Bengali script, with potential applications in digital archiving and automated document processing."
   },
-
   // Professional Projects
   {
     id: "marginedge",
@@ -98,8 +97,16 @@ const projects: Project[] = [
     results: "Improved data accuracy and accessibility for vital statistics, supported over 10 million citizens, and streamlined government service delivery processes.",
     academicSignificance: "Demonstrates expertise in government system development, secure data handling, database management, and public sector digital transformation."
   },
-
-  // Academic Projects
+  {
+    id: "dbtevariants",
+    title: "dbTEvariants",
+    description: "A manually curated database representing the most comprehensive resource to date for non-reference polymorphic human transposable elements. Transposable elements (TEs) comprise 45–50% of the human genome and play critical roles in genomic diversity, evolution, gene regulation, and disease mechanisms.",
+    type: "professional",
+    featured: false,
+    technologies: ["Next.js", "Vercel", "Postgres"],
+    tags: ["Next.js", "Vercel", "Postgres", "professional", "bioinformatics", "genomics", "database", "web-development"],
+    liveUrl: "https://genome-data.vercel.app/",
+  },
   {
     id: "echo-sign-language",
     title: "ECHO - Sign Language Interpreter",
@@ -259,6 +266,17 @@ const projects: Project[] = [
     technologies: ["Unity", "C#"],
     tags: ["Unity", "C#", "personal", "game-development", "2d", "shooter", "space", "movement"],
     githubUrl: "https://github.com/Partha-Sarker/Space-Riot"
+  },
+  {
+    id: "portfolio",
+    title: "Portfolio",
+    description: "A comprehensive, modern portfolio website showcasing research work, academic projects, professional experience, and personal initiatives. Built with React, TypeScript, and Material-UI with a focus on academic excellence and professional development.",
+    type: "personal",
+    featured: false,
+    technologies: ["React", "Material-UI", "TypeScript"],
+    tags: ["React", "Material-UI", "TypeScript", "personal", "web-development", "portfolio", "responsive", "modern"],
+    githubUrl: "https://github.com/Partha-Sarker/portfolio",
+    academicSignificance: "Demonstrates advanced frontend development skills, responsive design principles, and modern web technologies. Showcases ability to create professional, user-friendly interfaces for academic and professional presentation."
   }
 ];
 

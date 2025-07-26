@@ -1,46 +1,99 @@
-# Getting Started with Create React App
+# Professional Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive, modern portfolio website showcasing research work, academic projects, professional experience, and personal initiatives. Built with React, TypeScript, and Material-UI with a focus on academic excellence and professional development.
 
-## Available Scripts
+**🌐 Live**: [https://partha-sarker.github.io/portfolio/](https://partha-sarker.github.io/portfolio/)
 
-In the project directory, you can run:
+## 🌟 Features
 
-### `npm start`
+### Project Showcase
+- **Featured Projects**: Curated selection of top 4 projects across all categories
+- **Research Projects**: Academic research with detailed methodology and results
+- **Academic Projects**: University coursework and award-winning projects
+- **Professional Projects**: Enterprise-level applications and government systems
+- **Personal Projects**: Self-initiated creative and technical explorations
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Advanced Functionality
+- **Smart Search & Filtering**: Search by title, description, or tags with real-time results
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Video Integration**: Embedded project demonstrations and walkthroughs
+- **Interactive UI**: Smooth animations, hover effects, and intuitive navigation
+- **Tag-based Organization**: Comprehensive tagging system for easy project discovery
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Academic Focus
+- **Research Emphasis**: Detailed methodology, results, and academic significance
+- **Achievement Highlights**: Awards, recognitions, and notable accomplishments
+- **Educational Background**: Comprehensive academic history and achievements
+- **Research Areas**: Human-Computer Interaction, Computer Vision, Software Engineering
 
-### `npm test`
+## 🚀 Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
+- **React 18** with TypeScript for type-safe development
+- **Material-UI (MUI)** for consistent, professional design system
+- **Responsive Grid System** for optimal layout across devices
+- **Custom Hooks** for state management and reusable logic
 
-### `npm run build`
+### Architecture
+- **Component-based Architecture** with clear separation of concerns
+- **TypeScript Interfaces** for robust data modeling
+- **Utility Functions** for asset management and common operations
+- **Modular Design** for easy maintenance and scalability
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Development Tools
+- **Create React App** for streamlined development setup
+- **ESLint & Prettier** for code quality and consistency
+- **Git** for version control and collaboration
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+├── components/
+│   ├── academic/           # Academic background components
+│   ├── projects/           # Project showcase components
+│   └── layout/             # Layout and navigation components
+├── data/                   # Static data and type definitions
+│   ├── projects.ts         # Project information and metadata
+│   ├── education.ts        # Educational background
+│   ├── experience.ts       # Professional experience
+│   └── types.ts           # TypeScript type definitions
+├── utils/                  # Utility functions
+│   ├── assetUtils.ts      # Asset path management
+│   └── projectTags.ts     # Tag generation utilities
+└── public/
+    ├── videos/            # Project demonstration videos
+    └── info/              # Additional project documentation
+```
 
-### `npm run eject`
+## 🛠️ Installation & Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn package manager
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
+```bash
+# Clone the repository
+git clone [repository-url]
+cd portfolio
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Install dependencies
+npm install
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Start development server
+npm start
+```
 
-## Learn More
+### Development
+```bash
+# Run in development mode
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Build for production
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+**Built with ❤️ using React, TypeScript, and Material-UI**
