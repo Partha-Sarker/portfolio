@@ -20,6 +20,7 @@ import {
     Star as StarIcon,
     Science as ScienceIcon,
     School as SchoolIcon,
+    Work as WorkIcon,
     Person as PersonIcon,
     FilterList as FilterListIcon
 } from '@mui/icons-material';
@@ -27,6 +28,7 @@ import { Project } from '../../data/types';
 import FeaturedProjects from './FeaturedProjects';
 import FeaturedResearchProjects from './FeaturedResearchProjects';
 import AcademicProjects from './AcademicProjects';
+import ProfessionalProjects from './ProfessionalProjects';
 import PersonalProjects from './PersonalProjects';
 import ProjectCard from './ProjectCard';
 
@@ -74,23 +76,55 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
         setTechnologyFilter(event.target.value);
     };
 
-    // Get all unique technologies for filter dropdown
-    const allTechnologies = Array.from(
-        new Set(projects.flatMap(project => project.technologies))
-    ).sort();
+    // Curated filter tags for dropdown (most useful for filtering)
+    const filterTags = [
+        // Project Types
+        'featured', 'research', 'academic', 'professional', 'personal',
+        // Technologies & Languages
+        'Unity', 'augmented-reality', 'game-development', '3d', 'multiplayer',
+        'Java', 'Python', 'JavaScript', 'C#', 'C++', 'PHP', 'Node.js', 'Spring',
+        // Frameworks & Tools
+        'Android Studio', 'Laravel', 'OpenCV', 'Firebase', 'React', 'jQuery',
+        // Domains
+        'web-development', 'mobile', 'computer-vision', 'hci',
+        // Special Categories
+        'award-winning'
+    ];
 
-    // Filter projects based on search and technology filter
+    // Function to format tag labels for display
+    const formatTagLabel = (tag: string): string => {
+        const tagFormatMap: { [key: string]: string } = {
+            'featured': 'Featured',
+            'research': 'Research',
+            'academic': 'Academic',
+            'professional': 'Professional',
+            'personal': 'Personal',
+            'game-development': 'Game Development',
+            'web-development': 'Web Development',
+            'mobile': 'Mobile',
+            'computer-vision': 'Computer Vision',
+            'hci': 'HCI',
+            'award-winning': 'Award-Winning',
+            '3d': '3D',
+            'multiplayer': 'Multiplayer',
+            'augmented-reality': 'Augmented Reality'
+        };
+
+        return tagFormatMap[tag] || tag;
+    };
+
+    // Filter projects based on search and tag filter
     const filterProjects = (projectList: Project[]) => {
         return projectList.filter(project => {
             const matchesSearch = searchTerm === '' ||
                 project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
+                project.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
 
-            const matchesTechnology = technologyFilter === '' ||
-                project.technologies.includes(technologyFilter);
+            const matchesTag = technologyFilter === '' ||
+                project.tags.includes(technologyFilter);
 
-            return matchesSearch && matchesTechnology;
+            return matchesSearch && matchesTag;
         });
     };
 
@@ -100,6 +134,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
     const featuredCount = projects.filter(p => p.featured).length;
     const researchCount = projects.filter(p => p.type === 'research').length;
     const academicCount = projects.filter(p => p.type === 'academic').length;
+    const professionalCount = projects.filter(p => p.type === 'professional').length;
     const personalCount = projects.filter(p => p.type === 'personal').length;
 
     return (
@@ -109,7 +144,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                 <Typography variant="h3" component="h1" fontWeight={700} sx={{ mb: 2 }}>
                     Projects & Research
                 </Typography>
-                <Typography variant="h6" color="text.secondary" sx={{ maxWidth: '800px', mx: 'auto' }}>
+                <Typography variant="h6" color="text.secondary" sx={{ mx: 'auto' }}>
                     A comprehensive showcase of my research work, academic projects, and personal initiatives
                     spanning Human-Computer Interaction, Computer Vision, and Software Development
                 </Typography>
@@ -137,7 +172,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     <TextField
                         fullWidth
                         variant="outlined"
-                        placeholder="Search projects by title, description, or technology..."
+                        placeholder="Search projects by title, description, or tags..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         InputProps={{
@@ -150,16 +185,16 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     />
 
                     <FormControl fullWidth>
-                        <InputLabel>Filter by Technology</InputLabel>
+                        <InputLabel>Filter by Tag</InputLabel>
                         <Select
                             value={technologyFilter}
-                            label="Filter by Technology"
+                            label="Filter by Tag"
                             onChange={handleTechnologyFilterChange}
                         >
-                            <MenuItem value="">All Technologies</MenuItem>
-                            {allTechnologies.map((tech) => (
-                                <MenuItem key={tech} value={tech}>
-                                    {tech}
+                            <MenuItem value="">All Tags</MenuItem>
+                            {filterTags.map((tag) => (
+                                <MenuItem key={tag} value={tag}>
+                                    {formatTagLabel(tag)}
                                 </MenuItem>
                             ))}
                         </Select>
@@ -181,7 +216,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                         )}
                         {technologyFilter && (
                             <Chip
-                                label={`Technology: ${technologyFilter}`}
+                                label={`Tag: ${technologyFilter}`}
                                 size="small"
                                 onDelete={() => setTechnologyFilter('')}
                             />
@@ -190,132 +225,131 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                 )}
             </Paper>
 
-            {/* Navigation Tabs */}
-            <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}>
-                <Tabs
-                    value={activeTab}
-                    onChange={handleTabChange}
-                    aria-label="project categories"
-                    variant="fullWidth"
-                    sx={{
-                        '& .MuiTab-root': {
-                            textTransform: 'none',
-                            fontWeight: 600,
-                            fontSize: '1rem',
-                        },
-                    }}
-                >
-                    <Tab
-                        icon={<StarIcon />}
-                        iconPosition="start"
-                        label={`Featured (${featuredCount})`}
-                        id="projects-tab-0"
-                        aria-controls="projects-tabpanel-0"
-                    />
-                    <Tab
-                        icon={<ScienceIcon />}
-                        iconPosition="start"
-                        label={`Research (${researchCount})`}
-                        id="projects-tab-1"
-                        aria-controls="projects-tabpanel-1"
-                    />
-                    <Tab
-                        icon={<SchoolIcon />}
-                        iconPosition="start"
-                        label={`Academic (${academicCount})`}
-                        id="projects-tab-2"
-                        aria-controls="projects-tabpanel-2"
-                    />
-                    <Tab
-                        icon={<PersonIcon />}
-                        iconPosition="start"
-                        label={`Personal (${personalCount})`}
-                        id="projects-tab-3"
-                        aria-controls="projects-tabpanel-3"
-                    />
-                </Tabs>
-            </Box>
-
-            {/* Tab Panels */}
-            <TabPanel value={activeTab} index={0}>
-                {searchTerm || technologyFilter ? (
-                    <Box>
-                        <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }}>
-                            Featured Projects ({filterProjects(projects.filter(p => p.featured)).length} results)
-                        </Typography>
-                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
-                            {filterProjects(projects.filter(p => p.featured)).map((project) => (
-                                <ProjectCard key={project.id} project={project} />
-                            ))}
-                        </Box>
-                    </Box>
-                ) : (
-                    <FeaturedProjects projects={projects} />
-                )}
-            </TabPanel>
-
-            <TabPanel value={activeTab} index={1}>
-                {searchTerm || technologyFilter ? (
-                    <Box>
-                        <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }}>
-                            Research Projects ({filterProjects(projects.filter(p => p.type === 'research')).length} results)
-                        </Typography>
-                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
-                            {filterProjects(projects.filter(p => p.type === 'research')).map((project) => (
-                                <ProjectCard key={project.id} project={project} />
-                            ))}
-                        </Box>
-                    </Box>
-                ) : (
-                    <FeaturedResearchProjects projects={projects} />
-                )}
-            </TabPanel>
-
-            <TabPanel value={activeTab} index={2}>
-                {searchTerm || technologyFilter ? (
-                    <Box>
-                        <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }}>
-                            Academic Projects ({filterProjects(projects.filter(p => p.type === 'academic')).length} results)
-                        </Typography>
-                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
-                            {filterProjects(projects.filter(p => p.type === 'academic')).map((project) => (
-                                <ProjectCard key={project.id} project={project} />
-                            ))}
-                        </Box>
-                    </Box>
-                ) : (
-                    <AcademicProjects projects={projects} />
-                )}
-            </TabPanel>
-
-            <TabPanel value={activeTab} index={3}>
-                {searchTerm || technologyFilter ? (
-                    <Box>
-                        <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }}>
-                            Personal Projects ({filterProjects(projects.filter(p => p.type === 'personal')).length} results)
-                        </Typography>
-                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
-                            {filterProjects(projects.filter(p => p.type === 'personal')).map((project) => (
-                                <ProjectCard key={project.id} project={project} />
-                            ))}
-                        </Box>
-                    </Box>
-                ) : (
-                    <PersonalProjects projects={projects} />
-                )}
-            </TabPanel>
-
-            {/* No Results Message */}
-            {(searchTerm || technologyFilter) && filteredProjects.length === 0 && (
-                <Box sx={{ textAlign: 'center', py: 6 }}>
-                    <Typography variant="h6" color="text.secondary" sx={{ mb: 2 }}>
-                        No projects found matching your criteria
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Try adjusting your search terms or removing filters
-                    </Typography>
+            {/* Navigation Tabs - Only shown when not filtering */}
+            {!searchTerm && !technologyFilter && (
+                <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}>
+                    <Tabs
+                        value={activeTab}
+                        onChange={handleTabChange}
+                        aria-label="project categories"
+                        variant="fullWidth"
+                        sx={{
+                            '& .MuiTab-root': {
+                                textTransform: 'none',
+                                fontWeight: 600,
+                                fontSize: '1rem',
+                            },
+                        }}
+                    >
+                        <Tab
+                            icon={<StarIcon />}
+                            iconPosition="start"
+                            label={`Featured (${featuredCount})`}
+                            id="projects-tab-0"
+                            aria-controls="projects-tabpanel-0"
+                        />
+                        <Tab
+                            icon={<ScienceIcon />}
+                            iconPosition="start"
+                            label={`Research (${researchCount})`}
+                            id="projects-tab-1"
+                            aria-controls="projects-tabpanel-1"
+                        />
+                        <Tab
+                            icon={<SchoolIcon />}
+                            iconPosition="start"
+                            label={`Academic (${academicCount})`}
+                            id="projects-tab-2"
+                            aria-controls="projects-tabpanel-2"
+                        />
+                        <Tab
+                            icon={<WorkIcon />}
+                            iconPosition="start"
+                            label={`Professional (${professionalCount})`}
+                            id="projects-tab-3"
+                            aria-controls="projects-tabpanel-3"
+                        />
+                        <Tab
+                            icon={<PersonIcon />}
+                            iconPosition="start"
+                            label={`Personal (${personalCount})`}
+                            id="projects-tab-4"
+                            aria-controls="projects-tabpanel-4"
+                        />
+                        <Tab
+                            icon={<FilterListIcon />}
+                            iconPosition="start"
+                            label={`All (${projects.length})`}
+                            id="projects-tab-5"
+                            aria-controls="projects-tabpanel-5"
+                        />
+                    </Tabs>
                 </Box>
             )}
+
+            {/* Show all filtered projects together when searching/filtering */}
+            {searchTerm || technologyFilter ? (
+                <Box>
+                    <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }}>
+                        Search Results ({filteredProjects.length} projects found)
+                    </Typography>
+
+                    {filteredProjects.length > 0 ? (
+                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
+                            {filteredProjects.map((project) => (
+                                <ProjectCard key={project.id} project={project} />
+                            ))}
+                        </Box>
+                    ) : (
+                        <Box sx={{ textAlign: 'center', py: 6 }}>
+                            <Typography variant="h6" color="text.secondary" sx={{ mb: 2 }}>
+                                No projects found matching your criteria
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Try adjusting your search terms or removing filters
+                            </Typography>
+                        </Box>
+                    )}
+                </Box>
+            ) : (
+                <>
+                    {/* Tab Panels - Only shown when not filtering */}
+                    <TabPanel value={activeTab} index={0}>
+                        <FeaturedProjects projects={projects} />
+                    </TabPanel>
+
+                    <TabPanel value={activeTab} index={1}>
+                        <FeaturedResearchProjects projects={projects} />
+                    </TabPanel>
+
+                    <TabPanel value={activeTab} index={2}>
+                        <AcademicProjects projects={projects} />
+                    </TabPanel>
+
+                    <TabPanel value={activeTab} index={3}>
+                        <ProfessionalProjects projects={projects} />
+                    </TabPanel>
+
+                    <TabPanel value={activeTab} index={4}>
+                        <PersonalProjects projects={projects} />
+                    </TabPanel>
+
+                    <TabPanel value={activeTab} index={5}>
+                        <Box>
+                            <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }}>
+                                All Projects ({projects.length} total)
+                            </Typography>
+                            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
+                                {projects.map((project) => (
+                                    <ProjectCard key={project.id} project={project} />
+                                ))}
+                            </Box>
+                        </Box>
+                    </TabPanel>
+                </>
+            )}
+
+
 
             {/* Project Statistics */}
             <Paper
@@ -332,7 +366,16 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     Project Portfolio Summary
                 </Typography>
 
-                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', md: '1fr 1fr 1fr 1fr' }, gap: 3 }}>
+                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr 1fr 1fr' }, gap: 3 }}>
+                    <Box sx={{ textAlign: 'center' }}>
+                        <Typography variant="h4" fontWeight={700} color="text.primary">
+                            {projects.length}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            Total Projects
+                        </Typography>
+                    </Box>
+
                     <Box sx={{ textAlign: 'center' }}>
                         <Typography variant="h4" fontWeight={700} color="warning.main">
                             {featuredCount}
@@ -357,6 +400,15 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
                             Academic Projects
+                        </Typography>
+                    </Box>
+
+                    <Box sx={{ textAlign: 'center' }}>
+                        <Typography variant="h4" fontWeight={700} color="success.main">
+                            {professionalCount}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            Professional Projects
                         </Typography>
                     </Box>
 

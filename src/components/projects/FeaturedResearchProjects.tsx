@@ -48,18 +48,20 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                 </Typography>
             </Box>
 
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: '800px' }}>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
                 These research projects represent my core academic work, demonstrating expertise in
                 Human-Computer Interaction, Computer Vision, and applied research methodologies.
             </Typography>
 
-            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 4 }}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 4, alignItems: 'stretch' }}>
                 {featuredResearchProjects.map((project) => (
                     <Card
                         key={project.id}
                         elevation={4}
                         sx={{
-                            height: 'fit-content',
+                            height: '100%',
+                            display: 'flex',
+                            flexDirection: 'column',
                             borderRadius: 2,
                             border: `2px solid ${theme.palette.primary.main}`,
                             background: `linear-gradient(135deg, ${theme.palette.background.paper} 0%, ${theme.palette.background.default} 100%)`,
@@ -70,7 +72,7 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                             },
                         }}
                     >
-                        <CardContent sx={{ p: 4 }}>
+                        <CardContent sx={{ p: 4, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                             {/* Project Header */}
                             <Box sx={{ mb: 3 }}>
                                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>

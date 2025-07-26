@@ -64,7 +64,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
                 </Typography>
             </Box>
 
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: '800px' }}>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
                 These self-initiated projects reflect my passion for technology, creativity, and continuous learning.
                 They demonstrate initiative, problem-solving skills, and exploration of diverse technical domains
                 beyond academic requirements.

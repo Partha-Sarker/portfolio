@@ -12,6 +12,7 @@ export interface Project {
   type: 'research' | 'academic' | 'personal' | 'professional';
   featured: boolean;
   technologies: string[];
+  tags: string[];
   researchAreas?: string[];
   githubUrl?: string;
   liveUrl?: string;

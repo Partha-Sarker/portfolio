@@ -20,7 +20,6 @@ const education: Education[] = [
       "Algorithm",
       "Object Oriented Programming",
       "Machine Learning",
-      "Data Structures and Algorithms",
       "Database Systems",
       "Software Engineering",
       "Artificial Intelligence",

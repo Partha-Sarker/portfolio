@@ -46,7 +46,7 @@ const AcademicProjects: React.FC<AcademicProjectsProps> = ({ projects }) => {
                 </Typography>
             </Box>
 
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: '800px' }}>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
                 These projects showcase my learning journey during undergraduate studies, demonstrating
                 progression in technical skills, software development practices, and problem-solving abilities
                 across various domains including game development, web applications, and system programming.

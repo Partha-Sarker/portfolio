@@ -93,54 +93,35 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                 }),
             }}
         >
-            {/* Project Type Badge */}
-            <Box
-                sx={{
-                    position: 'absolute',
-                    top: 12,
-                    right: 12,
-                    zIndex: 1,
-                }}
-            >
-                <Tooltip title={`${getProjectTypeLabel(project.type)} Project`}>
-                    <Chip
-                        icon={getProjectTypeIcon(project.type)}
-                        label={getProjectTypeLabel(project.type)}
-                        size="small"
-                        sx={{
-                            backgroundColor: getProjectTypeColor(project.type),
-                            color: 'white',
-                            '& .MuiChip-icon': {
+            <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                {/* Badges Row */}
+                <Box sx={{ display: 'flex', justifyContent: isFeatured ? 'space-between' : 'flex-end', alignItems: 'center', mb: 2 }}>
+                    {isFeatured && (
+                        <Chip
+                            label="Featured"
+                            size="small"
+                            sx={{
+                                backgroundColor: theme.palette.warning.main,
                                 color: 'white',
-                            },
-                        }}
-                    />
-                </Tooltip>
-            </Box>
-
-            {/* Featured Badge */}
-            {isFeatured && (
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        top: 12,
-                        left: 12,
-                        zIndex: 1,
-                    }}
-                >
-                    <Chip
-                        label="Featured"
-                        size="small"
-                        sx={{
-                            backgroundColor: theme.palette.warning.main,
-                            color: 'white',
-                            fontWeight: 600,
-                        }}
-                    />
+                                fontWeight: 600,
+                            }}
+                        />
+                    )}
+                    <Tooltip title={`${getProjectTypeLabel(project.type)} Project`}>
+                        <Chip
+                            icon={getProjectTypeIcon(project.type)}
+                            label={getProjectTypeLabel(project.type)}
+                            size="small"
+                            sx={{
+                                backgroundColor: getProjectTypeColor(project.type),
+                                color: 'white',
+                                '& .MuiChip-icon': {
+                                    color: 'white',
+                                },
+                            }}
+                        />
+                    </Tooltip>
                 </Box>
-            )}
-
-            <CardContent sx={{ flexGrow: 1, pt: isFeatured ? 6 : 3 }}>
                 <Typography
                     variant={isFeatured ? 'h5' : 'h6'}
                     component="h3"
@@ -160,10 +141,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                     sx={{
                         mb: 2,
                         lineHeight: 1.6,
-                        display: '-webkit-box',
-                        WebkitLineClamp: isFeatured ? 4 : 3,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden',
                     }}
                 >
                     {project.description}
@@ -284,18 +261,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                     )}
                 </Box>
 
-                {isFeatured && (
-                    <Button
-                        variant="outlined"
-                        size="small"
-                        sx={{
-                            textTransform: 'none',
-                            fontWeight: 500,
-                        }}
-                    >
-                        Learn More
-                    </Button>
-                )}
+
             </CardActions>
         </Card>
     );

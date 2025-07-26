@@ -13,12 +13,14 @@ import {
 import {
     Star as StarIcon,
     GitHub as GitHubIcon,
+    Launch as LaunchIcon,
     Description as DescriptionIcon,
     Science as ScienceIcon,
     School as SchoolIcon,
     Person as PersonIcon
 } from '@mui/icons-material';
 import { Project } from '../../data/types';
+import { getAssetPath } from '../../utils/assetUtils';
 
 interface FeaturedProjectsProps {
     projects: Project[];
@@ -85,7 +87,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) => {
                 </Typography>
             </Box>
 
-            <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: '800px' }}>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
                 A curated selection of my most significant projects showcasing research excellence,
                 technical innovation, and creative problem-solving across different domains.
             </Typography>
@@ -110,34 +112,24 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) => {
                             },
                         }}
                     >
-                        {/* Featured Badge */}
-                        <Box
-                            sx={{
-                                position: 'absolute',
-                                top: -10,
-                                left: 20,
-                                zIndex: 1,
-                            }}
-                        >
-                            <Chip
-                                icon={<StarIcon />}
-                                label="Featured"
-                                size="small"
-                                sx={{
-                                    backgroundColor: theme.palette.warning.main,
-                                    color: 'white',
-                                    fontWeight: 700,
-                                    '& .MuiChip-icon': {
-                                        color: 'white',
-                                    },
-                                }}
-                            />
-                        </Box>
-
-                        <CardContent sx={{ p: 4, pt: 5, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                        <CardContent sx={{ p: 4, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                             {/* Project Header */}
                             <Box sx={{ mb: 3 }}>
-                                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
+                                {/* Badges Row */}
+                                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                                    <Chip
+                                        icon={<StarIcon />}
+                                        label="Featured"
+                                        size="small"
+                                        sx={{
+                                            backgroundColor: theme.palette.warning.main,
+                                            color: 'white',
+                                            fontWeight: 700,
+                                            '& .MuiChip-icon': {
+                                                color: 'white',
+                                            },
+                                        }}
+                                    />
                                     <Chip
                                         icon={getProjectTypeIcon(project.type)}
                                         label={getProjectTypeLabel(project.type)}
@@ -170,6 +162,38 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) => {
                                     {project.description}
                                 </Typography>
                             </Box>
+
+                            {/* Project Video (if available) */}
+                            {project.videoUrl && (
+                                <Box sx={{ mb: 3 }}>
+                                    <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 2 }}>
+                                        Demo Video
+                                    </Typography>
+                                    <Box
+                                        sx={{
+                                            position: 'relative',
+                                            width: '100%',
+                                            borderRadius: 2,
+                                            overflow: 'hidden',
+                                            boxShadow: 2,
+                                        }}
+                                    >
+                                        <video
+                                            controls
+                                            preload="metadata"
+                                            playsInline
+                                            style={{
+                                                width: '100%',
+                                                height: 'auto',
+                                                display: 'block',
+                                            }}
+                                        >
+                                            <source src={getAssetPath(project.videoUrl)} type="video/mp4" />
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </Box>
+                                </Box>
+                            )}
 
                             {/* Research Areas (if applicable) */}
                             {project.researchAreas && project.researchAreas.length > 0 && (
@@ -276,6 +300,20 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) => {
                                         sx={{ textTransform: 'none', flex: 1 }}
                                     >
                                         Source Code
+                                    </Button>
+                                )}
+
+                                {project.liveUrl && (
+                                    <Button
+                                        variant="outlined"
+                                        startIcon={<LaunchIcon />}
+                                        component={Link}
+                                        href={project.liveUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        sx={{ textTransform: 'none', flex: 1 }}
+                                    >
+                                        Visit Website
                                     </Button>
                                 )}
 
