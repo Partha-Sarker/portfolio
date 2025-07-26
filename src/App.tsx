@@ -7,7 +7,9 @@ import Education from './components/academic/Education';
 import AcademicAchievements from './components/academic/AcademicAchievements';
 import Hero from './components/academic/Hero';
 import { education } from './data';
+import projects from './data/projects';
 import { getAssetPath } from './utils/assetUtils';
+import ProjectsSection from './components/projects/ProjectsSection';
 import './App.css';
 
 function App() {
@@ -51,20 +53,13 @@ function App() {
         </SectionContainer>
       </Section>
 
-      {/* Research Projects Section - Placeholder */}
+      {/* Projects Section */}
       <Section
         id="projects"
-        title="Research Projects"
-        subtitle="Featured research work and technical projects"
+        paddingY={{ xs: 6, sm: 8, md: 10 }}
       >
         <SectionContainer>
-          <Grid container spacing={3}>
-            <Grid sx={{ xs: 12 }}>
-              <Typography variant="body1">
-                Research projects section content will be implemented in task 6.1
-              </Typography>
-            </Grid>
-          </Grid>
+          <ProjectsSection projects={projects} />
         </SectionContainer>
       </Section>
 
