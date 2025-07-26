@@ -7,13 +7,16 @@ import {
   CardContent,
   Divider,
   useTheme,
-  Avatar
+  Avatar,
+  Button,
+  Link
 } from '@mui/material';
 import {
   EmojiEvents as EmojiEventsIcon,
   School as SchoolIcon,
   Star as StarIcon,
-  Bookmark as BookmarkIcon
+  Bookmark as BookmarkIcon,
+  GitHub as GitHubIcon
 } from '@mui/icons-material';
 
 interface Achievement {
@@ -23,6 +26,7 @@ interface Achievement {
   date: string;
   category: 'award' | 'scholarship' | 'recognition' | 'publication';
   icon: React.ReactNode;
+  url?: string;
 }
 
 /**
@@ -52,17 +56,18 @@ const AcademicAchievements: React.FC = () => {
     },
     {
       id: 'hackathon',
-      title: '2nd Runner-up in University Hackathon',
-      description: 'Developed an innovative solution for document analysis using computer vision techniques.',
-      date: '2020',
+      title: '2nd Runner-up at LICT SUST Techfest Hackathon',
+      description: 'Developed "ECHO" - a language conversion app that translates between text, speech, and American Sign Language to help disabled people communicate. Built within 40 hours at the national hackathon for undergraduates.',
+      date: '2019',
       category: 'award',
-      icon: <EmojiEventsIcon />
+      icon: <EmojiEventsIcon />,
+      url: 'https://github.com/Boorhan/Echo-Sign-Language-Interpreter'
     },
     {
       id: 'scholarship',
       title: 'Merit-based Scholarship Recipient',
-      description: 'Awarded scholarship for academic excellence and research potential.',
-      date: '2019',
+      description: 'Awarded one-time scholarship for academic performance in a semester.',
+      date: '2017',
       category: 'scholarship',
       icon: <SchoolIcon />
     }
@@ -82,81 +87,7 @@ const AcademicAchievements: React.FC = () => {
         Academic Achievements
       </Typography>
 
-      {/* Featured Achievement */}
-      <Paper
-        elevation={3}
-        sx={{
-          p: 3,
-          mb: 4,
-          borderRadius: 2,
-          background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
-          color: 'white',
-          position: 'relative',
-          overflow: 'hidden'
-        }}
-      >
-        <Box
-          sx={{
-            position: 'absolute',
-            top: -15,
-            right: -15,
-            opacity: 0.2,
-          }}
-        >
-          <EmojiEventsIcon sx={{ fontSize: 150 }} />
-        </Box>
 
-        <Typography variant="h5" component="h3" fontWeight={600} sx={{ mb: 1 }}>
-          Research Excellence
-        </Typography>
-
-        <Typography variant="body1" sx={{ mb: 2, maxWidth: '80%' }}>
-          Recognized for outstanding contributions to research in computer vision and document analysis,
-          with a focus on innovative approaches to handwritten document segmentation.
-        </Typography>
-
-        <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', mt: 2 }}>
-          <Box
-            sx={{
-              backgroundColor: 'rgba(255,255,255,0.2)',
-              color: 'white',
-              borderRadius: '20px',
-              px: 2,
-              py: 0.5,
-              display: 'inline-block',
-              fontSize: '0.875rem',
-            }}
-          >
-            Computer Vision
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: 'rgba(255,255,255,0.2)',
-              color: 'white',
-              borderRadius: '20px',
-              px: 2,
-              py: 0.5,
-              display: 'inline-block',
-              fontSize: '0.875rem',
-            }}
-          >
-            Document Analysis
-          </Box>
-          <Box
-            sx={{
-              backgroundColor: 'rgba(255,255,255,0.2)',
-              color: 'white',
-              borderRadius: '20px',
-              px: 2,
-              py: 0.5,
-              display: 'inline-block',
-              fontSize: '0.875rem',
-            }}
-          >
-            Research Grant
-          </Box>
-        </Box>
-      </Paper>
 
       {/* Achievement Categories */}
       <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 3 }}>
@@ -180,7 +111,7 @@ const AcademicAchievements: React.FC = () => {
                 </Typography>
               </Box>
               <Divider sx={{ mb: 2 }} />
-              
+
               {groupedAchievements.award.map((achievement) => (
                 <Box key={achievement.id} sx={{ mb: 2 }}>
                   <Typography variant="subtitle1" fontWeight={500}>
@@ -189,9 +120,23 @@ const AcademicAchievements: React.FC = () => {
                   <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
                     {achievement.description}
                   </Typography>
-                  <Typography variant="caption" color="text.secondary">
+                  <Typography variant="caption" color="text.secondary" sx={{ mb: 1, display: 'block' }}>
                     {achievement.date}
                   </Typography>
+                  {achievement.url && (
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      component={Link}
+                      href={achievement.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      startIcon={<GitHubIcon />}
+                      sx={{ fontSize: '0.75rem', mt: 1 }}
+                    >
+                      View Project
+                    </Button>
+                  )}
                 </Box>
               ))}
             </CardContent>
@@ -218,7 +163,7 @@ const AcademicAchievements: React.FC = () => {
                 </Typography>
               </Box>
               <Divider sx={{ mb: 2 }} />
-              
+
               {groupedAchievements.scholarship.map((achievement) => (
                 <Box key={achievement.id} sx={{ mb: 2 }}>
                   <Typography variant="subtitle1" fontWeight={500}>
@@ -256,7 +201,7 @@ const AcademicAchievements: React.FC = () => {
                 </Typography>
               </Box>
               <Divider sx={{ mb: 2 }} />
-              
+
               {groupedAchievements.recognition.map((achievement) => (
                 <Box key={achievement.id} sx={{ mb: 2 }}>
                   <Typography variant="subtitle1" fontWeight={500}>
@@ -294,7 +239,7 @@ const AcademicAchievements: React.FC = () => {
                 </Typography>
               </Box>
               <Divider sx={{ mb: 2 }} />
-              
+
               {groupedAchievements.publication.map((achievement) => (
                 <Box key={achievement.id} sx={{ mb: 2 }}>
                   <Typography variant="subtitle1" fontWeight={500}>
