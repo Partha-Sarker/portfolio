@@ -1,0 +1,3 @@
+- 10th/104 students
+- last 4 semester excellent cgpa
+- got exceeding expectations on all 5 categories in my performance review
