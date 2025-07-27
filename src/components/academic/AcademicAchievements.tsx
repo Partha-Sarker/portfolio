@@ -49,7 +49,7 @@ const AcademicAchievements: React.FC = () => {
       id: 'ielts',
       title: 'IELTS Score: 7.5',
       description: 'Achieved a high score in the International English Language Testing System, demonstrating advanced English language proficiency. Breakdown: Listening: 8.0, Reading: 8.0, Speaking: 6.5, Writing: 6.5.',
-      date: '2022',
+      date: 'July 2025',
       category: 'recognition',
       icon: <StarIcon />
     },
@@ -57,7 +57,7 @@ const AcademicAchievements: React.FC = () => {
       id: 'gre',
       title: 'GRE Score: 309 (Quant 162)',
       description: 'Attained a competitive score in the Graduate Record Examination, with particularly strong performance in the Quantitative section.',
-      date: '2022',
+      date: 'April 2025',
       category: 'recognition',
       icon: <StarIcon />
     },
