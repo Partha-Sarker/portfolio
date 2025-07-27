@@ -81,7 +81,7 @@ export interface Experience {
 export interface Skill {
   id: string;
   name: string;
-  category: 'programming' | 'frameworks' | 'tools' | 'research' | 'soft';
+  category: 'programming' | 'frameworks' | 'cloud' | 'databases' | 'tools' | 'design' | 'research' | 'soft';
   proficiency: 'beginner' | 'intermediate' | 'advanced' | 'expert';
   relevance: 'high' | 'medium' | 'low';
   academicApplications?: string[];

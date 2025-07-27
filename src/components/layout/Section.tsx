@@ -37,6 +37,7 @@ const Section: React.FC<SectionProps> = ({
         py: paddingY,
         minHeight: minHeight,
         scrollMarginTop: '64px', // Offset for fixed header
+        borderRadius: 4,
       }}
     >
       <Container maxWidth={fullWidth ? false : 'lg'} disableGutters={fullWidth}>

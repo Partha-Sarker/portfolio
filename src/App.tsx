@@ -7,6 +7,7 @@ import Education from './components/academic/Education';
 import AcademicAchievements from './components/academic/AcademicAchievements';
 import Hero from './components/academic/Hero';
 import { Experience } from './components/experience';
+import { Skills } from './components/skills';
 import { education } from './data';
 import projects from './data/projects';
 import { getAssetPath } from './utils/assetUtils';
@@ -57,7 +58,8 @@ function App() {
       {/* Projects Section */}
       <Section
         id="projects"
-        paddingY={{ xs: 6, sm: 8, md: 10 }}
+        title="Projects & Research"
+        subtitle="A comprehensive showcase of research work, academic projects, and personal initiatives"
       >
         <SectionContainer>
           <ProjectsSection projects={projects} />
@@ -65,22 +67,25 @@ function App() {
       </Section>
 
       {/* Experience Section */}
-      <Experience />
+      <Section
+        id="experience"
+        title="Professional Experience"
+        subtitle="Work history with research relevance"
+        backgroundColor={theme.palette.background.default}
+      >
+        <SectionContainer>
+          <Experience />
+        </SectionContainer>
+      </Section>
 
-      {/* Skills Section - Placeholder */}
+      {/* Skills Section */}
       <Section
         id="skills"
         title="Skills & Expertise"
         subtitle="Technical skills and competencies"
       >
         <SectionContainer>
-          <Grid container spacing={3}>
-            <Grid sx={{ xs: 12 }}>
-              <Typography variant="body1">
-                Skills section content will be implemented in task 8.1
-              </Typography>
-            </Grid>
-          </Grid>
+          <Skills />
         </SectionContainer>
       </Section>
 

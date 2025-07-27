@@ -194,7 +194,7 @@ const Hero: React.FC<HeroProps> = ({
                   fontWeight: 600,
                 }}
               >
-                View Research
+                View Projects & Research
               </Button>
             </Box>
           </Grid>

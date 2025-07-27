@@ -1,18 +1,18 @@
 import React from 'react';
-import { 
-  Box, 
-  Container, 
-  Grid, 
-  Typography, 
-  Link, 
-  IconButton, 
-  Divider, 
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+  Link,
+  IconButton,
+  Divider,
   Button,
   useMediaQuery
 } from '@mui/material';
-import { 
-  Email as EmailIcon, 
-  GitHub as GitHubIcon, 
+import {
+  Email as EmailIcon,
+  GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
   Twitter as TwitterIcon,
   School as SchoolIcon,
@@ -51,10 +51,10 @@ const Footer: React.FC = () => {
               </Link>
             </Box>
             <Box sx={{ mt: 2 }}>
-              <IconButton 
-                aria-label="GitHub" 
-                component="a" 
-                href="https://github.com/Partha-Sarker" 
+              <IconButton
+                aria-label="GitHub"
+                component="a"
+                href="https://github.com/Partha-Sarker"
                 target="_blank"
                 rel="noopener noreferrer"
                 size="small"
@@ -62,10 +62,10 @@ const Footer: React.FC = () => {
               >
                 <GitHubIcon />
               </IconButton>
-              <IconButton 
-                aria-label="LinkedIn" 
-                component="a" 
-                href="https://linkedin.com/" 
+              <IconButton
+                aria-label="LinkedIn"
+                component="a"
+                href="https://linkedin.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 size="small"
@@ -73,10 +73,10 @@ const Footer: React.FC = () => {
               >
                 <LinkedInIcon />
               </IconButton>
-              <IconButton 
-                aria-label="Twitter" 
-                component="a" 
-                href="https://twitter.com/" 
+              <IconButton
+                aria-label="Twitter"
+                component="a"
+                href="https://twitter.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 size="small"
@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 sx={{ textTransform: 'none' }}
               >
-                View Projects List
+                View Projects & Research
               </Button>
             </Box>
           </Grid>
@@ -139,11 +139,11 @@ const Footer: React.FC = () => {
             </Box>
           </Grid>
           <Grid size={{ xs: 'auto' }}>
-            <Box sx={{ 
-              display: 'flex', 
+            <Box sx={{
+              display: 'flex',
               flexDirection: isMobile ? 'column' : 'row',
               alignItems: isMobile ? 'flex-start' : 'center',
-              gap: 2 
+              gap: 2
             }}>
               <Link component={RouterLink} to="/" color="inherit" underline="hover" variant="body2">
                 Home

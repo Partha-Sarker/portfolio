@@ -139,16 +139,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
 
     return (
         <Box sx={{ mb: 4 }}>
-            {/* Section Header */}
-            <Box sx={{ textAlign: 'center', mb: 6 }}>
-                <Typography variant="h3" component="h1" fontWeight={700} sx={{ mb: 2 }}>
-                    Projects & Research
-                </Typography>
-                <Typography variant="h6" color="text.secondary" sx={{ mx: 'auto' }}>
-                    A comprehensive showcase of my research work, academic projects, and personal initiatives
-                    spanning Human-Computer Interaction, Computer Vision, and Software Development
-                </Typography>
-            </Box>
 
             {/* Search and Filter Controls */}
             <Paper
