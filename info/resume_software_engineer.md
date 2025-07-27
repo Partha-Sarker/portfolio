@@ -53,6 +53,10 @@ Tools & Technologies: Mockito, Jest, Storybook, Liquibase, Docker, RabbitMQ, Jen
 Databases & Cloud: PostgreSQL, SQL Server, AWS (DynamoDB, S3, CloudWatch, Lambda, CloudFormation, CDK)
 Game Development & Design: Android Studio, Unity, Blender, Photoshop, Unreal Engine
 ```
+
+## Problem Solving
+- Over 500 problems solved on various online judges. [StopStalk](https://www.stopstalk.com/user/profile/Partha), [LeetCode](https://leetcode.com/parthasarker3)
+
 ## Education
 
 ```
