@@ -1,4 +1,4 @@
-# Professional Portfolio
+# Portfolio
 
 A comprehensive, modern portfolio website showcasing research work, academic projects, professional experience, and personal initiatives. Built with React, TypeScript, and Material-UI with a focus on academic excellence and professional development.
 

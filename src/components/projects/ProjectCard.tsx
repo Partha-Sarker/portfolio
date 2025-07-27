@@ -231,7 +231,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                     )}
 
                     {project.liveUrl && (
-                        <Tooltip title="View Live Demo">
+                        <Tooltip title="View Website">
                             <IconButton
                                 component="a"
                                 href={project.liveUrl}
