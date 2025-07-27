@@ -93,51 +93,6 @@ const Footer: React.FC = () => {
 
         <Divider sx={{ my: 3 }} />
 
-        {/* Site Navigation */}
-        <Grid container spacing={2} sx={{ justifyContent: "space-between", alignItems: "center" }}>
-          <Grid size={{ xs: 'auto' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <SchoolIcon sx={{ mr: 1, color: 'primary.main' }} />
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                component={RouterLink}
-                to="/"
-                sx={{ textDecoration: 'none', color: 'inherit' }}
-              >
-                Academic Portfolio
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid size={{ xs: 'auto' }}>
-            <Box sx={{
-              display: 'flex',
-              flexDirection: isMobile ? 'column' : 'row',
-              alignItems: isMobile ? 'flex-start' : 'center',
-              gap: 2
-            }}>
-              <Link component={RouterLink} to="/" color="inherit" underline="hover" variant="body2">
-                Home
-              </Link>
-              <Link component={RouterLink} to="/education" color="inherit" underline="hover" variant="body2">
-                Education
-              </Link>
-              <Link component={RouterLink} to="/projects" color="inherit" underline="hover" variant="body2">
-                Research Projects
-              </Link>
-              <Link component={RouterLink} to="/experience" color="inherit" underline="hover" variant="body2">
-                Experience
-              </Link>
-              <Link component={RouterLink} to="/skills" color="inherit" underline="hover" variant="body2">
-                Skills
-              </Link>
-              <Link component={RouterLink} to="/interests" color="inherit" underline="hover" variant="body2">
-                Interests
-              </Link>
-            </Box>
-          </Grid>
-        </Grid>
-
         {/* Copyright */}
         <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 3 }}>
           © {new Date().getFullYear()} Academic Portfolio. All rights reserved.
