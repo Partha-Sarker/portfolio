@@ -79,9 +79,31 @@ SSO Built using spring oauth server
 Implemented a piano note practice app using JavaScript to help with musical notation and sheet music recognition.
 - *JavaScript, JQuery, VexFlow*
 
-## [Linear Equation Solver](https://github.com/Partha-Sarker/Solve-Linear-Euations-and-Draw-Petri-Net-Using-Unity)
-Desktop app for solving linear equations via Gaussian elimination method built using Unity.
-- *Unity, C#*
+## [Linear Equation Solver - Draw Petri Net](https://github.com/Partha-Sarker/Solve-Linear-Euations-and-Draw-Petri-Net-Using-Unity)
+
+### Introduction
+This is a project I did for a client as part of his thesis work. This project contains some serious stuff like Petri-net stochastic simulation! Though I didn't get most of the simulation things, I was able to deliver the right things according to the algorithm the client showed and finish the project.
+
+### Description
+This project has two separate modules inside it. One module can solve linear equations and the other draws and simulates Petri Net. You can solve linear equations having any number of variables. If the equations hold a unique solution, linear equation solver can calculate the answer. The linear equation solving part uses the Gaussian Elimination method for solving the equations. Additionally, you can also draw petri net having states, transitions and create edges between them.
+Executable Project Link: https://drive.google.com/file/d/1phRdLnc3fMZq8VAxE6GQ0ZufigSTKWxy/view?usp=sharing
+### Technologies
+*Unity, C#, Gaussian elimination*
+
+### Linear Equation Solver
+- Can calculate any number of equations and variables
+- Uses gaussian elimination
+- Give results if the equations result in a unique solution
+### Petri Net
+- Can create any number of states or transition
+- connect the nodes with directed edge
+- No two same of nodes can't be connected
+- Has keyboard shortcuts
+- Log screen for understanding what is going on
+- Saving the current graph(petri net) on local machine
+- Loading graph(petri net) from local machine
+- Zooming and changing camera position
+- Simple UI
 
 ## [Kill-The-Traitors](https://github.com/Partha-Sarker/Kill-The-Traitors)
 Implemented a 3D third-person shooter game based on the Bangladesh Liberation War using Unity.
