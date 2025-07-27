@@ -336,27 +336,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) => {
                 ))}
             </Box>
 
-            {/* Featured Projects Summary */}
-            <Box
-                sx={{
-                    mt: 4,
-                    p: 3,
-                    backgroundColor: theme.palette.warning.light + '20',
-                    borderRadius: 2,
-                    border: `1px solid ${theme.palette.warning.light}`,
-                }}
-            >
-                <Typography variant="h6" fontWeight={600} sx={{ mb: 2, color: theme.palette.warning.dark }}>
-                    Why These Projects Stand Out
-                </Typography>
 
-                <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
-                    These featured projects represent the pinnacle of my technical and research capabilities,
-                    spanning from groundbreaking HCI research to innovative AR applications and complex multiplayer systems.
-                    Each project demonstrates unique problem-solving approaches, technical excellence, and significant
-                    contributions to their respective domains.
-                </Typography>
-            </Box>
         </Box>
     );
 };

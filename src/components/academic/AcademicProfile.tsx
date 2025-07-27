@@ -3,16 +3,13 @@ import {
   Box,
   Typography,
   Paper,
-  Chip,
-  Divider,
-  useTheme
+  Divider
 } from '@mui/material';
 import {
-  School as SchoolIcon,
   Science as ScienceIcon,
   Psychology as PsychologyIcon,
   Biotech as BiotechIcon,
-  ImportContacts as ImportContactsIcon
+  ViewInAr as ViewInArIcon
 } from '@mui/icons-material';
 
 interface ResearchInterest {
@@ -22,10 +19,9 @@ interface ResearchInterest {
 }
 
 /**
- * Academic Profile component that showcases research interests and academic focus
+ * Academic Profile component that showcases research interests
  */
 const AcademicProfile: React.FC = () => {
-  const theme = useTheme();
 
   // Research interests data
   const researchInterests: ResearchInterest[] = [
@@ -36,79 +32,23 @@ const AcademicProfile: React.FC = () => {
     },
     {
       title: 'Computer Vision',
-      description: 'Research on image processing techniques for document analysis and segmentation.',
+      description: 'Research on image processing techniques for pattern recognition and visual analysis.',
       icon: <BiotechIcon color="primary" />
     },
     {
       title: 'Artificial Intelligence',
-      description: 'Applying machine learning and AI techniques to solve complex problems in document analysis and HCI.',
+      description: 'Applying machine learning and AI techniques to solve complex problems in HCI and interactive systems.',
       icon: <ScienceIcon color="primary" />
     },
     {
-      title: 'Document Analysis',
-      description: 'Techniques for processing and analyzing handwritten documents, particularly in Bengali script.',
-      icon: <ImportContactsIcon color="primary" />
+      title: 'AR/VR Development',
+      description: 'Creating immersive augmented and virtual reality experiences for educational and interactive applications.',
+      icon: <ViewInArIcon color="primary" />
     }
   ];
 
   return (
     <Box sx={{ mb: 4 }}>
-      {/* Academic Credentials Banner */}
-      <Paper
-        elevation={0}
-        sx={{
-          p: 3,
-          mb: 4,
-          backgroundColor: theme.palette.primary.main,
-          color: 'white',
-          borderRadius: 2,
-          position: 'relative',
-          overflow: 'hidden'
-        }}
-      >
-        <Box
-          sx={{
-            position: 'absolute',
-            top: -20,
-            right: -20,
-            opacity: 0.1,
-            transform: 'rotate(15deg)'
-          }}
-        >
-          <SchoolIcon sx={{ fontSize: 180 }} />
-        </Box>
-
-        <Typography variant="h4" component="h2" gutterBottom fontWeight={700}>
-          Academic Focus
-        </Typography>
-
-        <Typography variant="body1" sx={{ maxWidth: '80%', mb: 2 }}>
-          Dedicated to advancing research in computer vision and human-computer interaction,
-          with a particular interest in document analysis and educational technology.
-        </Typography>
-
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 2 }}>
-          <Chip
-            icon={<SchoolIcon />}
-            label="B.Sc. in Computer Science"
-            sx={{
-              backgroundColor: 'rgba(255,255,255,0.2)',
-              color: 'white',
-              '& .MuiChip-icon': { color: 'white' }
-            }}
-          />
-          <Chip
-            icon={<ScienceIcon />}
-            label="Research Focus"
-            sx={{
-              backgroundColor: 'rgba(255,255,255,0.2)',
-              color: 'white',
-              '& .MuiChip-icon': { color: 'white' }
-            }}
-          />
-        </Box>
-      </Paper>
-
       {/* Research Interests */}
       <Typography variant="h5" component="h3" gutterBottom fontWeight={600} sx={{ mb: 3 }}>
         Research Interests

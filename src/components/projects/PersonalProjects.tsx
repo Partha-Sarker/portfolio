@@ -191,7 +191,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
                             Research Connections
                         </Typography>
                         <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6, mb: 2 }}>
-                            Several projects connect to my research interests, particularly in HCI (Piano Practice App),
+                            Several projects connect to my research interests, particularly in HCI (AR Girl),
                             automation (CS Ranking Crawler), and creative technology applications.
                         </Typography>
 

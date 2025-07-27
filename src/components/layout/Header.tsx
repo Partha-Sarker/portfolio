@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  AppBar, 
-  Toolbar, 
-  Typography, 
-  Button, 
-  IconButton, 
-  Box, 
-  Drawer, 
-  List, 
-  ListItem, 
-  ListItemText, 
-  Container, 
-  useMediaQuery, 
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Container,
+  useMediaQuery,
   useScrollTrigger,
   Slide,
   Divider
@@ -60,12 +60,12 @@ const Header: React.FC = () => {
     if (location.pathname === '/' && sectionId) {
       // If we're on the home page and there's a section ID, scroll to it
       scrollToElement(sectionId);
-    } else if (path === '/' && location.pathname === '/') {
-      // If we're on home and clicking home, scroll to top
+    } else if (path === '/') {
+      // If clicking home, always scroll to top (whether we're on home or not)
       scrollToTop();
     }
     // For other cases, React Router will handle the navigation
-    
+
     // Close mobile drawer if open
     if (mobileOpen) {
       setMobileOpen(false);
@@ -76,13 +76,13 @@ const Header: React.FC = () => {
   useEffect(() => {
     // Find the route that matches the current path
     const currentRoute = routes.find(route => route.path === location.pathname);
-    
+
     // If there's a section ID and we just navigated to this route, scroll to the section
     if (currentRoute?.sectionId) {
       const timer = setTimeout(() => {
         scrollToElement(currentRoute.sectionId as string);
       }, 100); // Small delay to ensure the DOM is ready
-      
+
       return () => clearTimeout(timer);
     }
   }, [location.pathname]);
@@ -90,21 +90,28 @@ const Header: React.FC = () => {
   // Mobile drawer content
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Box sx={{ 
-        display: 'flex', 
-        alignItems: 'center', 
+      <Box sx={{
+        display: 'flex',
+        alignItems: 'center',
         justifyContent: 'center',
         p: 2
       }}>
         <SchoolIcon sx={{ mr: 1, color: 'primary.main' }} />
-        <Typography 
-          variant="h6" 
-          component={RouterLink}
-          to="/"
-          onClick={() => handleNavClick('/', undefined)}
-          sx={{ 
+        <Typography
+          variant="h6"
+          component="button"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick('/', undefined);
+          }}
+          sx={{
             color: 'text.primary',
             textDecoration: 'none',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            fontSize: 'inherit',
+            fontFamily: 'inherit'
           }}
         >
           Academic Portfolio
@@ -113,9 +120,9 @@ const Header: React.FC = () => {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem 
-            component={RouterLink} 
-            to={item.path} 
+          <ListItem
+            component={RouterLink}
+            to={item.path}
             key={item.path}
             onClick={() => handleNavClick(item.path, item.sectionId)}
             sx={{
@@ -124,10 +131,16 @@ const Header: React.FC = () => {
                 backgroundColor: 'rgba(25, 118, 210, 0.08)',
               },
               backgroundColor: location.pathname === item.path ? 'rgba(25, 118, 210, 0.08)' : 'transparent',
+              ...(item.path === '/' && {
+                background: 'none',
+                border: 'none',
+                width: '100%',
+                cursor: 'pointer'
+              })
             }}
           >
-            <ListItemText 
-              primary={item.label} 
+            <ListItemText
+              primary={item.label}
               sx={{
                 '& .MuiTypography-root': {
                   fontWeight: location.pathname === item.path ? 700 : 500,
@@ -137,9 +150,9 @@ const Header: React.FC = () => {
             />
           </ListItem>
         ))}
-        <ListItem 
-          component="a" 
-          href="#" 
+        <ListItem
+          component="a"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           sx={{
@@ -149,8 +162,8 @@ const Header: React.FC = () => {
             },
           }}
         >
-          <ListItemText 
-            primary="Academic CV" 
+          <ListItemText
+            primary="Academic CV"
             sx={{
               '& .MuiTypography-root': {
                 fontWeight: 500,
@@ -165,11 +178,11 @@ const Header: React.FC = () => {
   return (
     <>
       <HideOnScroll>
-        <AppBar 
-          position="fixed" 
-          color="default" 
+        <AppBar
+          position="fixed"
+          color="default"
           elevation={0}
-          sx={{ 
+          sx={{
             backgroundColor: 'rgba(255, 255, 255, 0.95)',
             borderBottom: '1px solid',
             borderColor: 'divider',
@@ -179,29 +192,33 @@ const Header: React.FC = () => {
           <Container maxWidth="lg">
             <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
               {/* Logo and Brand */}
-              <Box sx={{ 
-                display: 'flex', 
+              <Box sx={{
+                display: 'flex',
                 alignItems: 'center',
               }}>
-                <SchoolIcon 
-                  sx={{ 
-                    mr: 1, 
+                <SchoolIcon
+                  sx={{
+                    mr: 1,
                     color: 'primary.main',
                     fontSize: { xs: 24, sm: 28, md: 32 }
-                  }} 
+                  }}
                 />
                 <Typography
                   variant="h6"
                   component={RouterLink}
                   to="/"
-                  onClick={() => handleNavClick('/', undefined)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick('/', undefined);
+                  }}
                   sx={{
                     mr: 2,
                     fontFamily: 'Roboto',
                     fontWeight: 700,
                     color: 'text.primary',
                     textDecoration: 'none',
-                    fontSize: { xs: '1rem', sm: '1.25rem' }
+                    fontSize: { xs: '1rem', sm: '1.25rem' },
+                    cursor: 'pointer'
                   }}
                 >
                   Academic Portfolio
@@ -218,7 +235,7 @@ const Header: React.FC = () => {
                       to={item.path}
                       onClick={() => handleNavClick(item.path, item.sectionId)}
                       color={location.pathname === item.path ? 'primary' : 'inherit'}
-                      sx={{ 
+                      sx={{
                         mx: { sm: 0.5, md: 1 },
                         fontSize: { sm: '0.875rem', md: '1rem' },
                         fontWeight: location.pathname === item.path ? 700 : 500,
@@ -234,7 +251,7 @@ const Header: React.FC = () => {
                     href="#"
                     target="_blank"
                     rel="noopener noreferrer"
-                    sx={{ 
+                    sx={{
                       ml: { sm: 1, md: 2 },
                       fontSize: { sm: '0.875rem', md: '1rem' }
                     }}
@@ -260,7 +277,7 @@ const Header: React.FC = () => {
           </Container>
         </AppBar>
       </HideOnScroll>
-      
+
       {/* Mobile Navigation Drawer */}
       <Box component="nav">
         <Drawer
@@ -278,7 +295,7 @@ const Header: React.FC = () => {
           {drawer}
         </Drawer>
       </Box>
-      
+
       {/* Toolbar placeholder to prevent content from hiding behind the fixed AppBar */}
       <Toolbar />
     </>

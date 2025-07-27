@@ -33,7 +33,7 @@ function App() {
             "Human-Computer Interaction",
             "Computer Vision",
             "Artificial Intelligence",
-            "Document Analysis",
+            "AR/VR Development",
             "Machine Learning"
           ]}
           profilePhoto={getAssetPath('/profile_photo.png')}
@@ -47,6 +47,7 @@ function App() {
         title="Academic Background"
         subtitle="Education and research achievements"
         backgroundColor={theme.palette.background.default}
+        fullWidth
       >
         <SectionContainer>
           <AcademicProfile />
@@ -60,6 +61,7 @@ function App() {
         id="projects"
         title="Projects & Research"
         subtitle="A comprehensive showcase of research work, academic projects, and personal initiatives"
+        fullWidth
       >
         <SectionContainer>
           <ProjectsSection projects={projects} />
@@ -72,6 +74,7 @@ function App() {
         title="Professional Experience"
         subtitle="Work history with research relevance"
         backgroundColor={theme.palette.background.default}
+        fullWidth
       >
         <SectionContainer>
           <Experience />
@@ -83,6 +86,7 @@ function App() {
         id="skills"
         title="Skills & Expertise"
         subtitle="Technical skills and competencies"
+        fullWidth
       >
         <SectionContainer>
           <Skills />
@@ -95,6 +99,7 @@ function App() {
         title="Personal Interests"
         subtitle="Music and other dimensions"
         backgroundColor={theme.palette.background.default}
+        fullWidth
       >
         <SectionContainer>
           <Grid container spacing={3}>
@@ -112,6 +117,7 @@ function App() {
         id="contact"
         title="Contact"
         subtitle="Get in touch for professional opportunities"
+        fullWidth
       >
         <SectionContainer>
           <Grid container spacing={3}>

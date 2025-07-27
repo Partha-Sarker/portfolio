@@ -345,7 +345,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
             <Paper
                 elevation={0}
                 sx={{
-                    mt: 6,
                     p: 3,
                     backgroundColor: theme.palette.background.default,
                     borderRadius: 2,

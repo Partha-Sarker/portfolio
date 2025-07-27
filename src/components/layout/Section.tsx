@@ -24,7 +24,7 @@ const Section: React.FC<SectionProps> = ({
   backgroundColor,
   fullWidth = false,
   minHeight,
-  paddingY = { xs: 6, sm: 8, md: 10 },
+  paddingY = { xs: 4, sm: 5, md: 6 },
 }) => {
   const theme = useTheme();
 
@@ -34,7 +34,10 @@ const Section: React.FC<SectionProps> = ({
       component="section"
       sx={{
         backgroundColor: backgroundColor || 'transparent',
-        py: paddingY,
+        pt: typeof paddingY === 'object' ?
+          { xs: paddingY.xs ? paddingY.xs * 0.7 : 2.8, sm: paddingY.sm ? paddingY.sm * 0.7 : 3.5, md: paddingY.md ? paddingY.md * 0.7 : 4.2 } :
+          paddingY * 0.7,
+        pb: 0,
         minHeight: minHeight,
         scrollMarginTop: '64px', // Offset for fixed header
         borderRadius: 4,
@@ -42,7 +45,7 @@ const Section: React.FC<SectionProps> = ({
     >
       <Container maxWidth={fullWidth ? false : 'lg'} disableGutters={fullWidth}>
         {(title || subtitle) && (
-          <Box sx={{ mb: 6, textAlign: 'center' }}>
+          <Box sx={{ mb: 4, textAlign: 'center' }}>
             {title && (
               <Typography
                 variant="h2"

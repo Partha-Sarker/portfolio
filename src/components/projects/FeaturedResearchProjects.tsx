@@ -232,33 +232,6 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                             </Card>
                         ))}
                     </Box>
-
-                    {/* Research Impact Summary */}
-                    <Paper
-                        elevation={0}
-                        sx={{
-                            mt: 4,
-                            p: 3,
-                            backgroundColor: theme.palette.background.default,
-                            borderRadius: 2,
-                            border: `1px solid ${theme.palette.divider}`,
-                        }}
-                    >
-                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                            <TrendingUpIcon sx={{ mr: 1, color: theme.palette.secondary.main }} />
-                            <Typography variant="h6" fontWeight={600}>
-                                Research Impact & Future Directions
-                            </Typography>
-                        </Box>
-
-                        <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
-                            These research projects demonstrate a strong foundation in empirical research methods,
-                            user-centered design, and technical implementation. The work contributes to the growing
-                            field of digital wellbeing and accessibility technology, with potential for further
-                            development in graduate-level research focusing on Human-Computer Interaction and
-                            Computer Vision applications.
-                        </Typography>
-                    </Paper>
                 </Box>
             )}
         </Box>

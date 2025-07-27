@@ -207,7 +207,7 @@ const Hero: React.FC<HeroProps> = ({
           bottom: { xs: 10, sm: 20, md: 30 },
           mt: { xs: 6, md: 0 },
           zIndex: 1,
-          display: { xs: 'none', sm: 'block' } // Hide on mobile, show on larger screens
+          display: { md: 'none', lg: 'block' } // Hide on mobile, show on larger screens
         }}
       >
         <IconButton
