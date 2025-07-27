@@ -73,7 +73,7 @@ function App() {
       <Section
         id="experience"
         title="Professional Experience"
-        subtitle="Work history with research relevance"
+        subtitle="Professional work history"
         backgroundColor={theme.palette.background.default}
         fullWidth
       >
@@ -107,7 +107,7 @@ function App() {
         </SectionContainer>
       </Section>
 
-      
+
     </Layout>
   );
 }
