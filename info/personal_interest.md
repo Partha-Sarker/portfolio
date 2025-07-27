@@ -1,0 +1,7 @@
+- Have great interest in game development. Developed multiple games during undergraduation
+- Try to stay up to date with what's coming in Unity, Unreal Engine, Godot, Blender
+- Love exploring new features such as AR, VR, Modeling, Environment design
+- Love listening to songs and finding new ones. [Spotify](https://open.spotify.com/user/21utmxujfftmvmomgf3q3zbkq?si=3f4cda7d045041b5)
+- Playing competitive video games such as Valorant, Overwatch and watching streamers play
+- Love to watch anime and read Manga. [Myanimelist Profile](https://myanimelist.net/profile/Ahtrap)
+- Love playing Piano and Guitar. Watch me play on [Youtube](https://www.youtube.com/@partha.sarker)
