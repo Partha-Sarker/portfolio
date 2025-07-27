@@ -8,6 +8,7 @@ import AcademicAchievements from './components/academic/AcademicAchievements';
 import Hero from './components/academic/Hero';
 import { Experience } from './components/experience';
 import { Skills } from './components/skills';
+import { PersonalInterests } from './components/interests';
 import { education } from './data';
 import projects from './data/projects';
 import { getAssetPath } from './utils/assetUtils';
@@ -102,13 +103,7 @@ function App() {
         fullWidth
       >
         <SectionContainer>
-          <Grid container spacing={3}>
-            <Grid sx={{ xs: 12 }}>
-              <Typography variant="body1">
-                Personal interests section content will be implemented in task 9.1
-              </Typography>
-            </Grid>
-          </Grid>
+          <PersonalInterests />
         </SectionContainer>
       </Section>
 
