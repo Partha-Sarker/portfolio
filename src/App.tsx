@@ -107,23 +107,7 @@ function App() {
         </SectionContainer>
       </Section>
 
-      {/* Contact Section - Placeholder */}
-      <Section
-        id="contact"
-        title="Contact"
-        subtitle="Get in touch for professional opportunities"
-        fullWidth
-      >
-        <SectionContainer>
-          <Grid container spacing={3}>
-            <Grid sx={{ xs: 12 }}>
-              <Typography variant="body1">
-                Contact section content will be implemented in task 10.1
-              </Typography>
-            </Grid>
-          </Grid>
-        </SectionContainer>
-      </Section>
+      
     </Layout>
   );
 }

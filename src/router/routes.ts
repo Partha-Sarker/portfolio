@@ -22,7 +22,6 @@ const Projects = Home;
 const Experience = Home;
 const Skills = Home;
 const Interests = Home;
-const Contact = Home;
 
 // Define routes
 const routes: RouteConfig[] = [
@@ -65,15 +64,8 @@ const routes: RouteConfig[] = [
     path: '/interests',
     component: Interests,
     label: 'Interests',
-    showInNav: false, // Hidden from main nav to keep it clean
-    sectionId: 'interests',
-  },
-  {
-    path: '/contact',
-    component: Contact,
-    label: 'Contact',
     showInNav: true,
-    sectionId: 'contact',
+    sectionId: 'interests',
   },
 ];
 
