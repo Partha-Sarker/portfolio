@@ -11,12 +11,14 @@ import {
   Button,
   Link
 } from '@mui/material';
+import { getAssetPath } from '../../utils/assetUtils';
 import {
   EmojiEvents as EmojiEventsIcon,
   School as SchoolIcon,
   Star as StarIcon,
   Bookmark as BookmarkIcon,
-  GitHub as GitHubIcon
+  GitHub as GitHubIcon,
+  Psychology as PsychologyIcon
 } from '@mui/icons-material';
 
 interface Achievement {
@@ -24,9 +26,14 @@ interface Achievement {
   title: string;
   description: string;
   date: string;
-  category: 'award' | 'scholarship' | 'recognition' | 'publication';
+  category: 'award' | 'scholarship' | 'recognition' | 'problem-solving' | 'publication';
   icon: React.ReactNode;
   url?: string;
+  links?: Array<{
+    name: string;
+    url: string;
+    logo: string;
+  }>;
 }
 
 /**
@@ -41,7 +48,7 @@ const AcademicAchievements: React.FC = () => {
     {
       id: 'ielts',
       title: 'IELTS Score: 7.5',
-      description: 'Achieved a high score in the International English Language Testing System, demonstrating advanced English language proficiency.',
+      description: 'Achieved a high score in the International English Language Testing System, demonstrating advanced English language proficiency. Breakdown: Listening: 8.0, Reading: 8.0, Speaking: 6.5, Writing: 6.5.',
       date: '2022',
       category: 'recognition',
       icon: <StarIcon />
@@ -70,6 +77,26 @@ const AcademicAchievements: React.FC = () => {
       date: '2017',
       category: 'scholarship',
       icon: <SchoolIcon />
+    },
+    {
+      id: 'problem-solving',
+      title: 'Competitive Programming',
+      description: 'Solved over 500 problems on various online judges including LeetCode and other competitive programming platforms, demonstrating strong algorithmic thinking and problem-solving skills.',
+      date: 'Ongoing',
+      category: 'problem-solving',
+      icon: <StarIcon />,
+      links: [
+        {
+          name: 'StopStalk',
+          url: 'https://www.stopstalk.com/user/profile/Partha',
+          logo: '/StopStalk.png'
+        },
+        {
+          name: 'LeetCode',
+          url: 'https://leetcode.com/parthasarker3',
+          logo: '/LeetCode.png'
+        }
+      ]
     }
   ];
 
@@ -78,6 +105,7 @@ const AcademicAchievements: React.FC = () => {
     award: achievements.filter(a => a.category === 'award'),
     scholarship: achievements.filter(a => a.category === 'scholarship'),
     recognition: achievements.filter(a => a.category === 'recognition'),
+    'problem-solving': achievements.filter(a => a.category === 'problem-solving'),
     publication: achievements.filter(a => a.category === 'publication')
   };
 
@@ -213,6 +241,95 @@ const AcademicAchievements: React.FC = () => {
                   <Typography variant="caption" color="text.secondary">
                     {achievement.date}
                   </Typography>
+                </Box>
+              ))}
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Problem Solving */}
+        {groupedAchievements['problem-solving'].length > 0 && (
+          <Card elevation={1} sx={{ borderRadius: 2 }}>
+            <CardContent sx={{ p: 3 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                <Avatar
+                  sx={{
+                    bgcolor: theme.palette.success.main,
+                    width: 40,
+                    height: 40,
+                    mr: 2
+                  }}
+                >
+                  <PsychologyIcon />
+                </Avatar>
+                <Typography variant="h6" component="h3" fontWeight={600}>
+                  Problem Solving
+                </Typography>
+              </Box>
+              <Divider sx={{ mb: 2 }} />
+
+              {groupedAchievements['problem-solving'].map((achievement) => (
+                <Box key={achievement.id} sx={{ mb: 2 }}>
+                  <Typography variant="subtitle1" fontWeight={500}>
+                    {achievement.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                    {achievement.description}
+                  </Typography>
+                  <Typography variant="caption" color="text.secondary" sx={{ mb: 1, display: 'block' }}>
+                    {achievement.date}
+                  </Typography>
+
+                  {/* Multiple Links with Logos */}
+                  {achievement.links && (
+                    <Box sx={{ display: 'flex', gap: 1, mt: 1, flexWrap: 'wrap' }}>
+                      {achievement.links.map((link, index) => (
+                        <Button
+                          key={index}
+                          variant="outlined"
+                          size="small"
+                          component={Link}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          startIcon={
+                            <Box
+                              component="img"
+                              src={getAssetPath(link.logo)}
+                              alt={`${link.name} logo`}
+                              sx={{
+                                width: 16,
+                                height: 16,
+                                objectFit: 'contain'
+                              }}
+                            />
+                          }
+                          sx={{
+                            fontSize: '0.75rem',
+                            textTransform: 'none'
+                          }}
+                        >
+                          {link.name}
+                        </Button>
+                      ))}
+                    </Box>
+                  )}
+
+                  {/* Fallback for single URL (for other achievements) */}
+                  {achievement.url && !achievement.links && (
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      component={Link}
+                      href={achievement.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      startIcon={<GitHubIcon />}
+                      sx={{ fontSize: '0.75rem', mt: 1 }}
+                    >
+                      View Profile
+                    </Button>
+                  )}
                 </Box>
               ))}
             </CardContent>
