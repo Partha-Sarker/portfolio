@@ -219,13 +219,16 @@ const projects: Project[] = [
   },
   {
     id: "linear-equation-solver",
-    title: "Linear Equation Solver",
-    description: "Desktop app for solving linear equations via Gaussian elimination method built using Unity. Educational tool demonstrating mathematical algorithms.",
-    type: "personal",
+    title: "Linear Equation Solver - Draw Petri Net",
+    description: "A professional client project developed for a thesis work containing two modules: a linear equation solver using Gaussian elimination method and a Petri Net drawing and simulation system. Features stochastic simulation capabilities and comprehensive mathematical computation tools.",
+    type: "professional",
     featured: false,
-    technologies: ["Unity", "C#"],
-    tags: ["Unity", "C#", "personal", "mathematics", "linear-equations", "gaussian-elimination", "education"],
-    githubUrl: "https://github.com/Partha-Sarker/Solve-Linear-Euations-and-Draw-Petri-Net-Using-Unity"
+    technologies: ["Unity", "C#", "Gaussian Elimination"],
+    tags: ["Unity", "C#", "professional", "client-work", "mathematics", "linear-equations", "gaussian-elimination", "petri-net", "simulation", "thesis", "desktop-application"],
+    githubUrl: "https://github.com/Partha-Sarker/Solve-Linear-Euations-and-Draw-Petri-Net-Using-Unity",
+    methodology: "Developed two separate modules: Linear equation solver capable of handling any number of variables using Gaussian elimination method, and Petri Net module for drawing states, transitions, and creating directed edges with stochastic simulation capabilities.",
+    results: "Successfully delivered a comprehensive mathematical tool that can solve linear equations with unique solutions and create complex Petri Net diagrams with simulation features, keyboard shortcuts, save/load functionality, and intuitive UI.",
+    academicSignificance: "Demonstrates expertise in mathematical algorithm implementation, complex desktop application development, and ability to work with advanced academic concepts like Petri Net stochastic simulation for thesis-level research work."
   },
   {
     id: "kill-the-traitors",
