@@ -6,74 +6,59 @@ import { Experience } from './types';
  */
 const experience: Experience[] = [
   {
-    id: "software-engineer-1",
-    role: "Software Engineer",
-    company: "Tech Solutions Inc.",
+    id: "marginedge-software-engineer",
+    role: "Software Engineer I",
+    company: "MarginEdge",
     location: "Remote",
-    startDate: "2022",
+    startDate: "August 2024",
     endDate: "Present",
-    description: "Working on full-stack development for enterprise applications with a focus on scalable architecture and performance optimization.",
+    description: "Working on MarginEdge, a comprehensive restaurant management software that streamlines back-office operations and enhances financial oversight with real-time insights into food and labor costs.",
     responsibilities: [
-      "Developed and maintained RESTful APIs using Node.js and Express",
-      "Implemented front-end features using React and TypeScript",
-      "Optimized database queries and schema design for MongoDB",
-      "Collaborated with cross-functional teams to deliver features on schedule",
-      "Conducted code reviews and mentored junior developers"
+      "Optimized core data-copying system (Multi-Unit PMIX), reducing processing time from **80-100 min to 3 min**, improving uptime and reliability",
+      "Built real-time dashboards and panic toggles in AWS CloudWatch, reducing incident triage time by **60%**",
+      "Delivered labor data selection feature (frontend + backend), integrated alarms, and ensured on-time delivery",
+      "Developed a data comparison and alert system for post-migration checks, proactively preventing data loss issues",
+      "Collaborated with QA and product teams; **recognized by PMs** for clarity and delivery reliability",
+      "Received **perfect performance review** with **Exceeding Expectations** rating in all 5 categories: Ownership, Ambiguous Problem Handling, Technical Depth, Team Initiative, and System Operations"
     ],
-    researchRelevance: "Applied machine learning algorithms to improve search functionality and data analysis features.",
-    technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Express", "Docker"]
+
+    technologies: ["Spring Boot", "PostgreSQL", "React", "AngularJS", "AWS", "CloudWatch", "DynamoDB", "S3", "Lambda", "Jenkins", "Java", "JavaScript", "TypeScript"]
   },
   {
-    id: "junior-developer",
-    role: "Junior Developer",
-    company: "Web Innovations Ltd.",
+    id: "dsi-software-engineer",
+    role: "Software Engineer",
+    company: "Dynamic Solution Innovators",
     location: "Dhaka, Bangladesh",
-    startDate: "2019",
-    endDate: "2022",
-    description: "Worked on web application development with a focus on user interface and experience.",
-    responsibilities: [
-      "Developed responsive web interfaces using React and Material UI",
-      "Implemented backend functionality using Node.js and Express",
-      "Created and maintained RESTful APIs",
-      "Participated in agile development processes",
-      "Collaborated with designers to implement UI/UX improvements"
+    startDate: "May 2021",
+    endDate: "July 2024",
+    description: "Worked on large-scale national digital platforms for the Government of Bangladesh, contributing to systems that serve millions of citizens and students across the country.",
+    projects: [
+      {
+        id: "ieims",
+        name: "IEIMS (Integrated Education Information Management System)",
+        description: "A national digital platform developed by the Ministry of Education, Bangladesh, to centralize and streamline the management of secondary and higher secondary education serving over 20 million students across the country.",
+        responsibilities: [
+          "Developed registration, form fill-up, and payment modules in a microservice-based national education platform",
+          "Created QR-based attendance system, reducing manual workload by **80%**",
+          "Streamlined multi-step form workflows with robust frontend and backend integration",
+          "Configured deployment pipelines using Jenkins, containerized services with Docker, and managed deployment with Kubernetes, ensuring smooth rollouts and minimizing downtime"
+        ],
+        technologies: ["Spring Boot", "Next.js", "Kubernetes", "Docker", "Jenkins", "MS SQL Server", "MySQL", "React", "Node.js", "RabbitMQ", "Keycloak", "Java", "JavaScript", "Tailwind CSS", "Liquibase", "Nginx", "Helm Charts", "MinIO"]
+      },
+      {
+        id: "crvs",
+        name: "CRVS (Civil Registration and Vital Statistics)",
+        description: "A national system in Bangladesh for recording and managing vital events such as births, deaths, marriages, and divorces. The system integrates with various government platforms and supports over 10 million students.",
+        responsibilities: [
+          "Enhanced reporting and automated digital ID creation for **10M+ students**",
+          "Improved system performance by adding **10+ database indexes** and optimizing queries, reducing key data fetch times from **50+ seconds to 4 seconds**",
+          "Integrated with various government platforms for seamless vital statistics management",
+          "Developed efficient data processing workflows for large-scale government operations"
+        ],
+        technologies: ["Laravel", "Oracle Database", "PHP", "SQL"]
+      }
     ],
-    researchRelevance: "Implemented computer vision algorithms for an image processing feature that aligned with my research interests.",
-    technologies: ["JavaScript", "React", "Node.js", "Express", "MySQL", "Git"]
-  },
-  {
-    id: "research-assistant",
-    role: "Research Assistant",
-    company: "Metropolitan University",
-    location: "Sylhet, Bangladesh",
-    startDate: "2018",
-    endDate: "2019",
-    description: "Assisted faculty with research in computer vision and document analysis.",
-    responsibilities: [
-      "Collected and preprocessed data for handwritten document analysis",
-      "Implemented image processing algorithms using OpenCV and Python",
-      "Conducted literature reviews on document segmentation techniques",
-      "Documented research findings and contributed to publications",
-      "Presented research progress in departmental seminars"
-    ],
-    researchRelevance: "Directly contributed to research in handwritten document segmentation, which became the foundation for my featured research project.",
-    technologies: ["Python", "OpenCV", "NumPy", "Matplotlib", "Jupyter Notebooks"]
-  },
-  {
-    id: "intern",
-    role: "Software Development Intern",
-    company: "Local Tech Startup",
-    location: "Sylhet, Bangladesh",
-    startDate: "2018",
-    endDate: "2018",
-    description: "Three-month internship focused on web development and UI design.",
-    responsibilities: [
-      "Assisted in developing front-end components using React",
-      "Created responsive layouts and implemented UI designs",
-      "Participated in code reviews and team meetings",
-      "Learned industry best practices for software development"
-    ],
-    technologies: ["HTML", "CSS", "JavaScript", "React", "Git"]
+    technologies: ["Spring Boot", "Next.js", "Kubernetes", "Docker", "Jenkins", "MS SQL Server", "MySQL", "Oracle Database", "Laravel", "React", "Node.js", "RabbitMQ", "Keycloak", "Java", "JavaScript", "PHP", "Tailwind CSS", "Liquibase", "Nginx", "Helm Charts", "MinIO"]
   }
 ];
 

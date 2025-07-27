@@ -49,6 +49,17 @@ export interface Education {
 }
 
 /**
+ * Experience project/subsection data model
+ */
+export interface ExperienceProject {
+  id: string;
+  name: string;
+  description: string;
+  responsibilities: string[];
+  technologies: string[];
+}
+
+/**
  * Experience data model
  */
 export interface Experience {
@@ -59,8 +70,8 @@ export interface Experience {
   startDate: string;
   endDate: string | 'Present';
   description: string;
-  responsibilities: string[];
-  researchRelevance?: string;
+  responsibilities?: string[];
+  projects?: ExperienceProject[];
   technologies: string[];
 }
 

@@ -6,6 +6,7 @@ import AcademicProfile from './components/academic/AcademicProfile';
 import Education from './components/academic/Education';
 import AcademicAchievements from './components/academic/AcademicAchievements';
 import Hero from './components/academic/Hero';
+import { Experience } from './components/experience';
 import { education } from './data';
 import projects from './data/projects';
 import { getAssetPath } from './utils/assetUtils';
@@ -63,23 +64,8 @@ function App() {
         </SectionContainer>
       </Section>
 
-      {/* Experience Section - Placeholder */}
-      <Section
-        id="experience"
-        title="Professional Experience"
-        subtitle="Work history with research relevance"
-        backgroundColor={theme.palette.background.default}
-      >
-        <SectionContainer>
-          <Grid container spacing={3}>
-            <Grid sx={{ xs: 12 }}>
-              <Typography variant="body1">
-                Experience section content will be implemented in task 7.1
-              </Typography>
-            </Grid>
-          </Grid>
-        </SectionContainer>
-      </Section>
+      {/* Experience Section */}
+      <Experience />
 
       {/* Skills Section - Placeholder */}
       <Section
