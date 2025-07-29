@@ -83,6 +83,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                 flexDirection: 'column',
                 transition: 'all 0.3s ease-in-out',
                 position: 'relative',
+                maxWidth: '100%',
+                overflow: 'hidden',
                 '&:hover': {
                     transform: 'translateY(-4px)',
                     boxShadow: isFeatured ? 6 : 4,
@@ -93,9 +95,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                 }),
             }}
         >
-            <CardContent sx={{ flexGrow: 1, p: 3 }}>
+            <CardContent sx={{ flexGrow: 1, p: { xs: 2, sm: 2.5, md: 3 } }}>
                 {/* Badges Row */}
-                <Box sx={{ display: 'flex', justifyContent: isFeatured ? 'space-between' : 'flex-end', alignItems: 'center', mb: 2 }}>
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent: isFeatured ? 'space-between' : 'flex-end',
+                    alignItems: 'center',
+                    mb: 2,
+                    flexWrap: 'wrap',
+                    gap: 1
+                }}>
                     {isFeatured && (
                         <Chip
                             label="Featured"
@@ -130,6 +139,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                     sx={{
                         color: isFeatured ? theme.palette.primary.main : 'text.primary',
                         mb: 2,
+                        fontSize: {
+                            xs: isFeatured ? '1.2rem' : '1rem',
+                            sm: isFeatured ? '1.4rem' : '1.1rem',
+                            md: isFeatured ? '1.5rem' : '1.25rem'
+                        },
+                        lineHeight: 1.3,
+                        wordBreak: 'break-word',
+                        hyphens: 'auto',
                     }}
                 >
                     {project.title}
@@ -141,6 +158,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                     sx={{
                         mb: 2,
                         lineHeight: 1.6,
+                        wordBreak: 'break-word',
+                        hyphens: 'auto',
                     }}
                 >
                     {project.description}
@@ -152,14 +171,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                         <Typography variant="caption" color="text.secondary" sx={{ mb: 1, display: 'block' }}>
                             Research Areas:
                         </Typography>
-                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, maxWidth: '100%', overflow: 'hidden' }}>
                             {project.researchAreas.map((area, index) => (
                                 <Chip
                                     key={index}
                                     label={area}
                                     size="small"
                                     variant="outlined"
-                                    sx={{ fontSize: '0.7rem' }}
+                                    sx={{
+                                        fontSize: '0.7rem',
+                                        maxWidth: { xs: '120px', sm: '150px' },
+                                        '& .MuiChip-label': {
+                                            overflow: 'hidden',
+                                            textOverflow: 'ellipsis',
+                                            whiteSpace: 'nowrap'
+                                        }
+                                    }}
                                 />
                             ))}
                         </Box>
@@ -171,7 +198,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                     <Typography variant="caption" color="text.secondary" sx={{ mb: 1, display: 'block' }}>
                         Technologies:
                     </Typography>
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, maxWidth: '100%', overflow: 'hidden' }}>
                         {project.technologies.map((tech, index) => (
                             <Chip
                                 key={index}
@@ -180,6 +207,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                                 sx={{
                                     backgroundColor: theme.palette.background.default,
                                     fontSize: '0.7rem',
+                                    maxWidth: { xs: '100px', sm: '120px' },
+                                    '& .MuiChip-label': {
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        whiteSpace: 'nowrap'
+                                    }
                                 }}
                             />
                         ))}
@@ -213,8 +246,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'standard'
                 )}
             </CardContent>
 
-            <CardActions sx={{ justifyContent: 'space-between', px: 2, pb: 2 }}>
-                <Box sx={{ display: 'flex', gap: 1 }}>
+            <CardActions sx={{ justifyContent: 'space-between', px: { xs: 1.5, sm: 2 }, pb: { xs: 1.5, sm: 2 } }}>
+                <Box sx={{ display: 'flex', gap: { xs: 0.5, sm: 1 } }}>
                     {project.githubUrl && (
                         <Tooltip title="View Source Code">
                             <IconButton

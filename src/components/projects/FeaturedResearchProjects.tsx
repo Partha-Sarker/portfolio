@@ -55,7 +55,7 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
             {/* Featured Research Projects */}
             {featuredResearchProjects.length > 0 && (
                 <Box sx={{ mb: 5 }}>
-                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 4, alignItems: 'stretch' }}>
+                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr', lg: '1fr 1fr' }, gap: { xs: 3, md: 4 }, alignItems: 'stretch' }}>
                         {featuredResearchProjects.map((project) => (
                             <Card
                                 key={project.id}
@@ -74,7 +74,7 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                                     },
                                 }}
                             >
-                                <CardContent sx={{ p: 4, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+                                <CardContent sx={{ p: { xs: 2, sm: 3, md: 4 }, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
                                     {/* Project Header */}
                                     <Box sx={{ mb: 3 }}>
                                         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
@@ -106,7 +106,12 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                                             component="h3"
                                             gutterBottom
                                             fontWeight={600}
-                                            sx={{ color: theme.palette.primary.main, mb: 2 }}
+                                            sx={{
+                                                color: theme.palette.primary.main,
+                                                mb: 2,
+                                                wordBreak: 'break-word',
+                                                hyphens: 'auto',
+                                            }}
                                         >
                                             {project.title}
                                         </Typography>
@@ -114,7 +119,12 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                                         <Typography
                                             variant="body2"
                                             color="text.secondary"
-                                            sx={{ lineHeight: 1.6, mb: 3 }}
+                                            sx={{
+                                                lineHeight: 1.6,
+                                                mb: 3,
+                                                wordBreak: 'break-word',
+                                                hyphens: 'auto',
+                                            }}
                                         >
                                             {project.description}
                                         </Typography>
@@ -126,14 +136,22 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                                             <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 1 }}>
                                                 Research Areas
                                             </Typography>
-                                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, maxWidth: '100%', overflow: 'hidden' }}>
                                                 {project.researchAreas.map((area, index) => (
                                                     <Chip
                                                         key={index}
                                                         label={area}
                                                         size="small"
                                                         variant="outlined"
-                                                        sx={{ fontSize: '0.7rem' }}
+                                                        sx={{
+                                                            fontSize: '0.7rem',
+                                                            maxWidth: { xs: '120px', sm: '150px' },
+                                                            '& .MuiChip-label': {
+                                                                overflow: 'hidden',
+                                                                textOverflow: 'ellipsis',
+                                                                whiteSpace: 'nowrap'
+                                                            }
+                                                        }}
                                                     />
                                                 ))}
                                             </Box>
@@ -145,7 +163,7 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                                         <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 1 }}>
                                             Technologies
                                         </Typography>
-                                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, maxWidth: '100%', overflow: 'hidden' }}>
                                             {project.technologies.map((tech, index) => (
                                                 <Chip
                                                     key={index}
@@ -154,6 +172,12 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                                                     sx={{
                                                         backgroundColor: theme.palette.background.default,
                                                         fontSize: '0.7rem',
+                                                        maxWidth: { xs: '100px', sm: '120px' },
+                                                        '& .MuiChip-label': {
+                                                            overflow: 'hidden',
+                                                            textOverflow: 'ellipsis',
+                                                            whiteSpace: 'nowrap'
+                                                        }
                                                     }}
                                                 />
                                             ))}
@@ -199,7 +223,13 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                                     )}
 
                                     {/* Action Buttons */}
-                                    <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mt: 4 }}>
+                                    <Box sx={{
+                                        display: 'flex',
+                                        gap: { xs: 1, sm: 2 },
+                                        flexWrap: 'wrap',
+                                        mt: { xs: 3, md: 4 },
+                                        flexDirection: { xs: 'column', sm: 'row' }
+                                    }}>
                                         {project.githubUrl && (
                                             <Button
                                                 variant="outlined"
@@ -208,7 +238,11 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                                                 href={project.githubUrl}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                sx={{ textTransform: 'none', flex: 1 }}
+                                                sx={{
+                                                    textTransform: 'none',
+                                                    flex: { xs: 'none', sm: 1 },
+                                                    minWidth: { xs: '100%', sm: 'auto' }
+                                                }}
                                             >
                                                 Source Code
                                             </Button>
@@ -222,7 +256,11 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({ pro
                                                 href={project.documentationUrl}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                sx={{ textTransform: 'none', flex: 1 }}
+                                                sx={{
+                                                    textTransform: 'none',
+                                                    flex: { xs: 'none', sm: 1 },
+                                                    minWidth: { xs: '100%', sm: 'auto' }
+                                                }}
                                             >
                                                 Research Paper
                                             </Button>

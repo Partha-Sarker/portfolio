@@ -138,7 +138,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
     const personalCount = projects.filter(p => p.type === 'personal').length;
 
     return (
-        <Box sx={{ mb: 4 }}>
+        <Box sx={{ mb: 4, maxWidth: '100%', overflow: 'hidden' }}>
 
             {/* Search and Filter Controls */}
             <Paper
@@ -158,7 +158,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     </Typography>
                 </Box>
 
-                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '2fr 1fr' }, gap: 2 }}>
+                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '2fr 1fr' }, gap: 2 }}>
                     <TextField
                         fullWidth
                         variant="outlined"
@@ -172,14 +172,30 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                                 </InputAdornment>
                             ),
                         }}
+                        sx={{
+                            '& .MuiInputBase-input': {
+                                fontSize: { xs: '0.9rem', sm: '1rem' },
+                            },
+                            '& .MuiInputBase-root': {
+                                minHeight: { xs: '40px', sm: '56px' },
+                            },
+                        }}
                     />
 
                     <FormControl fullWidth>
-                        <InputLabel>Filter by Tag</InputLabel>
+                        <InputLabel sx={{ fontSize: { xs: '0.9rem', sm: '1rem' } }}>Filter by Tag</InputLabel>
                         <Select
                             value={technologyFilter}
                             label="Filter by Tag"
                             onChange={handleTechnologyFilterChange}
+                            sx={{
+                                '& .MuiSelect-select': {
+                                    fontSize: { xs: '0.9rem', sm: '1rem' },
+                                    minHeight: { xs: '40px', sm: '56px' },
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                },
+                            }}
                         >
                             <MenuItem value="">All Tags</MenuItem>
                             {filterTags.map((tag) => (
@@ -193,15 +209,23 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
 
                 {/* Active Filters Display */}
                 {(searchTerm || technologyFilter) && (
-                    <Box sx={{ mt: 2, display: 'flex', gap: 1, flexWrap: 'wrap' }}>
-                        <Typography variant="body2" color="text.secondary" sx={{ mr: 1 }}>
+                    <Box sx={{ mt: 2, display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center' }}>
+                        <Typography variant="body2" color="text.secondary" sx={{ mr: 1, fontSize: { xs: '0.8rem', sm: '0.875rem' } }}>
                             Active filters:
                         </Typography>
                         {searchTerm && (
                             <Chip
-                                label={`Search: "${searchTerm}"`}
+                                label={`Search: "${searchTerm.length > 15 ? searchTerm.substring(0, 15) + '...' : searchTerm}"`}
                                 size="small"
                                 onDelete={() => setSearchTerm('')}
+                                sx={{
+                                    maxWidth: { xs: '150px', sm: '200px' },
+                                    '& .MuiChip-label': {
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        whiteSpace: 'nowrap'
+                                    }
+                                }}
                             />
                         )}
                         {technologyFilter && (
@@ -209,6 +233,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                                 label={`Tag: ${technologyFilter}`}
                                 size="small"
                                 onDelete={() => setTechnologyFilter('')}
+                                sx={{
+                                    maxWidth: { xs: '120px', sm: '150px' },
+                                    '& .MuiChip-label': {
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        whiteSpace: 'nowrap'
+                                    }
+                                }}
                             />
                         )}
                     </Box>
@@ -222,56 +254,95 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                         value={activeTab}
                         onChange={handleTabChange}
                         aria-label="project categories"
-                        variant="fullWidth"
+                        variant="scrollable"
+                        scrollButtons="auto"
+                        allowScrollButtonsMobile
                         sx={{
                             '& .MuiTab-root': {
                                 textTransform: 'none',
                                 fontWeight: 600,
-                                fontSize: '1rem',
+                                fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' },
+                                minWidth: { xs: 'auto', sm: 120 },
+                                padding: { xs: '6px 8px', sm: '12px 16px' },
+                            },
+                            '& .MuiTabs-scrollButtons': {
+                                '&.Mui-disabled': {
+                                    opacity: 0.3,
+                                },
                             },
                         }}
                     >
                         <Tab
-                            icon={<StarIcon />}
+                            icon={<StarIcon sx={{ fontSize: { xs: '1rem', sm: '1.2rem' } }} />}
                             iconPosition="start"
-                            label={`Featured (${featuredCount})`}
+                            label={`Featured${featuredCount > 0 ? ` (${featuredCount})` : ''}`}
                             id="projects-tab-0"
                             aria-controls="projects-tabpanel-0"
+                            sx={{
+                                '& .MuiTab-iconWrapper': {
+                                    marginRight: { xs: '4px', sm: '8px' },
+                                },
+                            }}
                         />
                         <Tab
-                            icon={<ScienceIcon />}
+                            icon={<ScienceIcon sx={{ fontSize: { xs: '1rem', sm: '1.2rem' } }} />}
                             iconPosition="start"
-                            label={`Research (${researchCount})`}
+                            label={`Research${researchCount > 0 ? ` (${researchCount})` : ''}`}
                             id="projects-tab-1"
                             aria-controls="projects-tabpanel-1"
+                            sx={{
+                                '& .MuiTab-iconWrapper': {
+                                    marginRight: { xs: '4px', sm: '8px' },
+                                },
+                            }}
                         />
                         <Tab
-                            icon={<SchoolIcon />}
+                            icon={<SchoolIcon sx={{ fontSize: { xs: '1rem', sm: '1.2rem' } }} />}
                             iconPosition="start"
-                            label={`Academic (${academicCount})`}
+                            label={`Academic${academicCount > 0 ? ` (${academicCount})` : ''}`}
                             id="projects-tab-2"
                             aria-controls="projects-tabpanel-2"
+                            sx={{
+                                '& .MuiTab-iconWrapper': {
+                                    marginRight: { xs: '4px', sm: '8px' },
+                                },
+                            }}
                         />
                         <Tab
-                            icon={<WorkIcon />}
+                            icon={<WorkIcon sx={{ fontSize: { xs: '1rem', sm: '1.2rem' } }} />}
                             iconPosition="start"
-                            label={`Professional (${professionalCount})`}
+                            label={`Professional${professionalCount > 0 ? ` (${professionalCount})` : ''}`}
                             id="projects-tab-3"
                             aria-controls="projects-tabpanel-3"
+                            sx={{
+                                '& .MuiTab-iconWrapper': {
+                                    marginRight: { xs: '4px', sm: '8px' },
+                                },
+                            }}
                         />
                         <Tab
-                            icon={<PersonIcon />}
+                            icon={<PersonIcon sx={{ fontSize: { xs: '1rem', sm: '1.2rem' } }} />}
                             iconPosition="start"
-                            label={`Personal (${personalCount})`}
+                            label={`Personal${personalCount > 0 ? ` (${personalCount})` : ''}`}
                             id="projects-tab-4"
                             aria-controls="projects-tabpanel-4"
+                            sx={{
+                                '& .MuiTab-iconWrapper': {
+                                    marginRight: { xs: '4px', sm: '8px' },
+                                },
+                            }}
                         />
                         <Tab
-                            icon={<FilterListIcon />}
+                            icon={<FilterListIcon sx={{ fontSize: { xs: '1rem', sm: '1.2rem' } }} />}
                             iconPosition="start"
                             label={`All (${projects.length})`}
                             id="projects-tab-5"
                             aria-controls="projects-tabpanel-5"
+                            sx={{
+                                '& .MuiTab-iconWrapper': {
+                                    marginRight: { xs: '4px', sm: '8px' },
+                                },
+                            }}
                         />
                     </Tabs>
                 </Box>
@@ -285,7 +356,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     </Typography>
 
                     {filteredProjects.length > 0 ? (
-                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
+                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
                             {filteredProjects.map((project) => (
                                 <ProjectCard key={project.id} project={project} />
                             ))}
@@ -329,7 +400,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                             <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }}>
                                 All Projects ({projects.length} total)
                             </Typography>
-                            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
+                            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
                                 {projects.map((project) => (
                                     <ProjectCard key={project.id} project={project} />
                                 ))}
@@ -355,7 +426,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     Project Portfolio Summary
                 </Typography>
 
-                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', md: '1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr 1fr 1fr' }, gap: 3 }}>
+                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr 1fr', md: '1fr 1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr 1fr 1fr' }, gap: { xs: 2, sm: 3 } }}>
                     <Box sx={{ textAlign: 'center' }}>
                         <Typography variant="h4" fontWeight={700} color="text.primary">
                             {projects.length}

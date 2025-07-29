@@ -80,7 +80,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
                         </Typography>
                     </Box>
 
-                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3, mb: 3 }}>
+                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3, mb: 3 }}>
                         {creativeProjects.map((project) => (
                             <ProjectCard key={project.id} project={project} />
                         ))}
@@ -113,7 +113,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
                         </Typography>
                     </Box>
 
-                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
+                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
                         {gameProjects.map((project) => (
                             <ProjectCard key={project.id} project={project} />
                         ))}
@@ -131,7 +131,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
                         </Typography>
                     </Box>
 
-                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
+                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
                         {webToolProjects.map((project) => (
                             <ProjectCard key={project.id} project={project} />
                         ))}
@@ -146,7 +146,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
                         Other Projects
                     </Typography>
 
-                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
+                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
                         {otherProjects.map((project) => (
                             <ProjectCard key={project.id} project={project} />
                         ))}
@@ -169,7 +169,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
                     Personal Development & Initiative
                 </Typography>
 
-                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 3 }}>
+                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr' }, gap: { xs: 2, md: 3 } }}>
                     <Box>
                         <Typography variant="subtitle2" fontWeight={600} sx={{ mb: 1 }}>
                             Self-Directed Learning
