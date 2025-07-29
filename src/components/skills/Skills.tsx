@@ -71,7 +71,7 @@ const Skills: React.FC = () => {
         <Box sx={{ mb: 6 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                 {getCategoryIcon(category)}
-                <Typography variant="h5" component="h3" fontWeight={600}>
+                <Typography variant="h5" component="h3" fontWeight={600} sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
                     {getCategoryTitle(category)}
                 </Typography>
             </Box>

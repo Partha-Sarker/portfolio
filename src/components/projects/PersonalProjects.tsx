@@ -75,7 +75,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
                 <Box sx={{ mb: 5 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                         <MusicNoteIcon sx={{ mr: 1, color: theme.palette.secondary.main }} />
-                        <Typography variant="h5" component="h3" fontWeight={600}>
+                        <Typography variant="h5" component="h3" fontWeight={600} sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
                             Creative & Interactive Projects
                         </Typography>
                     </Box>
@@ -108,7 +108,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
                 <Box sx={{ mb: 5 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                         <CodeIcon sx={{ mr: 1, color: theme.palette.primary.main }} />
-                        <Typography variant="h5" component="h3" fontWeight={600}>
+                        <Typography variant="h5" component="h3" fontWeight={600} sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
                             Game Development Projects
                         </Typography>
                     </Box>
@@ -126,7 +126,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
                 <Box sx={{ mb: 5 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                         <LightbulbIcon sx={{ mr: 1, color: theme.palette.warning.main }} />
-                        <Typography variant="h5" component="h3" fontWeight={600}>
+                        <Typography variant="h5" component="h3" fontWeight={600} sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
                             Web Tools & Automation
                         </Typography>
                     </Box>
@@ -142,7 +142,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
             {/* Other Projects */}
             {otherProjects.length > 0 && (
                 <Box sx={{ mb: 5 }}>
-                    <Typography variant="h5" component="h3" fontWeight={600} sx={{ mb: 3 }}>
+                    <Typography variant="h5" component="h3" fontWeight={600} sx={{ mb: 3, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
                         Other Projects
                     </Typography>
 
@@ -165,7 +165,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
                     border: `1px solid ${theme.palette.divider}`,
                 }}
             >
-                <Typography variant="h6" fontWeight={600} sx={{ mb: 2, color: theme.palette.warning.main }}>
+                <Typography variant="h6" component="h4" fontWeight={600} sx={{ mb: 2, color: theme.palette.warning.main, fontSize: { xs: '1.1rem', sm: '1.25rem' } }}>
                     Personal Development & Initiative
                 </Typography>
 

@@ -63,7 +63,7 @@ const ProfessionalProjects: React.FC<ProfessionalProjectsProps> = ({ projects })
                     border: `1px solid ${theme.palette.divider}`,
                 }}
             >
-                <Typography variant="h6" fontWeight={600} sx={{ mb: 2, color: theme.palette.success.main }}>
+                <Typography variant="h6" component="h4" fontWeight={600} sx={{ mb: 2, color: theme.palette.success.main, fontSize: { xs: '1.1rem', sm: '1.25rem' } }}>
                     Professional Impact & Expertise
                 </Typography>
 

@@ -154,7 +154,7 @@ const PersonalInterests: React.FC = () => {
 
     return (
         <Box>
-            
+
 
             {/* Interests by Category */}
             {Object.entries(interestsByCategory).map(([category, categoryInterests]) => (
@@ -169,7 +169,7 @@ const PersonalInterests: React.FC = () => {
                                 borderRadius: 2
                             }}
                         />
-                        <Typography variant="h5" component="h3" fontWeight={600}>
+                        <Typography variant="h5" component="h3" fontWeight={600} sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
                             {getCategoryTitle(category)}
                         </Typography>
                     </Box>
@@ -204,7 +204,7 @@ const PersonalInterests: React.FC = () => {
                                         >
                                             {interest.icon}
                                         </Box>
-                                        <Typography variant="h6" component="h4" fontWeight={600}>
+                                        <Typography variant="h6" component="h4" fontWeight={600} sx={{ fontSize: { xs: '1.1rem', sm: '1.25rem' } }}>
                                             {interest.title}
                                         </Typography>
                                     </Box>
@@ -282,7 +282,7 @@ const PersonalInterests: React.FC = () => {
                     textAlign: 'center'
                 }}
             >
-                <Typography variant="h6" fontWeight={600} sx={{ mb: 1, color: theme.palette.primary.main }}>
+                <Typography variant="h6" component="h4" fontWeight={600} sx={{ mb: 1, color: theme.palette.primary.main, fontSize: { xs: '1.1rem', sm: '1.25rem' } }}>
                     Connecting Interests with Innovation
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>

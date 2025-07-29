@@ -57,7 +57,7 @@ const AcademicProjects: React.FC<AcademicProjectsProps> = ({ projects }) => {
                 <Box sx={{ mb: 5 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                         <EmojiEventsIcon sx={{ mr: 1, color: theme.palette.warning.main }} />
-                        <Typography variant="h5" component="h3" fontWeight={600}>
+                        <Typography variant="h5" component="h3" fontWeight={600} sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
                             Award-Winning Projects
                         </Typography>
                     </Box>
@@ -73,7 +73,7 @@ const AcademicProjects: React.FC<AcademicProjectsProps> = ({ projects }) => {
             {/* Regular Academic Projects */}
             {regularAcademicProjects.length > 0 && (
                 <Box>
-                    <Typography variant="h5" component="h3" fontWeight={600} sx={{ mb: 3 }}>
+                    <Typography variant="h5" component="h3" fontWeight={600} sx={{ mb: 3, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
                         Course Projects & Assignments
                     </Typography>
 
@@ -96,7 +96,7 @@ const AcademicProjects: React.FC<AcademicProjectsProps> = ({ projects }) => {
                     border: `1px solid ${theme.palette.divider}`,
                 }}
             >
-                <Typography variant="h6" fontWeight={600} sx={{ mb: 2, color: theme.palette.secondary.main }}>
+                <Typography variant="h6" component="h4" fontWeight={600} sx={{ mb: 2, color: theme.palette.secondary.main, fontSize: { xs: '1.1rem', sm: '1.25rem' } }}>
                     Academic Learning Highlights
                 </Typography>
 

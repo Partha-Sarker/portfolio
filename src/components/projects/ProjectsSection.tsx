@@ -165,7 +165,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
             >
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                     <FilterListIcon sx={{ mr: 1, color: theme.palette.text.secondary }} />
-                    <Typography variant="h6" fontWeight={600}>
+                    <Typography variant="h6" component="h4" fontWeight={600} sx={{ fontSize: { xs: '1.1rem', sm: '1.25rem' } }}>
                         Search & Filter Projects
                     </Typography>
                 </Box>
@@ -395,7 +395,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
             {/* Show all filtered projects together when searching/filtering */}
             {searchTerm || technologyFilter ? (
                 <Box>
-                    <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }}>
+                    <Typography variant="h5" component="h3" fontWeight={600} sx={{ mb: 3, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
                         Search Results ({filteredProjects.length} projects found)
                     </Typography>
 
@@ -448,7 +448,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
 
                     <TabPanel value={activeTab} index={5}>
                         <Box>
-                            <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }}>
+                            <Typography variant="h5" component="h3" fontWeight={600} sx={{ mb: 3, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>
                                 All Projects ({projects.length} total)
                             </Typography>
                             <Box sx={{
@@ -480,7 +480,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     border: `1px solid ${theme.palette.divider}`,
                 }}
             >
-                <Typography variant="h6" fontWeight={600} sx={{ mb: 2 }}>
+                <Typography variant="h6" component="h4" fontWeight={600} sx={{ mb: 2, fontSize: { xs: '1.1rem', sm: '1.25rem' } }}>
                     Project Portfolio Summary
                 </Typography>
 
