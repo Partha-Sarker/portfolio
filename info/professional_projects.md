@@ -137,3 +137,35 @@ CRVS (Civil Registration and Vital Statistics) is a national system in Banglades
 
 ### Major technologies
 Laravel, Oracle Database
+
+
+
+# [dbTEvariants](https://genome-data.vercel.app/)
+Transposable elements (TEs) are DNA sequences capable of moving from one genomic location to another, a phenomenon known as transposition. Approximately 45–50% of the human genome is composed of TEs. Although most human TEs have stabilized over millions of years and are no longer mobile, certain relatively recent TE families retain mobility, leading to genomic insertions or deletions and subsequent genomic variations. The biological significance of TEs spans multiple critical areas, including contributing to genomic diversity through mutations and genomic rearrangements, facilitating evolutionary processes by generating novel genetic combinations, exerting regulatory influences on gene expression, and impacting disease mechanisms via gene disruption. Given their broad relevance, a comprehensive database of non-reference polymorphic human TEs is an essential resource for researchers and the scientific community. To address this need, we developed dbTEvariants, a manually curated database representing the most comprehensive resource to date for non-reference polymorphic human transposable elements.
+- *Next.js, Vercel, Postgres*
+
+# [Linear Equation Solver - Draw Petri Net](https://github.com/Partha-Sarker/Solve-Linear-Euations-and-Draw-Petri-Net-Using-Unity)
+
+## Introduction
+This is a project I did for a client as part of his thesis work. This project contains some serious stuff like Petri-net stochastic simulation! Though I didn't get most of the simulation things, I was able to deliver the right things according to the algorithm the client showed and finish the project.
+
+## Description
+This project has two separate modules inside it. One module can solve linear equations and the other draws and simulates Petri Net. You can solve linear equations having any number of variables. If the equations hold a unique solution, linear equation solver can calculate the answer. The linear equation solving part uses the Gaussian Elimination method for solving the equations. Additionally, you can also draw petri net having states, transitions and create edges between them.
+Executable Project Link: https://drive.google.com/file/d/1phRdLnc3fMZq8VAxE6GQ0ZufigSTKWxy/view?usp=sharing
+## Technologies
+*Unity, C#, Gaussian elimination*
+
+## Linear Equation Solver
+- Can calculate any number of equations and variables
+- Uses gaussian elimination
+- Give results if the equations result in a unique solution
+## Petri Net
+- Can create any number of states or transition
+- connect the nodes with directed edge
+- No two same of nodes can't be connected
+- Has keyboard shortcuts
+- Log screen for understanding what is going on
+- Saving the current graph(petri net) on local machine
+- Loading graph(petri net) from local machine
+- Zooming and changing camera position
+- Simple UI
