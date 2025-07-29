@@ -25,7 +25,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         maxWidth: '100vw',
         overflowX: 'hidden',
       }}>
-        {children}
+        <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3 } }}>
+          {children}
+        </Container>
       </Box>
       <Footer />
     </Box>

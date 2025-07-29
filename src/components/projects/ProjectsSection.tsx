@@ -5,6 +5,7 @@ import {
     Tabs,
     Tab,
     useTheme,
+    useMediaQuery,
     Paper,
     Chip,
     TextField,
@@ -64,6 +65,7 @@ function TabPanel(props: TabPanelProps) {
  */
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
     const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [activeTab, setActiveTab] = useState(0);
     const [searchTerm, setSearchTerm] = useState('');
     const [technologyFilter, setTechnologyFilter] = useState('');
@@ -271,9 +273,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                         value={activeTab}
                         onChange={handleTabChange}
                         aria-label="project categories"
-                        variant="scrollable"
+                        variant={isMobile ? 'scrollable' : 'fullWidth'}
                         scrollButtons="auto"
                         allowScrollButtonsMobile
+                        centered={!isMobile}
                         sx={{
                             width: '100%',
                             maxWidth: '100%',
@@ -286,19 +289,24 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                             },
                             '& .MuiTabs-flexContainer': {
                                 maxWidth: '100%',
+                                justifyContent: isMobile ? 'flex-start' : 'center',
                             },
                             '& .MuiTab-root': {
                                 textTransform: 'none',
                                 fontWeight: 600,
                                 fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' },
-                                minWidth: { xs: 'auto', sm: 120 },
-                                maxWidth: { xs: '140px', sm: '160px' },
+                                minWidth: { xs: 'auto', sm: 120, md: 'auto' },
                                 padding: { xs: '6px 8px', sm: '12px 16px' },
+                                whiteSpace: 'nowrap',
+                                '& .MuiTab-iconWrapper': {
+                                    marginRight: { xs: '4px', sm: '8px' },
+                                },
                             },
                             '& .MuiTabs-scrollButtons': {
                                 '&.Mui-disabled': {
                                     opacity: 0.3,
                                 },
+                                display: { md: 'none' },
                             },
                         }}
                     >
@@ -309,6 +317,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                             id="projects-tab-0"
                             aria-controls="projects-tabpanel-0"
                             sx={{
+                                whiteSpace: 'nowrap',
                                 '& .MuiTab-iconWrapper': {
                                     marginRight: { xs: '4px', sm: '8px' },
                                 },
@@ -321,6 +330,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                             id="projects-tab-1"
                             aria-controls="projects-tabpanel-1"
                             sx={{
+                                whiteSpace: 'nowrap',
                                 '& .MuiTab-iconWrapper': {
                                     marginRight: { xs: '4px', sm: '8px' },
                                 },
@@ -333,6 +343,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                             id="projects-tab-2"
                             aria-controls="projects-tabpanel-2"
                             sx={{
+                                whiteSpace: 'nowrap',
                                 '& .MuiTab-iconWrapper': {
                                     marginRight: { xs: '4px', sm: '8px' },
                                 },
@@ -345,6 +356,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                             id="projects-tab-3"
                             aria-controls="projects-tabpanel-3"
                             sx={{
+                                whiteSpace: 'nowrap',
                                 '& .MuiTab-iconWrapper': {
                                     marginRight: { xs: '4px', sm: '8px' },
                                 },
@@ -357,6 +369,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                             id="projects-tab-4"
                             aria-controls="projects-tabpanel-4"
                             sx={{
+                                whiteSpace: 'nowrap',
                                 '& .MuiTab-iconWrapper': {
                                     marginRight: { xs: '4px', sm: '8px' },
                                 },
@@ -369,6 +382,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                             id="projects-tab-5"
                             aria-controls="projects-tabpanel-5"
                             sx={{
+                                whiteSpace: 'nowrap',
                                 '& .MuiTab-iconWrapper': {
                                     marginRight: { xs: '4px', sm: '8px' },
                                 },
