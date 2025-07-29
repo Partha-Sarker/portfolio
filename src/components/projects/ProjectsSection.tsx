@@ -138,7 +138,13 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
     const personalCount = projects.filter(p => p.type === 'personal').length;
 
     return (
-        <Box sx={{ mb: 4, maxWidth: '100%', overflow: 'hidden' }}>
+        <Box sx={{
+            mb: 4,
+            width: '100%',
+            maxWidth: '100%',
+            overflowX: 'hidden',
+            boxSizing: 'border-box'
+        }}>
 
             {/* Search and Filter Controls */}
             <Paper
@@ -149,6 +155,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     backgroundColor: theme.palette.background.default,
                     borderRadius: 2,
                     border: `1px solid ${theme.palette.divider}`,
+                    width: '100%',
+                    maxWidth: '100%',
+                    boxSizing: 'border-box',
+                    overflowX: 'hidden',
                 }}
             >
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -158,7 +168,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     </Typography>
                 </Box>
 
-                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '2fr 1fr' }, gap: 2 }}>
+                <Box sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '2fr 1fr' },
+                    gap: 2,
+                    width: '100%',
+                    maxWidth: '100%',
+                    boxSizing: 'border-box'
+                }}>
                     <TextField
                         fullWidth
                         variant="outlined"
@@ -258,11 +275,24 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                         scrollButtons="auto"
                         allowScrollButtonsMobile
                         sx={{
+                            width: '100%',
+                            maxWidth: '100%',
+                            '& .MuiTabs-root': {
+                                maxWidth: '100%',
+                            },
+                            '& .MuiTabs-scroller': {
+                                maxWidth: '100%',
+                                overflow: 'hidden',
+                            },
+                            '& .MuiTabs-flexContainer': {
+                                maxWidth: '100%',
+                            },
                             '& .MuiTab-root': {
                                 textTransform: 'none',
                                 fontWeight: 600,
                                 fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' },
                                 minWidth: { xs: 'auto', sm: 120 },
+                                maxWidth: { xs: '140px', sm: '160px' },
                                 padding: { xs: '6px 8px', sm: '12px 16px' },
                             },
                             '& .MuiTabs-scrollButtons': {
@@ -356,7 +386,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     </Typography>
 
                     {filteredProjects.length > 0 ? (
-                        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
+                        <Box sx={{
+                            display: 'grid',
+                            gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' },
+                            gap: 3,
+                            width: '100%',
+                            maxWidth: '100%',
+                            boxSizing: 'border-box'
+                        }}>
                             {filteredProjects.map((project) => (
                                 <ProjectCard key={project.id} project={project} />
                             ))}
@@ -400,7 +437,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                             <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }}>
                                 All Projects ({projects.length} total)
                             </Typography>
-                            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' }, gap: 3 }}>
+                            <Box sx={{
+                                display: 'grid',
+                                gridTemplateColumns: { xs: '1fr', sm: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr' },
+                                gap: 3,
+                                width: '100%',
+                                maxWidth: '100%',
+                                boxSizing: 'border-box'
+                            }}>
                                 {projects.map((project) => (
                                     <ProjectCard key={project.id} project={project} />
                                 ))}
@@ -426,7 +470,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
                     Project Portfolio Summary
                 </Typography>
 
-                <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr 1fr', md: '1fr 1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr 1fr 1fr' }, gap: { xs: 2, sm: 3 } }}>
+                <Box sx={{
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr 1fr', md: '1fr 1fr 1fr 1fr', lg: '1fr 1fr 1fr 1fr 1fr 1fr' },
+                    gap: { xs: 2, sm: 3 },
+                    width: '100%',
+                    maxWidth: '100%',
+                    boxSizing: 'border-box'
+                }}>
                     <Box sx={{ textAlign: 'center' }}>
                         <Typography variant="h4" fontWeight={700} color="text.primary">
                             {projects.length}

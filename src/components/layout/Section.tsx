@@ -41,6 +41,9 @@ const Section: React.FC<SectionProps> = ({
         minHeight: minHeight,
         scrollMarginTop: '64px', // Offset for fixed header
         borderRadius: 4,
+        width: '100%',
+        maxWidth: '100vw',
+        overflowX: 'hidden',
       }}
     >
       <Container maxWidth={fullWidth ? false : 'lg'} disableGutters={fullWidth}>

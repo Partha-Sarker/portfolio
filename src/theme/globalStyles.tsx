@@ -4,7 +4,7 @@ import React from 'react';
 
 const GlobalStyles = (): React.ReactElement => {
   const theme = useTheme();
-  
+
   return (
     <MuiGlobalStyles
       styles={{
@@ -16,17 +16,23 @@ const GlobalStyles = (): React.ReactElement => {
         html: {
           width: '100%',
           height: '100%',
+          maxWidth: '100vw',
+          overflowX: 'hidden',
           WebkitOverflowScrolling: 'touch',
           scrollBehavior: 'smooth',
         },
         body: {
           width: '100%',
           height: '100%',
+          maxWidth: '100vw',
+          overflowX: 'hidden',
           backgroundColor: theme.palette.background.default,
         },
         '#root': {
           width: '100%',
           height: '100%',
+          maxWidth: '100vw',
+          overflowX: 'hidden',
         },
         a: {
           textDecoration: 'none',

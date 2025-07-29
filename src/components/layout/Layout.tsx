@@ -9,19 +9,23 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <Box sx={{ 
-      display: 'flex', 
+    <Box sx={{
+      display: 'flex',
       flexDirection: 'column',
       minHeight: '100vh',
+      width: '100%',
+      maxWidth: '100vw',
+      overflowX: 'hidden',
     }}>
       <Header />
-      <Box component="main" sx={{ 
+      <Box component="main" sx={{
         flexGrow: 1,
         py: { xs: 2, sm: 4 },
+        width: '100%',
+        maxWidth: '100vw',
+        overflowX: 'hidden',
       }}>
-        <Container maxWidth="lg">
-          {children}
-        </Container>
+        {children}
       </Box>
       <Footer />
     </Box>

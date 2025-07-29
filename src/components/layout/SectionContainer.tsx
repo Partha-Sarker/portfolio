@@ -28,8 +28,11 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
       <Box
         sx={{
           width: '100%',
+          maxWidth: '100%',
           p: padding,
           backgroundColor,
+          boxSizing: 'border-box',
+          overflowX: 'hidden',
         }}
       >
         <Grid container spacing={spacing}>
@@ -46,9 +49,12 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
       variant={variant === 'outlined' ? 'outlined' : undefined}
       sx={{
         width: '100%',
+        maxWidth: '100%',
         p: padding,
         backgroundColor,
         borderRadius: 2,
+        boxSizing: 'border-box',
+        overflowX: 'hidden',
       }}
     >
       <Grid container spacing={spacing}>
