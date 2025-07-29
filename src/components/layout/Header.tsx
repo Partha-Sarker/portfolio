@@ -21,6 +21,7 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import routes from '../../router/routes';
 import { scrollToElement, scrollToTop } from '../../utils/scrollUtils';
+import { getAssetPath } from '../../utils/assetUtils';
 
 // Props for the hide on scroll functionality
 interface Props {
@@ -152,7 +153,7 @@ const Header: React.FC = () => {
         ))}
         <ListItem
           component="a"
-          href="#"
+          href={getAssetPath('/Academic_CV.pdf')}
           target="_blank"
           rel="noopener noreferrer"
           sx={{
@@ -248,7 +249,7 @@ const Header: React.FC = () => {
                     variant="outlined"
                     color="primary"
                     component="a"
-                    href="#"
+                    href={getAssetPath('/Academic_CV.pdf')}
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{

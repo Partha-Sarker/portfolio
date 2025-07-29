@@ -38,7 +38,7 @@ function App() {
             "Machine Learning"
           ]}
           profilePhoto={getAssetPath('/profile_photo.png')}
-          cvUrl={getAssetPath('/info/PARTHA_SARKER_SOFTWARE_ENGINEER_RESUME.pdf')}
+          cvUrl={getAssetPath('/Academic_CV.pdf')}
         />
       </Section>
 
