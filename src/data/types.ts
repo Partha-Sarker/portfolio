@@ -81,7 +81,7 @@ export interface Experience {
 export interface Skill {
   id: string;
   name: string;
-  category: 'programming' | 'frameworks' | 'cloud' | 'databases' | 'tools' | 'design' | 'research' | 'soft';
+  category: 'programming' | 'frameworks' | 'cloud' | 'databases' | 'tools' | 'design' | 'research' | 'soft' | 'ml';
   proficiency: 'beginner' | 'intermediate' | 'advanced' | 'expert';
   relevance: 'high' | 'medium' | 'low';
   academicApplications?: string[];
@@ -101,4 +101,24 @@ export interface Interest {
     title: string;
     url: string;
   }>;
+}
+
+/**
+ * Contact information data model
+ */
+export interface ContactInfo {
+  name: string;
+  location: string;
+  email: string;
+  phone: string;
+  socialLinks: {
+    linkedin: string;
+    github: string;
+    portfolio: string;
+  };
+  academicProfiles?: {
+    googleScholar?: string;
+    researchGate?: string;
+    orcid?: string;
+  };
 }

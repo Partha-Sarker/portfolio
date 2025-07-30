@@ -73,8 +73,8 @@ const AcademicAchievements: React.FC = () => {
     {
       id: 'scholarship',
       title: 'Merit-based Scholarship Recipient',
-      description: 'Awarded one-time scholarship for academic performance in a semester.',
-      date: '2017',
+      description: 'Awarded one-time scholarship for academic excellence.',
+      date: '2017 - 2021',
       category: 'scholarship',
       icon: <SchoolIcon />
     },

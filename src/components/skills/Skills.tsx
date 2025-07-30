@@ -14,7 +14,8 @@ import {
     Psychology as PsychologyIcon,
     Palette as PaletteIcon,
     Storage as StorageIcon,
-    Settings as SettingsIcon
+    Settings as SettingsIcon,
+    SmartToy as SmartToyIcon
 } from '@mui/icons-material';
 import skills from '../../data/skills';
 
@@ -34,7 +35,8 @@ const Skills: React.FC = () => {
         tools: skills.filter(skill => skill.category === 'tools'),
         design: skills.filter(skill => skill.category === 'design'),
         research: skills.filter(skill => skill.category === 'research'),
-        soft: skills.filter(skill => skill.category === 'soft')
+        soft: skills.filter(skill => skill.category === 'soft'),
+        ml: skills.filter(skill => skill.category === 'ml'),
     };
 
     // Get category icon
@@ -42,6 +44,7 @@ const Skills: React.FC = () => {
         switch (category) {
             case 'programming': return <CodeIcon sx={{ mr: 1, color: theme.palette.primary.main }} />;
             case 'frameworks': return <BuildIcon sx={{ mr: 1, color: theme.palette.primary.main }} />;
+            case 'ml': return <SmartToyIcon sx={{ mr: 1, color: theme.palette.primary.main }} />;
             case 'cloud': return <CloudIcon sx={{ mr: 1, color: theme.palette.primary.main }} />;
             case 'databases': return <StorageIcon sx={{ mr: 1, color: theme.palette.primary.main }} />;
             case 'tools': return <SettingsIcon sx={{ mr: 1, color: theme.palette.primary.main }} />;
@@ -57,6 +60,7 @@ const Skills: React.FC = () => {
         switch (category) {
             case 'programming': return 'Programming Languages';
             case 'frameworks': return 'Frameworks & Libraries';
+            case 'ml': return 'ML/AI';
             case 'cloud': return 'Cloud & DevOps Technologies';
             case 'databases': return 'Databases';
             case 'tools': return 'Development Tools & Technologies';
@@ -104,6 +108,9 @@ const Skills: React.FC = () => {
 
                 {/* Frameworks & Libraries */}
                 <SkillsSection category="frameworks" skillsList={skillsByCategory.frameworks} />
+
+                {/* ML/AI */}
+                <SkillsSection category="ml" skillsList={skillsByCategory.ml} />
 
                 {/* Cloud & DevOps Technologies */}
                 <SkillsSection category="cloud" skillsList={skillsByCategory.cloud} />

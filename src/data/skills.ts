@@ -244,6 +244,71 @@ const skills: Skill[] = [
     industryApplications: ["Utility-first CSS", "Rapid development"]
   },
 
+  // ml Frameworks & Libraries
+  {
+    id: "pytorch",
+    name: "PyTorch",
+    category: "ml",
+    proficiency: "advanced",
+    relevance: "high",
+    academicApplications: ["Deep learning research", "Neural network implementation", "Computer vision"],
+    industryApplications: ["Machine learning models", "AI applications"]
+  },
+  {
+    id: "tensorflow",
+    name: "TensorFlow",
+    category: "ml",
+    proficiency: "advanced",
+    relevance: "high",
+    academicApplications: ["Machine learning research", "Deep learning models"],
+    industryApplications: ["Production ML models", "AI systems"]
+  },
+  {
+    id: "keras",
+    name: "Keras",
+    category: "ml",
+    proficiency: "advanced",
+    relevance: "high",
+    academicApplications: ["Neural network prototyping", "Deep learning experiments"],
+    industryApplications: ["Rapid ML development", "Model prototyping"]
+  },
+  {
+    id: "scikit-learn",
+    name: "Scikit-learn",
+    category: "ml",
+    proficiency: "expert",
+    relevance: "high",
+    academicApplications: ["Machine learning algorithms", "Data analysis", "Statistical modeling"],
+    industryApplications: ["Predictive analytics", "Data science workflows"]
+  },
+  {
+    id: "numpy",
+    name: "NumPy",
+    category: "ml",
+    proficiency: "expert",
+    relevance: "high",
+    academicApplications: ["Numerical computing", "Scientific computing", "Data analysis"],
+    industryApplications: ["Data processing", "Mathematical computations"]
+  },
+  {
+    id: "pandas",
+    name: "Pandas",
+    category: "ml",
+    proficiency: "expert",
+    relevance: "high",
+    academicApplications: ["Data manipulation", "Statistical analysis", "Research data processing"],
+    industryApplications: ["Data analysis", "ETL processes"]
+  },
+  {
+    id: "matplotlib",
+    name: "Matplotlib",
+    category: "ml",
+    proficiency: "advanced",
+    relevance: "high",
+    academicApplications: ["Data visualization", "Research plots", "Statistical charts"],
+    industryApplications: ["Data visualization", "Reporting dashboards"]
+  },
+
   // Cloud & DevOps
   {
     id: "aws",
@@ -706,6 +771,35 @@ const skills: Skill[] = [
     relevance: "high",
     academicApplications: ["Research methodology", "New domain exploration"],
     industryApplications: ["Technology adoption", "Skill enhancement"]
+  },
+
+  // Additional Skills from CV
+  {
+    id: "arcore",
+    name: "ARCore",
+    category: "frameworks",
+    proficiency: "advanced",
+    relevance: "medium",
+    academicApplications: ["Augmented reality research", "Mobile AR applications"],
+    industryApplications: ["AR mobile development", "Interactive experiences"]
+  },
+  {
+    id: "sqs",
+    name: "AWS SQS",
+    category: "cloud",
+    proficiency: "advanced",
+    relevance: "medium",
+    academicApplications: ["Distributed system messaging"],
+    industryApplications: ["Message queuing", "Asynchronous processing"]
+  },
+  {
+    id: "teaching",
+    name: "Teaching & Mentoring",
+    category: "soft",
+    proficiency: "advanced",
+    relevance: "high",
+    academicApplications: ["Guest lecturing", "Academic instruction", "Knowledge transfer"],
+    industryApplications: ["Team mentoring", "Training delivery", "Knowledge sharing"]
   }
 ];
 

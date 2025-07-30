@@ -21,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({
   title,
   researchInterests,
   profilePhoto = getAssetPath('/profile_photo.png'),
-  cvUrl = getAssetPath('/info/PARTHA_SARKER_SOFTWARE_ENGINEER_RESUME.pdf'),
+  cvUrl = getAssetPath('/Academic_CV.pdf'),
 }) => {
   const theme = useTheme();
 
