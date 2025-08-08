@@ -30,10 +30,9 @@ interface Props {
 }
 
 // Component to hide the header on scroll down
-function HideOnScroll(props: Props) {
-  const { children, window } = props;
+function HideOnScroll({ children }: Props) {
   const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
+    target: document?.getElementById("root"),
   });
 
   return (
@@ -171,7 +170,7 @@ const Header: React.FC = () => {
           }}
         >
           <ListItemText
-            primary="Academic CV"
+            primary="Curriculum Vitae"
             sx={{
               "& .MuiTypography-root": {
                 fontWeight: 500,
@@ -264,7 +263,7 @@ const Header: React.FC = () => {
                       fontSize: { sm: "0.875rem", md: "1rem" },
                     }}
                   >
-                    Academic CV
+                    Curriculum Vitae
                   </Button>
                 </Box>
               )}

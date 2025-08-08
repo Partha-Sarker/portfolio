@@ -199,7 +199,7 @@ const Hero: React.FC<HeroProps> = ({
                   fontWeight: 600,
                 }}
               >
-                Download Academic CV
+                Download Curriculum Vitae
               </Button>
               <Button
                 variant="outlined"
