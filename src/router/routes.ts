@@ -10,7 +10,7 @@ export interface RouteConfig {
   routes?: RouteConfig[];
   label: string;
   showInNav: boolean;
-  sectionId?: string; // For smooth scrolling to sections
+  sectionId: string; // For smooth scrolling to sections
 }
 
 // Import pages
@@ -33,6 +33,7 @@ const routes: RouteConfig[] = [
     exact: true,
     label: "Home",
     showInNav: true,
+    sectionId: "hero",
   },
   {
     path: "/education",

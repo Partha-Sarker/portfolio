@@ -8,20 +8,32 @@
  */
 export const scrollToElement = (elementId: string): void => {
   const element = document.getElementById(elementId);
-  if (element) {
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+
+  if (!element) {
+    return;
   }
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
 };
 
 /**
  * Scrolls to the top of the page with smooth behavior
  */
 export const scrollToTop = (): void => {
-  window.scrollTo({
-    top: 0,
+  const body = document.getElementById("root");
+
+  if (!body) {
+    return;
+  }
+
+  const header = document.getElementsByTagName("header");
+  const offset = header[0]?.getBoundingClientRect()?.height || 65;
+
+  body.scrollTo({
+    top: -offset,
     behavior: "smooth",
   });
 };

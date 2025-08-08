@@ -57,13 +57,13 @@ const Header: React.FC = () => {
   };
 
   // Handle navigation click - either scroll to section or navigate to page
-  const handleNavClick = (path: string, sectionId?: string) => {
-    if (location.pathname === "/" && sectionId) {
-      // If we're on the home page and there's a section ID, scroll to it
-      scrollToElement(sectionId);
-    } else if (path === "/") {
+  const handleNavClick = (sectionId?: string) => {
+    if (sectionId === "hero") {
       // If clicking home, always scroll to top (whether we're on home or not)
       scrollToTop();
+    } else if (sectionId) {
+      // If we're on the home page and there's a section ID, scroll to it
+      scrollToElement(sectionId);
     }
     // For other cases, React Router will handle the navigation
 
@@ -81,9 +81,9 @@ const Header: React.FC = () => {
     );
 
     // If there's a section ID and we just navigated to this route, scroll to the section
-    if (currentRoute?.sectionId) {
+    if (currentRoute) {
       const timer = setTimeout(() => {
-        scrollToElement(currentRoute.sectionId as string);
+        handleNavClick(currentRoute.sectionId as string);
       }, 100); // Small delay to ensure the DOM is ready
 
       return () => clearTimeout(timer);
@@ -104,11 +104,8 @@ const Header: React.FC = () => {
         <SchoolIcon sx={{ mr: 1, color: "primary.main" }} />
         <Typography
           variant="h6"
-          component="button"
-          onClick={(e) => {
-            e.preventDefault();
-            handleNavClick("/", undefined);
-          }}
+          component={RouterLink}
+          to="/"
           sx={{
             color: "text.primary",
             textDecoration: "none",
@@ -129,7 +126,7 @@ const Header: React.FC = () => {
             component={RouterLink}
             to={item.path}
             key={item.path}
-            onClick={() => handleNavClick(item.path, item.sectionId)}
+            onClick={() => handleNavClick(item.sectionId)}
             sx={{
               textAlign: "center",
               "&:hover": {
@@ -220,10 +217,6 @@ const Header: React.FC = () => {
                   variant="h6"
                   component={RouterLink}
                   to="/"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick("/", undefined);
-                  }}
                   sx={{
                     mr: 2,
                     fontFamily: "Roboto",
@@ -246,7 +239,7 @@ const Header: React.FC = () => {
                       key={item.path}
                       component={RouterLink}
                       to={item.path}
-                      onClick={() => handleNavClick(item.path, item.sectionId)}
+                      onClick={() => handleNavClick(item.sectionId)}
                       color={
                         location.pathname === item.path ? "primary" : "inherit"
                       }
