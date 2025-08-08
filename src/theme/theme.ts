@@ -1,23 +1,23 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 // Define the color palette based on the design document
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2', // Deep blue - Representing professionalism and trust
+      main: "#1976d2", // Deep blue - Representing professionalism and trust
     },
     secondary: {
-      main: '#009688', // Teal - Representing growth and innovation
+      main: "#009688", // Teal - Representing growth and innovation
     },
     background: {
-      default: '#f5f5f5', // Light gray - For readability and clean appearance
-      paper: '#ffffff',
+      default: "#f5f5f5", // Light gray - For readability and clean appearance
+      paper: "#ffffff",
     },
     text: {
-      primary: '#333333', // Dark gray - For optimal readability
+      primary: "#333333", // Dark gray - For optimal readability
     },
     warning: {
-      main: '#ffc107', // Amber - For highlighting important elements
+      main: "#ffc107", // Amber - For highlighting important elements
     },
   },
   typography: {
@@ -60,14 +60,14 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          scrollBehavior: 'smooth',
+          scrollBehavior: "smooth",
         },
       },
     },
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none', // Prevent uppercase transformation
+          textTransform: "none", // Prevent uppercase transformation
           borderRadius: 8,
         },
       },
@@ -76,10 +76,10 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 12,
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-          transition: 'box-shadow 0.3s ease-in-out',
-          '&:hover': {
-            boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+          boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+          transition: "box-shadow 0.3s ease-in-out",
+          "&:hover": {
+            boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
           },
         },
       },

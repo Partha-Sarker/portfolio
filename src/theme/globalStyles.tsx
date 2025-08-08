@@ -1,6 +1,6 @@
-import { GlobalStyles as MuiGlobalStyles } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import React from 'react';
+import { GlobalStyles as MuiGlobalStyles } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import React from "react";
 
 const GlobalStyles = (): React.ReactElement => {
   const theme = useTheme();
@@ -8,49 +8,49 @@ const GlobalStyles = (): React.ReactElement => {
   return (
     <MuiGlobalStyles
       styles={{
-        '*': {
+        "*": {
           margin: 0,
           padding: 0,
-          boxSizing: 'border-box',
+          boxSizing: "border-box",
         },
         html: {
-          width: '100%',
-          height: '100%',
-          maxWidth: '100vw',
-          overflowX: 'hidden',
-          WebkitOverflowScrolling: 'touch',
-          scrollBehavior: 'smooth',
+          width: "100%",
+          height: "100%",
+          maxWidth: "100vw",
+          overflowX: "hidden",
+          WebkitOverflowScrolling: "touch",
+          scrollBehavior: "smooth",
         },
         body: {
-          width: '100%',
-          height: '100%',
-          maxWidth: '100vw',
-          overflowX: 'hidden',
+          width: "100%",
+          height: "100%",
+          maxWidth: "100vw",
+          overflowX: "hidden",
           backgroundColor: theme.palette.background.default,
         },
-        '#root': {
-          width: '100%',
-          height: '100%',
-          maxWidth: '100vw',
-          overflowX: 'hidden',
+        "#root": {
+          width: "100%",
+          height: "100%",
+          maxWidth: "100vw",
+          overflowX: "hidden",
         },
         a: {
-          textDecoration: 'none',
+          textDecoration: "none",
           color: theme.palette.primary.main,
-          '&:hover': {
-            textDecoration: 'underline',
+          "&:hover": {
+            textDecoration: "underline",
           },
         },
         img: {
-          display: 'block',
-          maxWidth: '100%',
+          display: "block",
+          maxWidth: "100%",
         },
-        '.code-block': {
+        ".code-block": {
           fontFamily: '"Fira Code", monospace',
-          backgroundColor: '#f5f5f5',
+          backgroundColor: "#f5f5f5",
           padding: theme.spacing(2),
           borderRadius: theme.spacing(1),
-          overflowX: 'auto',
+          overflowX: "auto",
         },
       }}
     />

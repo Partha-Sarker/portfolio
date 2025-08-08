@@ -9,7 +9,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  type: 'research' | 'academic' | 'personal' | 'professional';
+  type: "research" | "academic" | "personal" | "professional";
   featured: boolean;
   technologies: string[];
   tags: string[];
@@ -68,7 +68,7 @@ export interface Experience {
   company: string;
   location: string;
   startDate: string;
-  endDate: string | 'Present';
+  endDate: string | "Present";
   description: string;
   responsibilities?: string[];
   projects?: ExperienceProject[];
@@ -81,9 +81,18 @@ export interface Experience {
 export interface Skill {
   id: string;
   name: string;
-  category: 'programming' | 'frameworks' | 'cloud' | 'databases' | 'tools' | 'design' | 'research' | 'soft' | 'ml';
-  proficiency: 'beginner' | 'intermediate' | 'advanced' | 'expert';
-  relevance: 'high' | 'medium' | 'low';
+  category:
+    | "programming"
+    | "frameworks"
+    | "cloud"
+    | "databases"
+    | "tools"
+    | "design"
+    | "research"
+    | "soft"
+    | "ml";
+  proficiency: "beginner" | "intermediate" | "advanced" | "expert";
+  relevance: "high" | "medium" | "low";
   academicApplications?: string[];
   industryApplications?: string[];
 }

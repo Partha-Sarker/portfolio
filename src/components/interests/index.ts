@@ -1,1 +1,1 @@
-export { default as PersonalInterests } from './PersonalInterests';
+export { default as PersonalInterests } from "./PersonalInterests";

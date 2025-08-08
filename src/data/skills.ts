@@ -1,4 +1,4 @@
-import { Skill } from './types';
+import { Skill } from "./types";
 
 /**
  * Skills data
@@ -12,8 +12,16 @@ const skills: Skill[] = [
     category: "programming",
     proficiency: "expert",
     relevance: "high",
-    academicApplications: ["Algorithm implementation", "Desktop applications", "Data structures"],
-    industryApplications: ["Enterprise software", "Spring Boot applications", "Microservices"]
+    academicApplications: [
+      "Algorithm implementation",
+      "Desktop applications",
+      "Data structures",
+    ],
+    industryApplications: [
+      "Enterprise software",
+      "Spring Boot applications",
+      "Microservices",
+    ],
   },
   {
     id: "javascript",
@@ -22,7 +30,11 @@ const skills: Skill[] = [
     proficiency: "expert",
     relevance: "medium",
     academicApplications: ["Interactive web applications", "Research tools"],
-    industryApplications: ["Frontend development", "API integration", "Automation scripts"]
+    industryApplications: [
+      "Frontend development",
+      "API integration",
+      "Automation scripts",
+    ],
   },
   {
     id: "python",
@@ -30,8 +42,12 @@ const skills: Skill[] = [
     category: "programming",
     proficiency: "expert",
     relevance: "high",
-    academicApplications: ["Computer vision research", "Machine learning", "Document analysis"],
-    industryApplications: ["Data processing", "Automation", "Web scraping"]
+    academicApplications: [
+      "Computer vision research",
+      "Machine learning",
+      "Document analysis",
+    ],
+    industryApplications: ["Data processing", "Automation", "Web scraping"],
   },
   {
     id: "typescript",
@@ -39,8 +55,11 @@ const skills: Skill[] = [
     category: "programming",
     proficiency: "advanced",
     relevance: "medium",
-    academicApplications: ["Type-safe research applications", "Research dashboards"],
-    industryApplications: ["Large-scale applications", "Enterprise projects"]
+    academicApplications: [
+      "Type-safe research applications",
+      "Research dashboards",
+    ],
+    industryApplications: ["Large-scale applications", "Enterprise projects"],
   },
   {
     id: "csharp",
@@ -49,7 +68,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Unity game development", "Desktop tools"],
-    industryApplications: ["Client projects", "Mathematical applications"]
+    industryApplications: ["Client projects", "Mathematical applications"],
   },
   {
     id: "php",
@@ -58,7 +77,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "low",
     academicApplications: ["Web projects", "Volunteer management systems"],
-    industryApplications: ["Government systems", "Web applications"]
+    industryApplications: ["Government systems", "Web applications"],
   },
   {
     id: "sql",
@@ -67,7 +86,11 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Research data management"],
-    industryApplications: ["Database design", "Query optimization", "Performance tuning"]
+    industryApplications: [
+      "Database design",
+      "Query optimization",
+      "Performance tuning",
+    ],
   },
   {
     id: "cpp",
@@ -76,7 +99,10 @@ const skills: Skill[] = [
     proficiency: "intermediate",
     relevance: "medium",
     academicApplications: ["Computer graphics", "Algorithm implementation"],
-    industryApplications: ["System programming", "Performance-critical applications"]
+    industryApplications: [
+      "System programming",
+      "Performance-critical applications",
+    ],
   },
 
   // Frameworks & Libraries
@@ -86,8 +112,11 @@ const skills: Skill[] = [
     category: "frameworks",
     proficiency: "expert",
     relevance: "medium",
-    academicApplications: ["Research dashboards", "Interactive data visualizations"],
-    industryApplications: ["Single-page applications", "Dashboard development"]
+    academicApplications: [
+      "Research dashboards",
+      "Interactive data visualizations",
+    ],
+    industryApplications: ["Single-page applications", "Dashboard development"],
   },
   {
     id: "spring-boot",
@@ -96,7 +125,7 @@ const skills: Skill[] = [
     proficiency: "expert",
     relevance: "medium",
     academicApplications: ["Research API development"],
-    industryApplications: ["Microservices", "REST APIs", "Enterprise systems"]
+    industryApplications: ["Microservices", "REST APIs", "Enterprise systems"],
   },
   {
     id: "unity",
@@ -105,7 +134,7 @@ const skills: Skill[] = [
     proficiency: "expert",
     relevance: "medium",
     academicApplications: ["Game development", "AR applications"],
-    industryApplications: ["Client projects", "Mathematical simulations"]
+    industryApplications: ["Client projects", "Mathematical simulations"],
   },
   {
     id: "ar-development",
@@ -113,8 +142,11 @@ const skills: Skill[] = [
     category: "frameworks",
     proficiency: "intermediate",
     relevance: "medium",
-    academicApplications: ["Augmented reality applications", "Interactive experiences"],
-    industryApplications: ["AR applications", "Mobile AR"]
+    academicApplications: [
+      "Augmented reality applications",
+      "Interactive experiences",
+    ],
+    industryApplications: ["AR applications", "Mobile AR"],
   },
   {
     id: "unreal-engine",
@@ -123,7 +155,7 @@ const skills: Skill[] = [
     proficiency: "intermediate",
     relevance: "low",
     academicApplications: ["3D game development", "Realistic graphics"],
-    industryApplications: ["Game prototyping", "Interactive experiences"]
+    industryApplications: ["Game prototyping", "Interactive experiences"],
   },
   {
     id: "nextjs",
@@ -132,7 +164,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Research web applications"],
-    industryApplications: ["Server-side rendering", "Modern web applications"]
+    industryApplications: ["Server-side rendering", "Modern web applications"],
   },
   {
     id: "nodejs",
@@ -141,7 +173,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Web scraping", "Research tools"],
-    industryApplications: ["API development", "Automation tools"]
+    industryApplications: ["API development", "Automation tools"],
   },
   {
     id: "opencv",
@@ -149,8 +181,12 @@ const skills: Skill[] = [
     category: "frameworks",
     proficiency: "advanced",
     relevance: "high",
-    academicApplications: ["Document analysis", "Image segmentation", "Pattern recognition"],
-    industryApplications: ["Image recognition systems", "Video analysis"]
+    academicApplications: [
+      "Document analysis",
+      "Image segmentation",
+      "Pattern recognition",
+    ],
+    industryApplications: ["Image recognition systems", "Video analysis"],
   },
   {
     id: "laravel",
@@ -159,7 +195,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "low",
     academicApplications: ["Web development projects"],
-    industryApplications: ["Government systems", "Web applications"]
+    industryApplications: ["Government systems", "Web applications"],
   },
   {
     id: "angularjs",
@@ -168,7 +204,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "low",
     academicApplications: [],
-    industryApplications: ["Legacy system maintenance", "Web applications"]
+    industryApplications: ["Legacy system maintenance", "Web applications"],
   },
   {
     id: "material-ui",
@@ -177,7 +213,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Modern UI development", "Responsive design"],
-    industryApplications: ["React component library", "UI development"]
+    industryApplications: ["React component library", "UI development"],
   },
 
   {
@@ -187,7 +223,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "low",
     academicApplications: ["Web development", "Interactive applications"],
-    industryApplications: ["Legacy web applications", "DOM manipulation"]
+    industryApplications: ["Legacy web applications", "DOM manipulation"],
   },
   {
     id: "vexflow",
@@ -196,7 +232,7 @@ const skills: Skill[] = [
     proficiency: "intermediate",
     relevance: "low",
     academicApplications: ["Musical applications", "Notation display"],
-    industryApplications: ["Music notation rendering", "Educational tools"]
+    industryApplications: ["Music notation rendering", "Educational tools"],
   },
   {
     id: "javafx",
@@ -205,7 +241,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["GUI development", "Multimedia applications"],
-    industryApplications: ["Desktop applications", "Rich client applications"]
+    industryApplications: ["Desktop applications", "Rich client applications"],
   },
   {
     id: "opengl",
@@ -214,7 +250,7 @@ const skills: Skill[] = [
     proficiency: "intermediate",
     relevance: "medium",
     academicApplications: ["Graphics programming", "Geometric transformations"],
-    industryApplications: ["Computer graphics", "3D rendering"]
+    industryApplications: ["Computer graphics", "3D rendering"],
   },
   {
     id: "bootstrap",
@@ -223,7 +259,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "low",
     academicApplications: ["Responsive web design"],
-    industryApplications: ["CSS framework", "Rapid prototyping"]
+    industryApplications: ["CSS framework", "Rapid prototyping"],
   },
   {
     id: "beautifulsoup",
@@ -232,7 +268,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Web scraping", "Data extraction"],
-    industryApplications: ["Data mining", "Content extraction"]
+    industryApplications: ["Data mining", "Content extraction"],
   },
   {
     id: "tailwind",
@@ -241,7 +277,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Modern styling", "Responsive design"],
-    industryApplications: ["Utility-first CSS", "Rapid development"]
+    industryApplications: ["Utility-first CSS", "Rapid development"],
   },
 
   // ml Frameworks & Libraries
@@ -251,8 +287,12 @@ const skills: Skill[] = [
     category: "ml",
     proficiency: "advanced",
     relevance: "high",
-    academicApplications: ["Deep learning research", "Neural network implementation", "Computer vision"],
-    industryApplications: ["Machine learning models", "AI applications"]
+    academicApplications: [
+      "Deep learning research",
+      "Neural network implementation",
+      "Computer vision",
+    ],
+    industryApplications: ["Machine learning models", "AI applications"],
   },
   {
     id: "tensorflow",
@@ -261,7 +301,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "high",
     academicApplications: ["Machine learning research", "Deep learning models"],
-    industryApplications: ["Production ML models", "AI systems"]
+    industryApplications: ["Production ML models", "AI systems"],
   },
   {
     id: "keras",
@@ -269,8 +309,11 @@ const skills: Skill[] = [
     category: "ml",
     proficiency: "advanced",
     relevance: "high",
-    academicApplications: ["Neural network prototyping", "Deep learning experiments"],
-    industryApplications: ["Rapid ML development", "Model prototyping"]
+    academicApplications: [
+      "Neural network prototyping",
+      "Deep learning experiments",
+    ],
+    industryApplications: ["Rapid ML development", "Model prototyping"],
   },
   {
     id: "scikit-learn",
@@ -278,8 +321,12 @@ const skills: Skill[] = [
     category: "ml",
     proficiency: "expert",
     relevance: "high",
-    academicApplications: ["Machine learning algorithms", "Data analysis", "Statistical modeling"],
-    industryApplications: ["Predictive analytics", "Data science workflows"]
+    academicApplications: [
+      "Machine learning algorithms",
+      "Data analysis",
+      "Statistical modeling",
+    ],
+    industryApplications: ["Predictive analytics", "Data science workflows"],
   },
   {
     id: "numpy",
@@ -287,8 +334,12 @@ const skills: Skill[] = [
     category: "ml",
     proficiency: "expert",
     relevance: "high",
-    academicApplications: ["Numerical computing", "Scientific computing", "Data analysis"],
-    industryApplications: ["Data processing", "Mathematical computations"]
+    academicApplications: [
+      "Numerical computing",
+      "Scientific computing",
+      "Data analysis",
+    ],
+    industryApplications: ["Data processing", "Mathematical computations"],
   },
   {
     id: "pandas",
@@ -296,8 +347,12 @@ const skills: Skill[] = [
     category: "ml",
     proficiency: "expert",
     relevance: "high",
-    academicApplications: ["Data manipulation", "Statistical analysis", "Research data processing"],
-    industryApplications: ["Data analysis", "ETL processes"]
+    academicApplications: [
+      "Data manipulation",
+      "Statistical analysis",
+      "Research data processing",
+    ],
+    industryApplications: ["Data analysis", "ETL processes"],
   },
   {
     id: "matplotlib",
@@ -305,8 +360,12 @@ const skills: Skill[] = [
     category: "ml",
     proficiency: "advanced",
     relevance: "high",
-    academicApplications: ["Data visualization", "Research plots", "Statistical charts"],
-    industryApplications: ["Data visualization", "Reporting dashboards"]
+    academicApplications: [
+      "Data visualization",
+      "Research plots",
+      "Statistical charts",
+    ],
+    industryApplications: ["Data visualization", "Reporting dashboards"],
   },
 
   // Cloud & DevOps
@@ -317,7 +376,11 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Research infrastructure", "Data storage"],
-    industryApplications: ["Real-time monitoring", "Serverless computing", "Data storage"]
+    industryApplications: [
+      "Real-time monitoring",
+      "Serverless computing",
+      "Data storage",
+    ],
   },
   {
     id: "docker",
@@ -326,7 +389,10 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Reproducible research environments"],
-    industryApplications: ["Application containerization", "Deployment automation"]
+    industryApplications: [
+      "Application containerization",
+      "Deployment automation",
+    ],
   },
   {
     id: "kubernetes",
@@ -335,7 +401,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Research platform deployment"],
-    industryApplications: ["Scalable deployments", "Microservices management"]
+    industryApplications: ["Scalable deployments", "Microservices management"],
   },
   {
     id: "jenkins",
@@ -344,7 +410,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "low",
     academicApplications: [],
-    industryApplications: ["Deployment pipelines", "Automated testing"]
+    industryApplications: ["Deployment pipelines", "Automated testing"],
   },
   {
     id: "vercel",
@@ -353,7 +419,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Static site deployment"],
-    industryApplications: ["Frontend deployment", "Serverless functions"]
+    industryApplications: ["Frontend deployment", "Serverless functions"],
   },
   {
     id: "nginx",
@@ -362,7 +428,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Web server configuration"],
-    industryApplications: ["Load balancing", "Reverse proxy"]
+    industryApplications: ["Load balancing", "Reverse proxy"],
   },
   {
     id: "helm",
@@ -371,7 +437,10 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Application deployment"],
-    industryApplications: ["Kubernetes package management", "Configuration management"]
+    industryApplications: [
+      "Kubernetes package management",
+      "Configuration management",
+    ],
   },
   {
     id: "minio",
@@ -380,7 +449,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["File storage"],
-    industryApplications: ["Object storage", "Distributed systems"]
+    industryApplications: ["Object storage", "Distributed systems"],
   },
 
   // Databases
@@ -391,7 +460,11 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Research data storage"],
-    industryApplications: ["Data modeling", "Query optimization", "Performance tuning"]
+    industryApplications: [
+      "Data modeling",
+      "Query optimization",
+      "Performance tuning",
+    ],
   },
   {
     id: "mssql",
@@ -400,7 +473,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Enterprise data management"],
-    industryApplications: ["Enterprise applications", "Complex queries"]
+    industryApplications: ["Enterprise applications", "Complex queries"],
   },
   {
     id: "mysql",
@@ -409,7 +482,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Academic projects", "Web development"],
-    industryApplications: ["Web applications", "Data storage"]
+    industryApplications: ["Web applications", "Data storage"],
   },
   {
     id: "oracle",
@@ -418,7 +491,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Large-scale data management"],
-    industryApplications: ["Government systems", "Enterprise applications"]
+    industryApplications: ["Government systems", "Enterprise applications"],
   },
   {
     id: "dynamodb",
@@ -427,7 +500,11 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["NoSQL data storage", "Research data management"],
-    industryApplications: ["Real-time applications", "Serverless architectures", "Scalable NoSQL storage"]
+    industryApplications: [
+      "Real-time applications",
+      "Serverless architectures",
+      "Scalable NoSQL storage",
+    ],
   },
   {
     id: "firebase",
@@ -436,7 +513,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Mobile app development", "Real-time databases"],
-    industryApplications: ["Backend-as-a-Service", "Real-time applications"]
+    industryApplications: ["Backend-as-a-Service", "Real-time applications"],
   },
 
   // Development Tools
@@ -446,8 +523,11 @@ const skills: Skill[] = [
     category: "tools",
     proficiency: "expert",
     relevance: "high",
-    academicApplications: ["Research code versioning", "Collaborative projects"],
-    industryApplications: ["Code collaboration", "Project management"]
+    academicApplications: [
+      "Research code versioning",
+      "Collaborative projects",
+    ],
+    industryApplications: ["Code collaboration", "Project management"],
   },
   {
     id: "android-studio",
@@ -456,7 +536,7 @@ const skills: Skill[] = [
     proficiency: "expert",
     relevance: "medium",
     academicApplications: ["Android app development", "Mobile research"],
-    industryApplications: ["Mobile development", "App prototyping"]
+    industryApplications: ["Mobile development", "App prototyping"],
   },
   {
     id: "jupyter",
@@ -464,8 +544,15 @@ const skills: Skill[] = [
     category: "tools",
     proficiency: "expert",
     relevance: "high",
-    academicApplications: ["Data analysis", "Research documentation", "Algorithm prototyping"],
-    industryApplications: ["Data science workflows", "Exploratory data analysis"]
+    academicApplications: [
+      "Data analysis",
+      "Research documentation",
+      "Algorithm prototyping",
+    ],
+    industryApplications: [
+      "Data science workflows",
+      "Exploratory data analysis",
+    ],
   },
   {
     id: "mockito",
@@ -474,7 +561,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Test-driven development"],
-    industryApplications: ["Unit testing", "Java testing framework"]
+    industryApplications: ["Unit testing", "Java testing framework"],
   },
   {
     id: "jest",
@@ -483,7 +570,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Frontend testing"],
-    industryApplications: ["JavaScript testing", "Automated testing"]
+    industryApplications: ["JavaScript testing", "Automated testing"],
   },
   {
     id: "storybook",
@@ -492,7 +579,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Component documentation"],
-    industryApplications: ["UI component development", "Component testing"]
+    industryApplications: ["UI component development", "Component testing"],
   },
   {
     id: "liquibase",
@@ -501,7 +588,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Database versioning"],
-    industryApplications: ["Database schema management", "Migrations"]
+    industryApplications: ["Database schema management", "Migrations"],
   },
   {
     id: "rabbitmq",
@@ -510,7 +597,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Asynchronous processing"],
-    industryApplications: ["Message queuing", "Microservices communication"]
+    industryApplications: ["Message queuing", "Microservices communication"],
   },
   {
     id: "keycloak",
@@ -519,7 +606,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Identity management"],
-    industryApplications: ["Authentication", "Authorization", "SSO"]
+    industryApplications: ["Authentication", "Authorization", "SSO"],
   },
   {
     id: "cdk",
@@ -528,7 +615,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Infrastructure as code"],
-    industryApplications: ["AWS resource management", "Cloud infrastructure"]
+    industryApplications: ["AWS resource management", "Cloud infrastructure"],
   },
   {
     id: "bitbucket",
@@ -537,7 +624,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Code collaboration"],
-    industryApplications: ["Git repository hosting", "CI/CD"]
+    industryApplications: ["Git repository hosting", "CI/CD"],
   },
   {
     id: "jira",
@@ -546,7 +633,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Project tracking"],
-    industryApplications: ["Issue tracking", "Agile development"]
+    industryApplications: ["Issue tracking", "Agile development"],
   },
   {
     id: "launchdarkly",
@@ -555,7 +642,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "low",
     academicApplications: [],
-    industryApplications: ["Feature flag management", "A/B testing"]
+    industryApplications: ["Feature flag management", "A/B testing"],
   },
   {
     id: "preset",
@@ -564,7 +651,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Data visualization"],
-    industryApplications: ["Analytics dashboards", "Data insights"]
+    industryApplications: ["Analytics dashboards", "Data insights"],
   },
   {
     id: "churnzero",
@@ -573,7 +660,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "low",
     academicApplications: [],
-    industryApplications: ["Customer analytics", "Retention tracking"]
+    industryApplications: ["Customer analytics", "Retention tracking"],
   },
   {
     id: "claude-cli",
@@ -582,7 +669,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["AI-assisted development"],
-    industryApplications: ["Code assistance", "Development productivity"]
+    industryApplications: ["Code assistance", "Development productivity"],
   },
   {
     id: "localstack",
@@ -591,7 +678,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Local cloud development"],
-    industryApplications: ["AWS local testing", "Development environment"]
+    industryApplications: ["AWS local testing", "Development environment"],
   },
   {
     id: "windsurf",
@@ -600,7 +687,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Development environment"],
-    industryApplications: ["Code editing", "Development workflow"]
+    industryApplications: ["Code editing", "Development workflow"],
   },
   {
     id: "lens",
@@ -609,7 +696,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Kubernetes management"],
-    industryApplications: ["Kubernetes IDE", "Cluster management"]
+    industryApplications: ["Kubernetes IDE", "Cluster management"],
   },
 
   // Design & Creative Tools
@@ -620,7 +707,11 @@ const skills: Skill[] = [
     proficiency: "intermediate",
     relevance: "low",
     academicApplications: ["Research presentations", "Visual documentation"],
-    industryApplications: ["Image manipulation", "Graphic design", "Visual assets"]
+    industryApplications: [
+      "Image manipulation",
+      "Graphic design",
+      "Visual assets",
+    ],
   },
   {
     id: "blender",
@@ -629,7 +720,11 @@ const skills: Skill[] = [
     proficiency: "intermediate",
     relevance: "low",
     academicApplications: ["3D asset creation", "Animation projects"],
-    industryApplications: ["3D modeling", "Rendering", "Creative visualization"]
+    industryApplications: [
+      "3D modeling",
+      "Rendering",
+      "Creative visualization",
+    ],
   },
 
   // Research Skills
@@ -639,8 +734,12 @@ const skills: Skill[] = [
     category: "research",
     proficiency: "expert",
     relevance: "high",
-    academicApplications: ["Document analysis", "Pattern recognition", "Image segmentation"],
-    industryApplications: ["Object detection", "Image recognition systems"]
+    academicApplications: [
+      "Document analysis",
+      "Pattern recognition",
+      "Image segmentation",
+    ],
+    industryApplications: ["Object detection", "Image recognition systems"],
   },
   {
     id: "hci",
@@ -648,8 +747,15 @@ const skills: Skill[] = [
     category: "research",
     proficiency: "expert",
     relevance: "high",
-    academicApplications: ["Usability studies", "Behavioral interventions", "Educational technology"],
-    industryApplications: ["User experience design", "Accessibility implementation"]
+    academicApplications: [
+      "Usability studies",
+      "Behavioral interventions",
+      "Educational technology",
+    ],
+    industryApplications: [
+      "User experience design",
+      "Accessibility implementation",
+    ],
   },
   {
     id: "machine-learning",
@@ -657,8 +763,12 @@ const skills: Skill[] = [
     category: "research",
     proficiency: "advanced",
     relevance: "high",
-    academicApplications: ["Pattern recognition", "Predictive modeling", "Data classification"],
-    industryApplications: ["Recommendation systems", "Predictive analytics"]
+    academicApplications: [
+      "Pattern recognition",
+      "Predictive modeling",
+      "Data classification",
+    ],
+    industryApplications: ["Recommendation systems", "Predictive analytics"],
   },
   {
     id: "data-analysis",
@@ -666,8 +776,12 @@ const skills: Skill[] = [
     category: "research",
     proficiency: "advanced",
     relevance: "high",
-    academicApplications: ["Research data processing", "Statistical analysis", "Results interpretation"],
-    industryApplications: ["Performance analytics", "Business intelligence"]
+    academicApplications: [
+      "Research data processing",
+      "Statistical analysis",
+      "Results interpretation",
+    ],
+    industryApplications: ["Performance analytics", "Business intelligence"],
   },
 
   {
@@ -676,8 +790,11 @@ const skills: Skill[] = [
     category: "research",
     proficiency: "advanced",
     relevance: "high",
-    academicApplications: ["Handwritten text recognition", "Document segmentation"],
-    industryApplications: ["Digital archiving", "Automated processing"]
+    academicApplications: [
+      "Handwritten text recognition",
+      "Document segmentation",
+    ],
+    industryApplications: ["Digital archiving", "Automated processing"],
   },
 
   // Mathematical & Research Skills (moved from specialized)
@@ -688,10 +805,8 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "high",
     academicApplications: ["Data interpretation", "Research methodology"],
-    industryApplications: ["Data modeling", "Business analytics"]
+    industryApplications: ["Data modeling", "Business analytics"],
   },
-
-
 
   // Cloud Architecture Skills (moved from specialized)
   {
@@ -701,7 +816,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Distributed system design"],
-    industryApplications: ["System architecture", "Scalable applications"]
+    industryApplications: ["System architecture", "Scalable applications"],
   },
 
   // Database Skills (moved from specialized)
@@ -712,7 +827,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Query performance"],
-    industryApplications: ["Performance tuning", "Indexing strategies"]
+    industryApplications: ["Performance tuning", "Indexing strategies"],
   },
 
   // Development Tools (moved from specialized)
@@ -723,7 +838,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Single sign-on systems"],
-    industryApplications: ["Authentication", "Security implementation"]
+    industryApplications: ["Authentication", "Security implementation"],
   },
 
   // Soft Skills
@@ -734,7 +849,7 @@ const skills: Skill[] = [
     proficiency: "expert",
     relevance: "high",
     academicApplications: ["Research methodology", "Algorithm design"],
-    industryApplications: ["System optimization", "Performance improvements"]
+    industryApplications: ["System optimization", "Performance improvements"],
   },
   {
     id: "communication",
@@ -743,7 +858,7 @@ const skills: Skill[] = [
     proficiency: "expert",
     relevance: "high",
     academicApplications: ["Research presentations", "Technical documentation"],
-    industryApplications: ["Team collaboration", "Stakeholder communication"]
+    industryApplications: ["Team collaboration", "Stakeholder communication"],
   },
   {
     id: "project-management",
@@ -752,7 +867,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Research project coordination"],
-    industryApplications: ["Feature delivery", "Timeline management"]
+    industryApplications: ["Feature delivery", "Timeline management"],
   },
   {
     id: "teamwork",
@@ -761,7 +876,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Group projects", "Research collaboration"],
-    industryApplications: ["Agile teams", "Cross-functional collaboration"]
+    industryApplications: ["Agile teams", "Cross-functional collaboration"],
   },
   {
     id: "learning-agility",
@@ -770,7 +885,7 @@ const skills: Skill[] = [
     proficiency: "expert",
     relevance: "high",
     academicApplications: ["Research methodology", "New domain exploration"],
-    industryApplications: ["Technology adoption", "Skill enhancement"]
+    industryApplications: ["Technology adoption", "Skill enhancement"],
   },
 
   // Additional Skills from CV
@@ -780,8 +895,11 @@ const skills: Skill[] = [
     category: "frameworks",
     proficiency: "advanced",
     relevance: "medium",
-    academicApplications: ["Augmented reality research", "Mobile AR applications"],
-    industryApplications: ["AR mobile development", "Interactive experiences"]
+    academicApplications: [
+      "Augmented reality research",
+      "Mobile AR applications",
+    ],
+    industryApplications: ["AR mobile development", "Interactive experiences"],
   },
   {
     id: "sqs",
@@ -790,7 +908,7 @@ const skills: Skill[] = [
     proficiency: "advanced",
     relevance: "medium",
     academicApplications: ["Distributed system messaging"],
-    industryApplications: ["Message queuing", "Asynchronous processing"]
+    industryApplications: ["Message queuing", "Asynchronous processing"],
   },
   {
     id: "teaching",
@@ -798,9 +916,17 @@ const skills: Skill[] = [
     category: "soft",
     proficiency: "advanced",
     relevance: "high",
-    academicApplications: ["Guest lecturing", "Academic instruction", "Knowledge transfer"],
-    industryApplications: ["Team mentoring", "Training delivery", "Knowledge sharing"]
-  }
+    academicApplications: [
+      "Guest lecturing",
+      "Academic instruction",
+      "Knowledge transfer",
+    ],
+    industryApplications: [
+      "Team mentoring",
+      "Training delivery",
+      "Knowledge sharing",
+    ],
+  },
 ];
 
 export default skills;

@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import { Box, Container, Typography, useTheme } from '@mui/material';
+import React, { ReactNode } from "react";
+import { Box, Container, Typography, useTheme } from "@mui/material";
 
 interface SectionProps {
   id: string;
@@ -33,22 +33,27 @@ const Section: React.FC<SectionProps> = ({
       id={id}
       component="section"
       sx={{
-        backgroundColor: backgroundColor || 'transparent',
-        pt: typeof paddingY === 'object' ?
-          { xs: paddingY.xs ? paddingY.xs * 0.7 : 2.8, sm: paddingY.sm ? paddingY.sm * 0.7 : 3.5, md: paddingY.md ? paddingY.md * 0.7 : 4.2 } :
-          paddingY * 0.7,
+        backgroundColor: backgroundColor || "transparent",
+        pt:
+          typeof paddingY === "object"
+            ? {
+                xs: paddingY.xs ? paddingY.xs * 0.7 : 2.8,
+                sm: paddingY.sm ? paddingY.sm * 0.7 : 3.5,
+                md: paddingY.md ? paddingY.md * 0.7 : 4.2,
+              }
+            : paddingY * 0.7,
         pb: 0,
         minHeight: minHeight,
-        scrollMarginTop: '64px', // Offset for fixed header
+        scrollMarginTop: "64px", // Offset for fixed header
         borderRadius: 4,
-        width: '100%',
-        maxWidth: '100vw',
-        overflowX: 'hidden',
+        width: "100%",
+        maxWidth: "100vw",
+        overflowX: "hidden",
       }}
     >
-      <Container maxWidth={fullWidth ? false : 'lg'} disableGutters={fullWidth}>
+      <Container maxWidth={fullWidth ? false : "lg"} disableGutters={fullWidth}>
         {(title || subtitle) && (
-          <Box sx={{ mb: 4, textAlign: 'center' }}>
+          <Box sx={{ mb: 4, textAlign: "center" }}>
             {title && (
               <Typography
                 variant="h2"
@@ -56,19 +61,19 @@ const Section: React.FC<SectionProps> = ({
                 gutterBottom
                 sx={{
                   fontWeight: 700,
-                  fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
-                  position: 'relative',
-                  display: 'inline-block',
+                  fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
+                  position: "relative",
+                  display: "inline-block",
                   mb: 2,
-                  '&::after': {
+                  "&::after": {
                     content: '""',
-                    position: 'absolute',
+                    position: "absolute",
                     bottom: -8,
-                    left: '50%',
-                    width: '80px',
-                    height: '4px',
+                    left: "50%",
+                    width: "80px",
+                    height: "4px",
                     backgroundColor: theme.palette.primary.main,
-                    transform: 'translateX(-50%)',
+                    transform: "translateX(-50%)",
                   },
                 }}
               >
@@ -81,9 +86,9 @@ const Section: React.FC<SectionProps> = ({
                 component="p"
                 color="text.secondary"
                 sx={{
-                  maxWidth: '800px',
-                  mx: 'auto',
-                  fontSize: { xs: '1rem', sm: '1.25rem' },
+                  maxWidth: "800px",
+                  mx: "auto",
+                  fontSize: { xs: "1rem", sm: "1.25rem" },
                 }}
               >
                 {subtitle}

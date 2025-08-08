@@ -1,16 +1,16 @@
-import React, { Suspense } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import { Box, CircularProgress } from '@mui/material';
-import routes from './routes';
+import React, { Suspense } from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Box, CircularProgress } from "@mui/material";
+import routes from "./routes";
 
 // Loading component for suspense fallback
 const LoadingScreen = () => (
   <Box
     sx={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100vh",
     }}
   >
     <CircularProgress />

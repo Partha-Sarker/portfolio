@@ -1,19 +1,19 @@
-import { Typography, useTheme, Grid } from '@mui/material';
-import Layout from './components/layout/Layout';
-import Section from './components/layout/Section';
-import SectionContainer from './components/layout/SectionContainer';
-import AcademicProfile from './components/academic/AcademicProfile';
-import Education from './components/academic/Education';
-import AcademicAchievements from './components/academic/AcademicAchievements';
-import Hero from './components/academic/Hero';
-import { Experience } from './components/experience';
-import { Skills } from './components/skills';
-import { PersonalInterests } from './components/interests';
-import { education } from './data';
-import projects from './data/projects';
-import { getAssetPath } from './utils/assetUtils';
-import ProjectsSection from './components/projects/ProjectsSection';
-import './App.css';
+import { Typography, useTheme, Grid } from "@mui/material";
+import Layout from "./components/layout/Layout";
+import Section from "./components/layout/Section";
+import SectionContainer from "./components/layout/SectionContainer";
+import AcademicProfile from "./components/academic/AcademicProfile";
+import Education from "./components/academic/Education";
+import AcademicAchievements from "./components/academic/AcademicAchievements";
+import Hero from "./components/academic/Hero";
+import { Experience } from "./components/experience";
+import { Skills } from "./components/skills";
+import { PersonalInterests } from "./components/interests";
+import { education } from "./data";
+import projects from "./data/projects";
+import { getAssetPath } from "./utils/assetUtils";
+import ProjectsSection from "./components/projects/ProjectsSection";
+import "./App.css";
 
 function App() {
   const theme = useTheme();
@@ -21,12 +21,7 @@ function App() {
   return (
     <Layout>
       {/* Hero Section */}
-      <Section
-        id="hero"
-        minHeight="90vh"
-        paddingY={0}
-        fullWidth
-      >
+      <Section id="hero" minHeight="90vh" paddingY={0} fullWidth>
         <Hero
           name="Partha Sarker"
           title="Research-Focused Software Engineer"
@@ -35,10 +30,10 @@ function App() {
             "Computer Vision",
             "Artificial Intelligence",
             "AR/VR Development",
-            "Machine Learning"
+            "Machine Learning",
           ]}
-          profilePhoto={getAssetPath('/profile_photo.png')}
-          cvUrl={getAssetPath('/Academic_CV.pdf')}
+          profilePhoto={getAssetPath("/profile_photo.png")}
+          cvUrl={getAssetPath("/Academic_CV.pdf")}
         />
       </Section>
 
@@ -106,8 +101,6 @@ function App() {
           <PersonalInterests />
         </SectionContainer>
       </Section>
-
-
     </Layout>
   );
 }

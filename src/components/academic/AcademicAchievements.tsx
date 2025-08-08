@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   Typography,
@@ -9,24 +9,29 @@ import {
   useTheme,
   Avatar,
   Button,
-  Link
-} from '@mui/material';
-import { getAssetPath } from '../../utils/assetUtils';
+  Link,
+} from "@mui/material";
+import { getAssetPath } from "../../utils/assetUtils";
 import {
   EmojiEvents as EmojiEventsIcon,
   School as SchoolIcon,
   Star as StarIcon,
   Bookmark as BookmarkIcon,
   GitHub as GitHubIcon,
-  Psychology as PsychologyIcon
-} from '@mui/icons-material';
+  Psychology as PsychologyIcon,
+} from "@mui/icons-material";
 
 interface Achievement {
   id: string;
   title: string;
   description: string;
   date: string;
-  category: 'award' | 'scholarship' | 'recognition' | 'problem-solving' | 'publication';
+  category:
+    | "award"
+    | "scholarship"
+    | "recognition"
+    | "problem-solving"
+    | "publication";
   icon: React.ReactNode;
   url?: string;
   links?: Array<{
@@ -46,90 +51,106 @@ const AcademicAchievements: React.FC = () => {
   // Sample achievements data
   const achievements: Achievement[] = [
     {
-      id: 'ielts',
-      title: 'IELTS Score: 7.5',
-      description: 'Achieved a high score in the International English Language Testing System, demonstrating advanced English language proficiency. Breakdown: Listening: 8.0, Reading: 8.0, Speaking: 6.5, Writing: 6.5.',
-      date: 'July 2025',
-      category: 'recognition',
-      icon: <StarIcon />
+      id: "ielts",
+      title: "IELTS Score: 7.5",
+      description:
+        "Achieved a high score in the International English Language Testing System, demonstrating advanced English language proficiency. Breakdown: Listening: 8.0, Reading: 8.0, Speaking: 6.5, Writing: 6.5.",
+      date: "July 2025",
+      category: "recognition",
+      icon: <StarIcon />,
     },
     {
-      id: 'gre',
-      title: 'GRE Score: 309 (Quant 162)',
-      description: 'Attained a competitive score in the Graduate Record Examination, with particularly strong performance in the Quantitative section.',
-      date: 'April 2025',
-      category: 'recognition',
-      icon: <StarIcon />
+      id: "gre",
+      title: "GRE Score: 309 (Quant 162)",
+      description:
+        "Attained a competitive score in the Graduate Record Examination, with particularly strong performance in the Quantitative section.",
+      date: "April 2025",
+      category: "recognition",
+      icon: <StarIcon />,
     },
     {
-      id: 'hackathon',
-      title: '2nd Runner-up at LICT SUST Techfest Hackathon',
-      description: 'Developed "ECHO" - a language conversion app that translates between text, speech, and American Sign Language to help disabled people communicate. Built within 40 hours at the national hackathon for undergraduates.',
-      date: '2019',
-      category: 'award',
+      id: "hackathon",
+      title: "2nd Runner-up at LICT SUST Techfest Hackathon",
+      description:
+        'Developed "ECHO" - a language conversion app that translates between text, speech, and American Sign Language to help disabled people communicate. Built within 40 hours at the national hackathon for undergraduates.',
+      date: "2019",
+      category: "award",
       icon: <EmojiEventsIcon />,
-      url: 'https://github.com/Boorhan/Echo-Sign-Language-Interpreter'
+      url: "https://github.com/Boorhan/Echo-Sign-Language-Interpreter",
     },
     {
-      id: 'scholarship',
-      title: 'Merit-based Scholarship Recipient',
-      description: 'Awarded one-time scholarship for academic excellence.',
-      date: '2017 - 2021',
-      category: 'scholarship',
-      icon: <SchoolIcon />
+      id: "scholarship",
+      title: "Merit-based Scholarship Recipient",
+      description: "Awarded one-time scholarship for academic excellence.",
+      date: "2017 - 2021",
+      category: "scholarship",
+      icon: <SchoolIcon />,
     },
     {
-      id: 'problem-solving',
-      title: 'Competitive Programming',
-      description: 'Solved over 500 problems on various online judges including LeetCode and other competitive programming platforms, demonstrating strong algorithmic thinking and problem-solving skills.',
-      date: 'Ongoing',
-      category: 'problem-solving',
+      id: "problem-solving",
+      title: "Competitive Programming",
+      description:
+        "Solved over 500 problems on various online judges including LeetCode and other competitive programming platforms, demonstrating strong algorithmic thinking and problem-solving skills.",
+      date: "Ongoing",
+      category: "problem-solving",
       icon: <StarIcon />,
       links: [
         {
-          name: 'StopStalk',
-          url: 'https://www.stopstalk.com/user/profile/Partha',
-          logo: '/StopStalk.png'
+          name: "StopStalk",
+          url: "https://www.stopstalk.com/user/profile/Partha",
+          logo: "/StopStalk.png",
         },
         {
-          name: 'LeetCode',
-          url: 'https://leetcode.com/parthasarker3',
-          logo: '/LeetCode.png'
-        }
-      ]
-    }
+          name: "LeetCode",
+          url: "https://leetcode.com/parthasarker3",
+          logo: "/LeetCode.png",
+        },
+      ],
+    },
   ];
 
   // Group achievements by category
   const groupedAchievements = {
-    award: achievements.filter(a => a.category === 'award'),
-    scholarship: achievements.filter(a => a.category === 'scholarship'),
-    recognition: achievements.filter(a => a.category === 'recognition'),
-    'problem-solving': achievements.filter(a => a.category === 'problem-solving'),
-    publication: achievements.filter(a => a.category === 'publication')
+    award: achievements.filter((a) => a.category === "award"),
+    scholarship: achievements.filter((a) => a.category === "scholarship"),
+    recognition: achievements.filter((a) => a.category === "recognition"),
+    "problem-solving": achievements.filter(
+      (a) => a.category === "problem-solving",
+    ),
+    publication: achievements.filter((a) => a.category === "publication"),
   };
 
   return (
     <Box sx={{ mb: 6 }}>
-      <Typography variant="h4" component="h2" gutterBottom fontWeight={700} sx={{ mb: 4 }}>
+      <Typography
+        variant="h4"
+        component="h2"
+        gutterBottom
+        fontWeight={700}
+        sx={{ mb: 4 }}
+      >
         Academic Achievements
       </Typography>
 
-
-
       {/* Achievement Categories */}
-      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 3 }}>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+          gap: 3,
+        }}
+      >
         {/* Awards */}
         {groupedAchievements.award.length > 0 && (
           <Card elevation={1} sx={{ borderRadius: 2 }}>
             <CardContent sx={{ p: 3 }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                 <Avatar
                   sx={{
                     bgcolor: theme.palette.warning.main,
                     width: 40,
                     height: 40,
-                    mr: 2
+                    mr: 2,
                   }}
                 >
                   <EmojiEventsIcon />
@@ -145,10 +166,18 @@ const AcademicAchievements: React.FC = () => {
                   <Typography variant="subtitle1" fontWeight={500}>
                     {achievement.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ mb: 1 }}
+                  >
                     {achievement.description}
                   </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ mb: 1, display: 'block' }}>
+                  <Typography
+                    variant="caption"
+                    color="text.secondary"
+                    sx={{ mb: 1, display: "block" }}
+                  >
                     {achievement.date}
                   </Typography>
                   {achievement.url && (
@@ -160,7 +189,7 @@ const AcademicAchievements: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       startIcon={<GitHubIcon />}
-                      sx={{ fontSize: '0.75rem', mt: 1 }}
+                      sx={{ fontSize: "0.75rem", mt: 1 }}
                     >
                       View Project
                     </Button>
@@ -175,13 +204,13 @@ const AcademicAchievements: React.FC = () => {
         {groupedAchievements.scholarship.length > 0 && (
           <Card elevation={1} sx={{ borderRadius: 2 }}>
             <CardContent sx={{ p: 3 }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                 <Avatar
                   sx={{
                     bgcolor: theme.palette.primary.main,
                     width: 40,
                     height: 40,
-                    mr: 2
+                    mr: 2,
                   }}
                 >
                   <SchoolIcon />
@@ -197,7 +226,11 @@ const AcademicAchievements: React.FC = () => {
                   <Typography variant="subtitle1" fontWeight={500}>
                     {achievement.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ mb: 1 }}
+                  >
                     {achievement.description}
                   </Typography>
                   <Typography variant="caption" color="text.secondary">
@@ -213,13 +246,13 @@ const AcademicAchievements: React.FC = () => {
         {groupedAchievements.recognition.length > 0 && (
           <Card elevation={1} sx={{ borderRadius: 2 }}>
             <CardContent sx={{ p: 3 }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                 <Avatar
                   sx={{
                     bgcolor: theme.palette.secondary.main,
                     width: 40,
                     height: 40,
-                    mr: 2
+                    mr: 2,
                   }}
                 >
                   <StarIcon />
@@ -235,7 +268,11 @@ const AcademicAchievements: React.FC = () => {
                   <Typography variant="subtitle1" fontWeight={500}>
                     {achievement.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ mb: 1 }}
+                  >
                     {achievement.description}
                   </Typography>
                   <Typography variant="caption" color="text.secondary">
@@ -248,16 +285,16 @@ const AcademicAchievements: React.FC = () => {
         )}
 
         {/* Problem Solving */}
-        {groupedAchievements['problem-solving'].length > 0 && (
+        {groupedAchievements["problem-solving"].length > 0 && (
           <Card elevation={1} sx={{ borderRadius: 2 }}>
             <CardContent sx={{ p: 3 }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                 <Avatar
                   sx={{
                     bgcolor: theme.palette.success.main,
                     width: 40,
                     height: 40,
-                    mr: 2
+                    mr: 2,
                   }}
                 >
                   <PsychologyIcon />
@@ -268,21 +305,31 @@ const AcademicAchievements: React.FC = () => {
               </Box>
               <Divider sx={{ mb: 2 }} />
 
-              {groupedAchievements['problem-solving'].map((achievement) => (
+              {groupedAchievements["problem-solving"].map((achievement) => (
                 <Box key={achievement.id} sx={{ mb: 2 }}>
                   <Typography variant="subtitle1" fontWeight={500}>
                     {achievement.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ mb: 1 }}
+                  >
                     {achievement.description}
                   </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ mb: 1, display: 'block' }}>
+                  <Typography
+                    variant="caption"
+                    color="text.secondary"
+                    sx={{ mb: 1, display: "block" }}
+                  >
                     {achievement.date}
                   </Typography>
 
                   {/* Multiple Links with Logos */}
                   {achievement.links && (
-                    <Box sx={{ display: 'flex', gap: 1, mt: 1, flexWrap: 'wrap' }}>
+                    <Box
+                      sx={{ display: "flex", gap: 1, mt: 1, flexWrap: "wrap" }}
+                    >
                       {achievement.links.map((link, index) => (
                         <Button
                           key={index}
@@ -300,13 +347,13 @@ const AcademicAchievements: React.FC = () => {
                               sx={{
                                 width: 16,
                                 height: 16,
-                                objectFit: 'contain'
+                                objectFit: "contain",
                               }}
                             />
                           }
                           sx={{
-                            fontSize: '0.75rem',
-                            textTransform: 'none'
+                            fontSize: "0.75rem",
+                            textTransform: "none",
                           }}
                         >
                           {link.name}
@@ -325,7 +372,7 @@ const AcademicAchievements: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       startIcon={<GitHubIcon />}
-                      sx={{ fontSize: '0.75rem', mt: 1 }}
+                      sx={{ fontSize: "0.75rem", mt: 1 }}
                     >
                       View Profile
                     </Button>
@@ -340,13 +387,13 @@ const AcademicAchievements: React.FC = () => {
         {groupedAchievements.publication.length > 0 && (
           <Card elevation={1} sx={{ borderRadius: 2 }}>
             <CardContent sx={{ p: 3 }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                 <Avatar
                   sx={{
                     bgcolor: theme.palette.info.main,
                     width: 40,
                     height: 40,
-                    mr: 2
+                    mr: 2,
                   }}
                 >
                   <BookmarkIcon />
@@ -362,7 +409,11 @@ const AcademicAchievements: React.FC = () => {
                   <Typography variant="subtitle1" fontWeight={500}>
                     {achievement.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ mb: 1 }}
+                  >
                     {achievement.description}
                   </Typography>
                   <Typography variant="caption" color="text.secondary">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   Container,
@@ -8,8 +8,8 @@ import {
   IconButton,
   Divider,
   Button,
-  useMediaQuery
-} from '@mui/material';
+  useMediaQuery,
+} from "@mui/material";
 import {
   Email as EmailIcon,
   GitHub as GitHubIcon,
@@ -19,14 +19,14 @@ import {
   Description as DescriptionIcon,
   Code as CodeIcon,
   Phone as PhoneIcon,
-  LocationOn as LocationOnIcon
-} from '@mui/icons-material';
-import { Link as RouterLink } from 'react-router-dom';
-import { useTheme } from '@mui/material/styles';
+  LocationOn as LocationOnIcon,
+} from "@mui/icons-material";
+import { Link as RouterLink } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
 
 const Footer: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <Box
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
       sx={{
         py: 6,
         px: 2,
-        mt: 'auto',
+        mt: "auto",
         backgroundColor: theme.palette.grey[100],
         borderTop: `1px solid ${theme.palette.divider}`,
       }}
@@ -46,20 +46,24 @@ const Footer: React.FC = () => {
             <Typography variant="h6" color="text.primary" gutterBottom>
               Contact
             </Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-              <EmailIcon sx={{ mr: 1, fontSize: '1rem' }} />
-              <Link href="mailto:parthasarker3@gmail.com" color="inherit" underline="hover">
+            <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+              <EmailIcon sx={{ mr: 1, fontSize: "1rem" }} />
+              <Link
+                href="mailto:parthasarker3@gmail.com"
+                color="inherit"
+                underline="hover"
+              >
                 parthasarker3@gmail.com
               </Link>
             </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-              <LocationOnIcon sx={{ mr: 1, fontSize: '1rem' }} />
+            <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+              <LocationOnIcon sx={{ mr: 1, fontSize: "1rem" }} />
               <Typography variant="body2" color="text.secondary">
                 Dhaka, Bangladesh
               </Typography>
             </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-              <PhoneIcon sx={{ mr: 1, fontSize: '1rem' }} />
+            <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+              <PhoneIcon sx={{ mr: 1, fontSize: "1rem" }} />
               <Typography variant="body2" color="text.secondary">
                 +8801521428057
               </Typography>
@@ -94,7 +98,12 @@ const Footer: React.FC = () => {
         <Divider sx={{ my: 3 }} />
 
         {/* Copyright */}
-        <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 3 }}>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          align="center"
+          sx={{ mt: 3 }}
+        >
           © {new Date().getFullYear()} Academic Portfolio. All rights reserved.
         </Typography>
       </Container>

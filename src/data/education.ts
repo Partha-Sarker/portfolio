@@ -1,5 +1,5 @@
-import { Education } from './types';
-import { getAssetPath } from '../utils/assetUtils';
+import { Education } from "./types";
+import { getAssetPath } from "../utils/assetUtils";
 
 /**
  * Education data
@@ -23,19 +23,20 @@ const education: Education[] = [
       "Database Systems",
       "Software Engineering",
       "Artificial Intelligence",
-      "Computer Networks"
+      "Computer Networks",
     ],
     achievements: [
       "National Hackathon: 2nd Runner-up (LICT SUST Techfest 2019)",
       "Merit-based Scholarship for Academic Excellence (Top 10%)",
       "Competitive Programming: 500+ problems solved on various online judges",
-      "Problem Solving (Basic) Certificate - HackerRank"
+      "Problem Solving (Basic) Certificate - HackerRank",
     ],
     thesis: {
       title: "A Notification Based Nudge for Handling Excessive Smartphone Use",
-      description: "Research on reducing excessive smartphone usage through notification-based interventions that increase self-awareness without causing annoyance. Developed 'App Usage Monitor' that reduced smartphone usage by over 6% through subtle nudges and visualization techniques. Advisor: Marium-E-Jannat",
-      url: "https://arxiv.org/abs/2507.14702"
-    }
+      description:
+        "Research on reducing excessive smartphone usage through notification-based interventions that increase self-awareness without causing annoyance. Developed 'App Usage Monitor' that reduced smartphone usage by over 6% through subtle nudges and visualization techniques. Advisor: Marium-E-Jannat",
+      url: "https://arxiv.org/abs/2507.14702",
+    },
   },
   {
     id: "ielts",
@@ -47,8 +48,8 @@ const education: Education[] = [
     achievements: [
       "Overall Score: 7.5",
       "Listening: 8.0, Reading: 8.0",
-      "Speaking: 6.5, Writing: 6.5"
-    ]
+      "Speaking: 6.5, Writing: 6.5",
+    ],
   },
   {
     id: "certification1",
@@ -58,9 +59,7 @@ const education: Education[] = [
     location: "Online",
     date: "Jun 2020",
     url: "https://coursera.org/share/839242a113dfd489b53d758a5fe05c10",
-    achievements: [
-      "Grade Achieved: 100%"
-    ]
+    achievements: ["Grade Achieved: 100%"],
   },
   {
     id: "certification2",
@@ -70,9 +69,7 @@ const education: Education[] = [
     location: "Online",
     date: "May 2020",
     url: "https://coursera.org/share/f317760aa866779d8c4c4c8d981ec749",
-    achievements: [
-      "Grade Achieved: 100%"
-    ]
+    achievements: ["Grade Achieved: 100%"],
   },
   {
     id: "certification3",
@@ -82,9 +79,7 @@ const education: Education[] = [
     location: "Online",
     date: "Mar 2021",
     url: "https://www.hackerrank.com/certificates/f3603db7b2b1",
-    achievements: [
-      "Covers Data Structures and Algorithms"
-    ]
+    achievements: ["Covers Data Structures and Algorithms"],
   },
   {
     id: "higher-secondary",
@@ -98,8 +93,8 @@ const education: Education[] = [
     achievements: [
       "Perfect GPA Score",
       "General Scholarship for Academic Excellence",
-      "Science Group"
-    ]
+      "Science Group",
+    ],
   },
   {
     id: "secondary",
@@ -110,11 +105,8 @@ const education: Education[] = [
     startDate: "2012",
     endDate: "2014",
     gpa: "5.00/5.00",
-    achievements: [
-      "Perfect GPA Score",
-      "Science Group"
-    ]
-  }
+    achievements: ["Perfect GPA Score", "Science Group"],
+  },
 ];
 
 export default education;

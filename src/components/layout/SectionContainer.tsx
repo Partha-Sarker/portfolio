@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import { Box, Grid, Paper } from '@mui/material';
+import React, { ReactNode } from "react";
+import { Box, Grid, Paper } from "@mui/material";
 
 interface SectionContainerProps {
   children: ReactNode;
@@ -7,7 +7,7 @@ interface SectionContainerProps {
   spacing?: number;
   padding?: number | { xs?: number; sm?: number; md?: number; lg?: number };
   backgroundColor?: string;
-  variant?: 'default' | 'outlined' | 'elevation';
+  variant?: "default" | "outlined" | "elevation";
 }
 
 /**
@@ -19,20 +19,20 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   elevation = 0,
   spacing = 3,
   padding = { xs: 2, sm: 3, md: 4 },
-  backgroundColor = 'background.paper',
-  variant = 'default',
+  backgroundColor = "background.paper",
+  variant = "default",
 }) => {
   // For default variant, just use a Box
-  if (variant === 'default') {
+  if (variant === "default") {
     return (
       <Box
         sx={{
-          width: '100%',
-          maxWidth: '100%',
+          width: "100%",
+          maxWidth: "100%",
           p: padding,
           backgroundColor,
-          boxSizing: 'border-box',
-          overflowX: 'hidden',
+          boxSizing: "border-box",
+          overflowX: "hidden",
         }}
       >
         <Grid container spacing={spacing}>
@@ -45,16 +45,16 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
   // For outlined or elevation variants, use Paper
   return (
     <Paper
-      elevation={variant === 'elevation' ? elevation : 0}
-      variant={variant === 'outlined' ? 'outlined' : undefined}
+      elevation={variant === "elevation" ? elevation : 0}
+      variant={variant === "outlined" ? "outlined" : undefined}
       sx={{
-        width: '100%',
-        maxWidth: '100%',
+        width: "100%",
+        maxWidth: "100%",
         p: padding,
         backgroundColor,
         borderRadius: 2,
-        boxSizing: 'border-box',
-        overflowX: 'hidden',
+        boxSizing: "border-box",
+        overflowX: "hidden",
       }}
     >
       <Grid container spacing={spacing}>
