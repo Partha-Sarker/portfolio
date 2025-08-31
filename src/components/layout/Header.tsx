@@ -29,19 +29,6 @@ interface Props {
   children: React.ReactElement;
 }
 
-// Component to hide the header on scroll down
-function HideOnScroll({ children }: Props) {
-  const trigger = useScrollTrigger({
-    target: document?.getElementById("root"),
-  });
-
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
-
 const Header: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
@@ -83,11 +70,11 @@ const Header: React.FC = () => {
     if (currentRoute) {
       const timer = setTimeout(() => {
         handleNavClick(currentRoute.sectionId as string);
-      }, 100); // Small delay to ensure the DOM is ready
+      }, 500); // Small delay to ensure the DOM is ready
 
       return () => clearTimeout(timer);
     }
-  }, [location.pathname]);
+  }, []);
 
   // Mobile drawer content
   const drawer = (
@@ -184,106 +171,104 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <HideOnScroll>
-        <AppBar
-          position="fixed"
-          color="default"
-          elevation={0}
-          sx={{
-            backgroundColor: "rgba(255, 255, 255, 0.95)",
-            borderBottom: "1px solid",
-            borderColor: "divider",
-            backdropFilter: "blur(8px)",
-          }}
-        >
-          <Container maxWidth="lg">
-            <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-              {/* Logo and Brand */}
-              <Box
+      <AppBar
+        position="fixed"
+        color="default"
+        elevation={0}
+        sx={{
+          backgroundColor: "rgba(255, 255, 255, 0.95)",
+          borderBottom: "1px solid",
+          borderColor: "divider",
+          backdropFilter: "blur(8px)",
+        }}
+      >
+        <Container maxWidth="lg">
+          <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
+            {/* Logo and Brand */}
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <SchoolIcon
                 sx={{
-                  display: "flex",
-                  alignItems: "center",
+                  mr: 1,
+                  color: "primary.main",
+                  fontSize: { xs: 24, sm: 28, md: 32 },
+                }}
+              />
+              <Typography
+                variant="h6"
+                component={RouterLink}
+                to="/"
+                sx={{
+                  mr: 2,
+                  fontFamily: "Roboto",
+                  fontWeight: 700,
+                  color: "text.primary",
+                  textDecoration: "none",
+                  fontSize: { xs: "1rem", sm: "1.25rem" },
+                  cursor: "pointer",
                 }}
               >
-                <SchoolIcon
-                  sx={{
-                    mr: 1,
-                    color: "primary.main",
-                    fontSize: { xs: 24, sm: 28, md: 32 },
-                  }}
-                />
-                <Typography
-                  variant="h6"
-                  component={RouterLink}
-                  to="/"
-                  sx={{
-                    mr: 2,
-                    fontFamily: "Roboto",
-                    fontWeight: 700,
-                    color: "text.primary",
-                    textDecoration: "none",
-                    fontSize: { xs: "1rem", sm: "1.25rem" },
-                    cursor: "pointer",
-                  }}
-                >
-                  Academic Portfolio
-                </Typography>
-              </Box>
+                Academic Portfolio
+              </Typography>
+            </Box>
 
-              {/* Desktop/Tablet Navigation */}
-              {!isMobile && (
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  {navItems.map((item) => (
-                    <Button
-                      key={item.path}
-                      component={RouterLink}
-                      to={item.path}
-                      onClick={() => handleNavClick(item.sectionId)}
-                      color={
-                        location.pathname === item.path ? "primary" : "inherit"
-                      }
-                      sx={{
-                        mx: { sm: 0.5, md: 1 },
-                        fontSize: { sm: "0.875rem", md: "1rem" },
-                        fontWeight: location.pathname === item.path ? 700 : 500,
-                      }}
-                    >
-                      {item.label}
-                    </Button>
-                  ))}
+            {/* Desktop/Tablet Navigation */}
+            {!isMobile && (
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                {navItems.map((item) => (
                   <Button
-                    variant="outlined"
-                    color="primary"
-                    component="a"
-                    href={getAssetPath("/Academic_CV.pdf")}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    key={item.path}
+                    component={RouterLink}
+                    to={item.path}
+                    onClick={() => handleNavClick(item.sectionId)}
+                    color={
+                      location.pathname === item.path ? "primary" : "inherit"
+                    }
                     sx={{
-                      ml: { sm: 1, md: 2 },
+                      mx: { sm: 0.5, md: 1 },
                       fontSize: { sm: "0.875rem", md: "1rem" },
+                      fontWeight: location.pathname === item.path ? 700 : 500,
                     }}
                   >
-                    Curriculum Vitae
+                    {item.label}
                   </Button>
-                </Box>
-              )}
-
-              {/* Mobile Navigation Icon */}
-              {isMobile && (
-                <IconButton
-                  color="inherit"
-                  aria-label="open drawer"
-                  edge="start"
-                  onClick={handleDrawerToggle}
-                  sx={{ ml: 0.5 }}
+                ))}
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  component="a"
+                  href={getAssetPath("/Academic_CV.pdf")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    ml: { sm: 1, md: 2 },
+                    fontSize: { sm: "0.875rem", md: "1rem" },
+                  }}
                 >
-                  <MenuIcon />
-                </IconButton>
-              )}
-            </Toolbar>
-          </Container>
-        </AppBar>
-      </HideOnScroll>
+                  Curriculum Vitae
+                </Button>
+              </Box>
+            )}
+
+            {/* Mobile Navigation Icon */}
+            {isMobile && (
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ ml: 0.5 }}
+              >
+                <MenuIcon />
+              </IconButton>
+            )}
+          </Toolbar>
+        </Container>
+      </AppBar>
 
       {/* Mobile Navigation Drawer */}
       <Box component="nav">
