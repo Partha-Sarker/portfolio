@@ -1,8 +1,9 @@
-- 10th/104 students
+- 10th/107 students
 - last 4 semester excellent cgpa
 - got exceeding expectations on all 5 categories in my performance review
 - Built personal projects such as piano notation, subtitle in batch, copy youtube playlist project for solving personal project
-- Got gift from course teacher
+- Got gift from course teacher for networking project. Made android app for P2P communication
 - Helped classmates on their study
 - Reliable and helpful in company as well
 - Helped groom freshers
+- Got perfect performance review - exceeding expectations in all 5 evaluation categories
