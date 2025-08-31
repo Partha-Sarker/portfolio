@@ -57,7 +57,7 @@ const PersonalProjects: React.FC<PersonalProjectsProps> = ({ projects }) => {
   );
 
   return (
-    <Box sx={{ mb: 6 }}>
+    <Box>
       <Box sx={{ display: "flex", alignItems: "center", mb: 4 }}>
         <PersonIcon
           sx={{ mr: 2, color: theme.palette.warning.main, fontSize: "2rem" }}

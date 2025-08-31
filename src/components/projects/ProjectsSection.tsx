@@ -318,7 +318,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
 
       {/* Navigation Tabs - Only shown when not filtering */}
       {!searchTerm && !technologyFilter && (
-        <Box sx={{ borderBottom: 1, borderColor: "divider", mb: 3 }}>
+        <Box sx={{ borderColor: "divider", mb: 3 }}>
           <Tabs
             value={activeTab}
             onChange={handleTabChange}
@@ -560,6 +560,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
       <Paper
         elevation={0}
         sx={{
+          mt: 6,
           p: 3,
           backgroundColor: theme.palette.background.default,
           borderRadius: 2,

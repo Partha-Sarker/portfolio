@@ -26,7 +26,7 @@ const ProfessionalProjects: React.FC<ProfessionalProjectsProps> = ({
   }
 
   return (
-    <Box sx={{ mb: 6 }}>
+    <Box>
       <Box sx={{ display: "flex", alignItems: "center", mb: 4 }}>
         <WorkIcon
           sx={{ mr: 2, color: theme.palette.success.main, fontSize: "2rem" }}

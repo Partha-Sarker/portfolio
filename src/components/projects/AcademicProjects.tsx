@@ -35,7 +35,7 @@ const AcademicProjects: React.FC<AcademicProjectsProps> = ({ projects }) => {
   );
 
   return (
-    <Box sx={{ mb: 6 }}>
+    <Box>
       <Box sx={{ display: "flex", alignItems: "center", mb: 4 }}>
         <SchoolIcon
           sx={{ mr: 2, color: theme.palette.secondary.main, fontSize: "2rem" }}

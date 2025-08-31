@@ -41,7 +41,7 @@ const FeaturedResearchProjects: React.FC<FeaturedResearchProjectsProps> = ({
   }
 
   return (
-    <Box sx={{ mb: 6 }}>
+    <Box>
       <Box sx={{ display: "flex", alignItems: "center", mb: 4 }}>
         <ScienceIcon
           sx={{ mr: 2, color: theme.palette.primary.main, fontSize: "2rem" }}

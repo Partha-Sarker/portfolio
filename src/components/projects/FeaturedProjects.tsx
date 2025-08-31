@@ -79,7 +79,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects }) => {
   };
 
   return (
-    <Box sx={{ mb: 6 }}>
+    <Box>
       <Box sx={{ display: "flex", alignItems: "center", mb: 4 }}>
         <StarIcon
           sx={{ mr: 2, color: theme.palette.warning.main, fontSize: "2rem" }}
