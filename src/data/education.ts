@@ -34,7 +34,7 @@ const education: Education[] = [
     thesis: {
       title: "A Notification Based Nudge for Handling Excessive Smartphone Use",
       description:
-        "Research on reducing excessive smartphone usage through notification-based interventions that increase self-awareness without causing annoyance. Developed 'App Usage Monitor' that reduced smartphone usage by over 6% through subtle nudges and visualization techniques. Advisor: Marium-E-Jannat",
+        "Research on reducing excessive smartphone usage through notification-based interventions that increase self-awareness without causing annoyance. Developed 'App Usage Monitor' that reduced smartphone usage by over 6% through subtle nudges and visualization techniques.",
       url: "https://arxiv.org/abs/2507.14702",
     },
   },

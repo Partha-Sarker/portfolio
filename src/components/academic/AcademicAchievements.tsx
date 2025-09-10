@@ -27,11 +27,11 @@ interface Achievement {
   description: string;
   date: string;
   category:
-    | "award"
-    | "scholarship"
-    | "recognition"
-    | "problem-solving"
-    | "publication";
+  | "award"
+  | "scholarship"
+  | "recognition"
+  | "problem-solving"
+  | "publication";
   icon: React.ReactNode;
   url?: string;
   links?: Array<{
@@ -52,18 +52,16 @@ const AcademicAchievements: React.FC = () => {
   const achievements: Achievement[] = [
     {
       id: "ielts",
-      title: "IELTS Score: 7.5",
-      description:
-        "Achieved a high score in the International English Language Testing System, demonstrating advanced English language proficiency. Breakdown: Listening: 8.0, Reading: 8.0, Speaking: 6.5, Writing: 6.5.",
+      title: "IELTS: 7.5",
+      description: "Listening: 8.0, Reading: 8.0, Speaking: 6.5, Writing: 6.5",
       date: "July 2025",
       category: "recognition",
       icon: <StarIcon />,
     },
     {
       id: "gre",
-      title: "GRE Score: 309 (Quant 162)",
-      description:
-        "Attained a competitive score in the Graduate Record Examination, with particularly strong performance in the Quantitative section.",
+      title: "GRE: 309",
+      description: "Quant: 162, Verbal: 147, Analytical Writing: 3.5",
       date: "April 2025",
       category: "recognition",
       icon: <StarIcon />,
@@ -91,7 +89,7 @@ const AcademicAchievements: React.FC = () => {
       title: "Competitive Programming",
       description:
         "Solved over 500 problems on various online judges including LeetCode and other competitive programming platforms, demonstrating strong algorithmic thinking and problem-solving skills.",
-      date: "Ongoing",
+      date: "2017 - Ongoing",
       category: "problem-solving",
       icon: <StarIcon />,
       links: [
@@ -258,7 +256,7 @@ const AcademicAchievements: React.FC = () => {
                   <StarIcon />
                 </Avatar>
                 <Typography variant="h6" component="h3" fontWeight={600}>
-                  Recognitions
+                  Test Scores
                 </Typography>
               </Box>
               <Divider sx={{ mb: 2 }} />

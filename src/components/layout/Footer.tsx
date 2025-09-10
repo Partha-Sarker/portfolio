@@ -55,17 +55,29 @@ const Footer: React.FC = () => {
               >
                 parthasarker3@gmail.com
               </Link>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-              <LocationOnIcon sx={{ mr: 1, fontSize: "1rem" }} />
-              <Typography variant="body2" color="text.secondary">
-                Dhaka, Bangladesh
-              </Typography>
+              <Box sx={{ mx: 1 }}>|</Box>
+              <Link
+                href="mailto:partha.sarker@marginedge.com"
+                color="inherit"
+                underline="hover"
+              >
+                partha.sarker@marginedge.com
+              </Link>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <PhoneIcon sx={{ mr: 1, fontSize: "1rem" }} />
               <Typography variant="body2" color="text.secondary">
                 +8801521428057
+              </Typography>
+              <Box sx={{ mx: 1 }}>|</Box>
+              <Typography variant="body2" color="text.secondary">
+                +8801781431478
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+              <LocationOnIcon sx={{ mr: 1, fontSize: "1rem" }} />
+              <Typography variant="body2" color="text.secondary">
+                Dhaka, Bangladesh
               </Typography>
             </Box>
             <Box sx={{ mt: 2 }}>

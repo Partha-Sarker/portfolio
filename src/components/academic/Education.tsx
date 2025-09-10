@@ -236,7 +236,7 @@ const Education: React.FC<EducationProps> = ({ education }) => {
                       color="text.secondary"
                       sx={{ mb: 2 }}
                     >
-                      {edu.thesis.description}
+                      {edu.thesis.description} Advisor: <a target="_blank" href="https://scholar.google.com/citations?user=7pdeQX4AAAAJ&hl=en">Marium-E-Jannat</a>
                     </Typography>
 
                     <Box sx={{ mb: 2 }}>
@@ -249,13 +249,12 @@ const Education: React.FC<EducationProps> = ({ education }) => {
                         Key Research Areas:
                       </Typography>
                       <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                        <Chip size="small" label="Smartphone Usage Reduction" />
+                        <Chip size="small" label="Human-Computer Interaction" />
                         <Chip
                           size="small"
                           label="Notification-Based Interventions"
                         />
                         <Chip size="small" label="Behavioral Nudges" />
-                        <Chip size="small" label="Self-Awareness Techniques" />
                       </Box>
                     </Box>
 
@@ -288,7 +287,7 @@ const Education: React.FC<EducationProps> = ({ education }) => {
                         startIcon={<DescriptionIcon />}
                         sx={{ mt: 1 }}
                       >
-                        View Full Thesis
+                        Read full paper on arXiv
                       </Button>
                     )}
                   </Paper>
