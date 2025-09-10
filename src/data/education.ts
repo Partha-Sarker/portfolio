@@ -82,6 +82,16 @@ const education: Education[] = [
     achievements: ["Covers Data Structures and Algorithms"],
   },
   {
+    id: "certification4",
+    degree: "Certification",
+    field: "Claude Code in Action",
+    institution: "Anthropic",
+    location: "Online",
+    date: "Sep 2025",
+    url: "https://verify.skilljar.com/c/vpucg7jagzs2",
+    achievements: ["Covers Claude Code’s architecture, usage, and integrations"],
+  },
+  {
     id: "higher-secondary",
     degree: "Higher Secondary Certificate (HSC)",
     field: "Science",

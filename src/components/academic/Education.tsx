@@ -507,7 +507,7 @@ const Education: React.FC<EducationProps> = ({ education }) => {
           fontWeight={600}
           sx={{ mb: 3 }}
         >
-          Certifications & Additional Education
+          Certifications
         </Typography>
 
         <Box
@@ -530,15 +530,8 @@ const Education: React.FC<EducationProps> = ({ education }) => {
                   >
                     {cert.field}
                   </Typography>
-                  <Typography
-                    variant="subtitle1"
-                    color="text.secondary"
-                    sx={{ mb: 2 }}
-                  >
-                    {cert.degree}
-                  </Typography>
 
-                  <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                  <Box sx={{ display: "flex", alignItems: "center", my: 1 }}>
                     <SchoolIcon
                       sx={{
                         mr: 1,
