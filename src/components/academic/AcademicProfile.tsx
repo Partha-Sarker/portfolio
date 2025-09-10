@@ -26,6 +26,12 @@ const AcademicProfile: React.FC = () => {
       icon: <PsychologyIcon color="primary" />,
     },
     {
+      title: "AR/VR Development",
+      description:
+        "Creating immersive augmented and virtual reality experiences for educational and interactive applications.",
+      icon: <ViewInArIcon color="primary" />,
+    },
+    {
       title: "Computer Vision",
       description:
         "Research on image processing techniques for pattern recognition and visual analysis.",
@@ -36,12 +42,6 @@ const AcademicProfile: React.FC = () => {
       description:
         "Applying machine learning and AI techniques to solve complex problems in HCI and interactive systems.",
       icon: <ScienceIcon color="primary" />,
-    },
-    {
-      title: "AR/VR Development",
-      description:
-        "Creating immersive augmented and virtual reality experiences for educational and interactive applications.",
-      icon: <ViewInArIcon color="primary" />,
     },
   ];
 
